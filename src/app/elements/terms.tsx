@@ -5,13 +5,13 @@ export default function Terms() {
 		<>
 			<PageHeader title="Terms of Service" />
 			<div className="callout-body">
-                    By using anything offered by Pixelated, you automatically agree to this legal agreement. You also accept any updated version of this agreement by continuing to use the Services.<br/>
+                    By using anything offered by PixelVivid, you automatically agree to this legal agreement. You also accept any updated version of this agreement by continuing to use the Services.<br/>
 				<br/>
                     You MUST be at least 13 years old to use the Services (or at least 16 years old if you are a resident of certain European countries as described above). Do not use the Services if it would mean breaking the law.<br/>
 				<br/>
                     If you sign up for an account on the Services, you are responsible for all activity on your account. Be mindful about protecting your account password and let us know immediately if you think there are any issues.<br/>
 				<br/>
-                    You own all content you contribute to the Services, but you're ok with Pixelated using it in connection with its Services. Public Information is public, so don't include any private or sensitive information in any public part of the Services.<br/>
+                    You own all content you contribute to the Services, but you're ok with PixelVivid using it in connection with its Services. Public Information is public, so don't include any private or sensitive information in any public part of the Services.<br/>
 				<br/>
                     You're allowed to use the Services only in accordance with this agreement. Generally speaking, you are only allowed to use content that you find on the site in connection with your use of the Services and solely for personal and non-commercial purposes. We can edit, take down, or block any content on the Services at any time.<br/>
 				<br/>

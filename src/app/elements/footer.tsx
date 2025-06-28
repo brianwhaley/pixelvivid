@@ -9,7 +9,7 @@ export default function Footer() {
 	return (
 		<div className="section-container" suppressHydrationWarning={true} >
 			
-			<Analytics id="G-1J1W90VBE1" />
+			<Analytics id="G-B1NZG3YT9Y" />
 			{ /* <GoogleAnalytics gaId="G-1J1W90VBE1" /> */ }
 			
 		</div>

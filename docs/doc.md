@@ -109,3 +109,7 @@ https://cloudinary.com/blog/delivering_all_your_websites_images_through_a_cdn
 # ===== CHECKOUT WITH PAYPAL ===== 
 https://www.freecodecamp.org/news/integrate-paypal-into-html-css-js-product-pages/
 https://dev.to/evansifyke/how-to-integrate-paypal-with-html-css-and-javascript-2mnb
+
+# ===== GOOGLE ANALYTICS =====
+
+# ===== GOOGLE PROGRAMMABLE SEARCH =====

@@ -11,25 +11,17 @@ export default function Home() {
 			<section id="products-section">
 				<div className="section-container">
 					<br />
-					<PageHeader title="Pixelated Products & Services" />
+					<PageHeader title="PixelVivid Products & Services" />
 					<div className="row-12col">
 						<div className="grid-s3-e8">
-							Pixelated offers a wide variety of products and services, 
-							including custom web development for small businesses, 
-							refurbished and customized sunglasses, stock photography, 
-							touchup services, home design and remodeling, and more. 
+							PixelVivid offers a wide variety of products and services, 
+							including refurbished and customized sunglasses, stock photography, 
+							touchup services, home design and remodeling, custom made jewelry, 
+							cpmmissioned paintings, and more. 
 							Explore our detailed offerings below. 
 						</div>
 					</div>
-					<div className="row-3col">
-						<Callout
-							url="/workoverview" 
-							img='images/circuitboard.jpg'
-							title='Web Development'
-							content='Passionate Web Technologist,
-								Digital Transformation Professional, User Experience Champion.
-								I get excited watching companies and products grow and thrive.'
-							layout='vertical' />
+					<div className="row-2col">
 						<Callout
 							url='/customsunglasses' 
 							img='/images/customs/blue-splatter-3.jpg'
@@ -48,13 +40,13 @@ export default function Home() {
 								into a budding Stock Photography Portfolio.  Check out my work on 
 								iStockPhoto or ShutterStock, or see my books on Blurb or Shutterfly. '
 							layout='vertical' />
-						{/* <Callout
+						{ /* <Callout
 							url='/homedesign' 
 							img='https://farm66.static.flickr.com/65535/54513221006_5d2117cdf3_b.jpg'
 							title='Home Design & Remodeling'
 							content='We design a holistic plan for interior and exterior design of homes,
 								including kitchens, bathrooms, bedrooms, color schemes, artwork, garages, patios, decks, and more.'
-							layout='vertical' /> */}
+							layout='vertical' /> */ }
 					</div>
 				</div>
 			</section>
@@ -83,45 +75,35 @@ export default function Home() {
 
 			<section id="spotlight-section">
 				<div className="section-container">
-					<CalloutHeader title="Pixelated - Featured Spotlights" />
-					<div className="row-4col">
+					<CalloutHeader title="Featured Spotlights" />
+					<div className="row-3col">
 						<div className="gridItem">
 							<Callout
-								img='images/brianwhaley-headshot.jpg'
-								title='Brian T. Whaley'
-								content='Technologist,
-									Digital Transformation Professional, User Experience Champion,
-									Landscape and Macro Photographer, Avid World Traveler,
-									Advanced Open Water Scuba Diver, Enthusiast of Home-Cooked Food'
+								url='/store'
+								img='/images/customs/neon-splatter.jpg'
+								title='Custom Sunglasses Store'
+								content='View some cutomized Oakley sunglasses available for purchase.'
 								layout='vertical' />
-						</div><div className="gridItem">
+						</div>
+						<div className="gridItem">
 							<Callout
-								url='photogallery'
+								url='/subscribe'
+								img='/images/icons/email-icon.png'
+								title='Subscribe'
+								content='Subscribe for updates and announcements about new products, launches, events, and upcoming drops.'
+								layout='vertical' />
+						</div>
+						<div className="gridItem">
+							<Callout
+								url='/photogallery'
 								img='https://farm1.static.flickr.com/736/32093760946_27cb5b34fa_b.jpg'
 								title='Photo Gallery'
 								layout='vertical'
 								content='A carousel of some of my best photographs throughout my life.
 									They are primarily landscape photographs, macro photographs, and travel photographs.
-									The carousel was custom built using React and the Flickr API.
 									You can click on the left or right arrows to navigate, or swipe on a touch enabled device.'/>
-						</div><div className="gridItem">
-							<Callout
-								url='https://www.ebay.com/usr/btw73/'
-								img='images/logos/ebay-logo.png'
-								title='Sunglasses on eBay'
-								content='View some cutomized Oakley sunglasses available for purchase on eBay.'
-								layout='vertical' />
-						</div><div className="gridItem">
-							<Callout
-								url='https://www.goodreads.com/review/list/49377228-brian-whaley?shelf=books-for-work' 
-								img='/images/logos/goodreads-logo.png'
-								title='Goodreads'
-								layout='vertical' 
-								shape='round' 
-								content='This Goodreads Shelf is a collection of books that i have found to be 
-									invaluable to build, strengthen, and manage my career and leadership skills over my career, 
-									i hope these are useful to you too. '/>
 						</div>
+						
 					</div>
 				</div>
 			</section>

@@ -3,73 +3,73 @@
 		{ 
 			"name": "Home", 
 			"path": "/", 
-			"title": "PixelVivid -  - Home",
+			"title": "PixelVivid - Home",
 			"description": "PixelVivid offers a wide varity of products and services, including stock photography, touchup services, home design and remodeling, and more.",
 			"keywords": "PixelVivid, web development, small business, stock photography, home redesign, remodeling, social media"  
 		} , { 
 			"name": "Customs Overview", 
 			"path": "/customsunglasses", 
-			"title": "PixelVivid -  - Custom Sunglasses",
+			"title": "PixelVivid - Custom Sunglasses",
 			"description": "A sampling of the custom sunglasses I paint in my spare time",
 			"keywords": "PixelVivid, custom sunglasses, oakley, refurbish, restore, custom paint, ebay, gallery, carousel" 
 		} , { 
 			"name": "Customs Store", 
 			"path": "/store", 
-			"title": "PixelVivid -  - Customs Store",
+			"title": "PixelVivid - Customs Store",
 			"description": "Check out my Custom Sunglasses store where I sell my custom painted sunglasses",
 			"keywords": "PixelVivid, online store, ecommerce, custom sunglasses" 
 		} , { 
 			"name": "Customs Request", 
 			"path": "/requests", 
-			"title": "PixelVivid -  - Customs Request",
+			"title": "PixelVivid - Customs Request",
 			"description": "Request some custom sunglass work for yourself.",
 			"keywords": "PixelVivid, online store, ecommerce, ebay, custom sunglasses, requests, form" 
 		} , { 
 			"name": "Subscribe", 
 			"path": "/subscribe", 
-			"title": "PixelVivid -  - Subscribe",
+			"title": "PixelVivid - Subscribe",
 			"description": "Subscribe th PixelVivid newsletters, announcements, and updates.",
 			"keywords": "PixelVivid, online store, ecommerce, ebay, custom sunglasses, subscribe, subscription, newsletter, announcement, drop, update" 
 		} , { 
 			"name": "Customs Gallery", 
 			"path": "/customsgallery", 
-			"title": "PixelVivid -  - Customs Gallery",
+			"title": "PixelVivid - Customs Gallery",
 			"description": "A carousel gallery of some of the paint styles I do on sunglasses, including marbles, splatters, drips, and repairs",
 			"keywords": "PixelVivid, gallery, carousel, custom paint, oakely, marble, splatter, drip, repair" 
 		} , { 
 			"name": "My Customs", 
 			"path": "/mycustoms", 
-			"title": "PixelVivid -  - My Customs",
+			"title": "PixelVivid - My Customs",
 			"description": "These are pictures of the custom sunglasses in my personal collection.",
 			"keywords": "PixelVivid, custom sunglasses, personal collection, collection" 
 		} , { 
 			"name": "Photo Overview", 
 			"path": "/photography", 
-			"title": "Pixelated - Photography",
-			"description": "An overview of the Pixelated phtography portfolio.",
-			"keywords": "pixelated, photography, overview, gallery, carousel, social media" 
+			"title": "PixelVivid - Photography",
+			"description": "An overview of the PixelVivid phtography portfolio.",
+			"keywords": "PixelVivid, photography, overview, gallery, carousel, social media" 
 		} , { 
 			"name": "Photo Gallery", 
 			"path": "/photogallery", 
-			"title": "Pixelated - Photo Gallery",
+			"title": "PixelVivid - Photo Gallery",
 			"description": "A carousel of some of my best photographs throughout my life. They are primarily landscape photographs, macro photographs, and travel photographs. ",
-			"keywords": "pixelated, gallery, carousel, photographs, landscape, macro, travel" 
+			"keywords": "PixelVivid, gallery, carousel, photographs, landscape, macro, travel" 
 		} , { 
 			"name": "Social Media", 
 			"path": "/socialmedia", 
-			"title": "PixelVivid -  - Social Media",
+			"title": "PixelVivid - Social Media",
 			"description": "Links to all my digital footprints",
 			"keywords": "PixelVivid, social media, photography, stock photography, istock, shutterstock, blurb, shutterfly, x, twitter, 500px, flickr, instagram" 
 		} , {
 			"name": "Terms of Service", 
 			"path": "/terms", 
-			"title": "PixelVivid -  - Terms of Service",
+			"title": "PixelVivid - Terms of Service",
 			"description": "PixelVivid Terms of Service",
 			"keywords": "PixelVivid, terms of service"  
 		} , { 
 			"name": "Privacy Policy", 
 			"path": "/privacy", 
-			"title": "PixelVivid -  - Privacy Policy",
+			"title": "PixelVivid - Privacy Policy",
 			"description": "PixelVivid Privacy Policy",
 			"keywords": "PixelVivid, privacy policy, data retention"  
 		}

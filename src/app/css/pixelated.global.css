@@ -127,8 +127,10 @@ section.section-alt {
 }
 
 #page-header {
-	background-color: #369;
-	background-image: url(/images/pix/pix-bg.gif);
+	background-image: url(/images/pixelvivid/pix-bg.gif);
+	/* background-color: #369; */
+	background-color: rgba(255,255,255,0.3);
+    background-blend-mode: lighten;
 	color: #FFF;
 	height: 60px;
 	padding: 10px 15px;
@@ -428,3 +430,4 @@ main .carouselCardSubHeader h4 {
         1px -1px 5px black, 
         -1px -1px 5px black;
 }
+
