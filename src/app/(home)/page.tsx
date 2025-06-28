@@ -14,23 +14,21 @@ export default function Home() {
 					<PageHeader title="PixelVivid Products & Services" />
 					<div className="row-12col">
 						<div className="grid-s3-e8">
-							PixelVivid offers a wide variety of products and services, 
-							including refurbished and customized sunglasses, stock photography, 
-							touchup services, home design and remodeling, custom made jewelry, 
-							cpmmissioned paintings, and more. 
-							Explore our detailed offerings below. 
+							PixelVivid offers a wide variety of artistic products 
+							and services such as unique one-of-a-kind painted sunglasses, 
+							photography, jewelry, commissioned paintings, and more. 
+							Explore our creative offerings below. 
 						</div>
 					</div>
 					<div className="row-2col">
 						<Callout
 							url='/customsunglasses' 
 							img='/images/customs/blue-splatter-3.jpg'
-							title='Custom Sunglasses'
-							content='I refurbish, repair, and customize Oakley sunglasses. 
-								I enjoy providing custom paint jobs with a splash of colors - 
-								marbled, splattered, and dripped. Custom paint can be one color, 
-								or a combination of complimentary colors. Patterns can also be small or large, 
-								thin or thick, dense or sparse.  As the customer, you choose!'
+							title='Customized Sunglasses'
+							content='PixelVivid sunglasses offer a wide variety of 
+								activewear sunglasses with color splashed, marbled, splattered, 
+								dripped and pixeled! Oakley frames are our favorite glasses 
+								to paint but we can paint on almost any brand. '
 							layout='vertical' />
 						<Callout
 							url='/photography' 
@@ -76,7 +74,7 @@ export default function Home() {
 			<section id="spotlight-section">
 				<div className="section-container">
 					<CalloutHeader title="Featured Spotlights" />
-					<div className="row-3col">
+					<div className="row-4col">
 						<div className="gridItem">
 							<Callout
 								url='/store'
@@ -91,6 +89,19 @@ export default function Home() {
 								img='/images/icons/email-icon.png'
 								title='Subscribe'
 								content='Subscribe for updates and announcements about new products, launches, events, and upcoming drops.'
+								layout='vertical' />
+						</div>
+						<div className="gridItem">
+							<Callout
+								url='/request'
+								img='/images/icons/request-icon.jpg'
+								title='Special Sunglass Orders'
+								content='Pixelvivid can co-create a personalized pair of 
+									really cool sunglasses with you! The artistic design of 
+									your sunglasses can include one color, or a combination of 
+									complimentary colors. Paint designs can be smaller or larger, 
+									thin or thick, dense or sparse. Your special order sunglasses 
+									are personal and vivid!'
 								layout='vertical' />
 						</div>
 						<div className="gridItem">
