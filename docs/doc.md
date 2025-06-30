@@ -24,7 +24,7 @@ npm run dev
 
 https://localhost:3000
 
-## ===== COMMPN NPM COMMANDS =====
+## ===== COMMON NPM COMMANDS =====
 
 npm outdated | awk 'NR>1 {print $1"@"$4}' | xargs npm install --force --save
 
@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "content and naming updates"
+git commit -m "addition of discount code feature"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

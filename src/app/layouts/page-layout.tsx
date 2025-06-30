@@ -10,7 +10,7 @@ export default function HomeLayout({children}: Readonly<{children: React.ReactNo
 			<header>
 				<div id="page-header" className="fixed-header"><Header /></div>
 				<div id="fixed-header-spacer"></div>
-				<div id="page-search" className="noMobile"><Search id="009500278966481927899:bcssp73qony" /></div>
+				<div id="page-search" className="noMobile"><Search id="e336d1c9d0e5e48e5" /></div>
 			</header>
 			<nav><Nav /></nav>
 			<main>{children}</main>
