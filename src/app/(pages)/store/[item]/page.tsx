@@ -15,9 +15,10 @@ export default function EbayItem({params}: { params: Promise<{ item: string }> }
 		tokenScope: 'https://api.ebay.com/oauth/api_scope',
 		globalId: 'EBAY-US',
 	};
+	const cloudinaryProductEnv = "dzjibwmev"; // Cloudinary environment for product images
 	return (
 		<>
-			<EbayItemDetail apiProps={apiProps} itemID={item} />
+			<EbayItemDetail apiProps={apiProps} itemID={item} cloudinaryProductEnv={cloudinaryProductEnv} />
 		</>
 		
 	);

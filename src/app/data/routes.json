@@ -19,7 +19,7 @@
 			"description": "Check out my Custom Sunglasses store where I sell my custom painted sunglasses",
 			"keywords": "PixelVivid, online store, ecommerce, custom sunglasses" 
 		} , { 
-			"name": "Customs Request", 
+			"name": "Requests", 
 			"path": "/requests", 
 			"title": "PixelVivid - Customs Request",
 			"description": "Request some custom sunglass work for yourself.",
@@ -30,12 +30,6 @@
 			"title": "PixelVivid - Subscribe",
 			"description": "Subscribe to the PixelVivid newsletters, announcements, and updates.",
 			"keywords": "PixelVivid, online store, ecommerce, ebay, custom sunglasses, subscribe, subscription, newsletter, announcement, drop, update" 
-		} , { 
-			"name": "My Customs", 
-			"path": "/mycustoms", 
-			"title": "PixelVivid - My Customs",
-			"description": "These are pictures of the custom sunglasses in my personal collection.",
-			"keywords": "PixelVivid, custom sunglasses, personal collection, collection" 
 		} , { 
 			"name": "Photography", 
 			"path": "/photography", 

@@ -14,12 +14,14 @@ export default function Ebay() {
 		tokenScope: 'https://api.ebay.com/oauth/api_scope',
 		globalId: 'EBAY-US',
 	};
+	const cloudinaryProductEnv = "dzjibwmev"; // Cloudinary environment for product images
+
 	return (
 		<>
 			<section id="ebay-section">
 				<div className="section-container">
 					<PageHeader title="Custom Sunglasses For Sale" />
-					<EbayItems apiProps={apiProps} />
+					<EbayItems apiProps={apiProps} cloudinaryProductEnv={cloudinaryProductEnv} />
 				</div>
 			</section>
 		</>
