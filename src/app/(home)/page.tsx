@@ -74,7 +74,7 @@ export default function Home() {
 			<section id="spotlight-section">
 				<div className="section-container">
 					<CalloutHeader title="Featured Spotlights" />
-					<div className="row-4col">
+					<div className="row-3col">
 						<div className="gridItem">
 							<Callout
 								url='/store'
@@ -103,16 +103,6 @@ export default function Home() {
 									thin or thick, dense or sparse. Your special order sunglasses 
 									are personal and vivid!'
 								layout='vertical' />
-						</div>
-						<div className="gridItem">
-							<Callout
-								url='/photogallery'
-								img='https://farm1.static.flickr.com/736/32093760946_27cb5b34fa_b.jpg'
-								title='Photo Gallery'
-								layout='vertical'
-								content='A carousel of some of my best photographs throughout my life.
-									They are primarily landscape photographs, macro photographs, and travel photographs.
-									You can click on the left or right arrows to navigate, or swipe on a touch enabled device.'/>
 						</div>
 						
 					</div>

@@ -36,16 +36,8 @@ export default function CustomSunglasses() {
 			<section id="customs-section">
 				<div className="section-container">
 					<PageHeader title="Custom Painted Sunglasses by BTW" />
-					<div className="row-4col">
+					<div className="row-3col">
 						<div className="gridItem">
-							<Callout
-								url='/customsgallery'
-								img='/images/customs/btw-customs.jpg'
-								title='Custom Sunglass Gallery' 
-								content='Flip through some examples of my work customizing Oakley sunglasses and eyeglasses.'
-								layout='vertical' 
-								shape="round" />
-						</div><div className="gridItem">
 							<Callout
 								// url="https://www.ebay.com/sch/i.html?sid=btw73" 
 								url="/store" 
@@ -54,7 +46,8 @@ export default function CustomSunglasses() {
 								content='View some cutomized Oakley sunglasses available for purchase.'
 								layout='vertical' 
 								shape='round' />
-						</div><div className="gridItem">
+						</div>
+						<div className="gridItem">
 							<Callout
 								// url="https://www.ebay.com/sch/i.html?sid=btw73" 
 								url="/requests" 
@@ -63,7 +56,8 @@ export default function CustomSunglasses() {
 								content='Sharing my backlog of requests for upcoming customized sunglasses'
 								layout='vertical' 
 								shape='round' />
-						</div><div className="gridItem">
+						</div>
+						<div className="gridItem">
 							<Callout
 								url='/subscribe'
 								img='/images/icons/email-icon.png'
