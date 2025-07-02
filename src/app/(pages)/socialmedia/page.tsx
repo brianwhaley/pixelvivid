@@ -27,18 +27,18 @@ const myRSSFeeds = {
 	/* iStockPhoto */
 	/* LinkedIn */
 	/* pinterest: { url: "https://www.pinterest.com/brianwhaley/feed.rss" }, */
-	/* reddit: { url: "https://www.reddit.com/user/btw-73/saved.rss?feed=fc1adaa9f977a389504453447e7c0e6ef68f7037&user=btw-73" }, */
+	reddit: { url: "https://www.reddit.com/user/pixelvivid2025/submitted/.rss" },
 	/* https://ssl.reddit.com/prefs/feeds/ */
 	shutterfly: { url: "https://cmd.shutterfly.com/commands/format/rss?site=brianwhaley&page=brianwhaley" },
 	/* snapchat */
 	/* ShutterStock */
 	/* TickTock */
 	/* tumblr: { url: "https://pixelatedviews.tumblr.com/rss" }, */
-	/* x: { url : "https://rsshub.app/twitter/user/brianwhaley", iconSrcAlt: 'Tweets from Brian Whaley'}, */
+	x: { url : "https://rsshub.app/twitter/user/pixelvivid2025", iconSrcAlt: 'Tweets from Brian Whaley'},
 	// twitter: { url: "https://twitrss.me/twitter_user_to_rss/?user=brianwhaley" },
 	// twitter: { url : "https://rss.app/feeds/MPULoVcijU5AAHxU.xml", iconSrcAlt: 'Tweets from Brian Whaley'},
 	// twitter: { url: "https://twitrss.me/twitter_user_to_rss/?user=pixelatedviews" }
-	x2: { url : "https://rsshub.app/twitter/user/pixelatedviews", iconSrcAlt: 'Tweets from Pixelated'},
+	// x2: { url : "https://rsshub.app/twitter/user/pixelatedviews", iconSrcAlt: 'Tweets from Pixelated'},
 	// twitter2: { url : "https://rss.app/feeds/B0rl26o7ehFAuBoq.xml", iconSrcAlt: 'Tweets from picelated.views'},
 	/* youtube: { url: "https://www.youtube.com/feeds/videos.xml%3Fchannel_id=UCKk2eBwml-4mEsmMK-dK6sQ" } */
 };

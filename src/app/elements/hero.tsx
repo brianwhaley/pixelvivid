@@ -18,10 +18,12 @@ export default function Hero() {
 				flickr : {
 					baseURL: 'https://api.flickr.com/services/rest/?',
 					urlProps: {
-						method: 'flickr.photos.search',
+						// method: 'flickr.photos.search',
+						method: 'flickr.photosets.getPhotos',
+						photoset_id: "72177720326925753",
 						api_key: '882cab5548d53c9e6b5fb24d59cc321d',
 						user_id: '15473210@N04',
-						tags: 'pixelatedviewsgallery',
+						// tags: 'pixelatedviewsgallery',
 						extras: 'date_taken,description,owner_name',
 						sort: 'date-taken-desc',
 						per_page: 500,

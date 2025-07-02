@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "remove customs gallery from overview page"
+git commit -m "social media updaes, sustainability, shared callouts"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

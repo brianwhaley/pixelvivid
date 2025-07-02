@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { getRouteByKey } from "@/app/components/metadata/pixelated.metadata";
 // import { getRouteByKey } from "@brianwhaley/pixelated-components";
 // import { getMetadata } from "@brianwhaley/pixelated-components";
-import HomeLayout from "@/app/layouts/home-layout";
+// import HomeLayout from "@/app/layouts/home-layout";
 import PageLayout from "@/app/layouts/page-layout";
 import "@/app/css/pixelated.global.css";
 import "@/app/css/pixelated.grid.scss";
@@ -15,12 +15,12 @@ import myRoutes from "@/app/data/routes.json";
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
 	const pathname = usePathname();
 	const metadata = getRouteByKey(myRoutes.routes, "path", pathname);
-	let layout;
-	if (pathname === '/') {
-		layout = <HomeLayout>{children}</HomeLayout> ;
-	} else {
-		layout = <PageLayout>{children}</PageLayout> ;
-	}
+	// let layout;
+	// if (pathname === '/') {
+	// 	layout = <HomeLayout>{children}</HomeLayout> ;
+	// } else {
+	const layout = <PageLayout>{children}</PageLayout> ;
+	// }
 
 	const [ origin, setOrigin ] = useState<string | null>(null);
 	// const [ host, setHost ] = useState<string | null>(null);

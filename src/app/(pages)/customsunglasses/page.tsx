@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { PageHeader } from "@/app/components/general/pixelated.general";
 import { Callout, CalloutHeader, CalloutSmall } from "@brianwhaley/pixelated-components";
+import * as CalloutLibrary from "@/app/elements/calloutlibrary";
 import { Modal, handleModalOpen } from "@brianwhaley/pixelated-components";
 import { Carousel } from "@brianwhaley/pixelated-components";
 import GalleryWrapper from "@/app/elements/gallerywrapper";
@@ -38,39 +39,17 @@ export default function CustomSunglasses() {
 					<PageHeader title="Custom Painted Sunglasses by BTW" />
 					<div className="row-3col">
 						<div className="gridItem">
-							<Callout
-								// url="https://www.ebay.com/sch/i.html?sid=btw73" 
-								url="/store" 
-								img='/images/customs/btw-signature.jpg'
-								title='Custom Sunglass Store' 
-								content='View some cutomized Oakley sunglasses available for purchase.'
-								layout='vertical' 
-								shape='round' />
+							<CalloutLibrary.sunglassStore />
 						</div>
 						<div className="gridItem">
-							<Callout
-								// url="https://www.ebay.com/sch/i.html?sid=btw73" 
-								url="/requests" 
-								img='/images/icons/request-icon.jpg'
-								title='Customs Request List' 
-								content='Sharing my backlog of requests for upcoming customized sunglasses'
-								layout='vertical' 
-								shape='round' />
+							<CalloutLibrary.subscribe />
 						</div>
 						<div className="gridItem">
-							<Callout
-								url='/subscribe'
-								img='/images/icons/email-icon.png'
-								title='Subscribe' 
-								content='Subscribe to receive emails about monthly activities, new sunglass drops, and new events and discounts.'
-								layout='vertical' 
-								shape='round' />
+							<CalloutLibrary.specialOrder />
 						</div>
 					</div>
 				</div>
 			</section>
-
-
 
 
 			<section className="section" id="customs-section">

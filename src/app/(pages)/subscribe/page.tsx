@@ -24,10 +24,10 @@ export default function Subscribe() {
 	
 	return (
 		<div className="section-container">
-			<PageHeader title="Subscribe to Pixelated Emails" />
+			<PageHeader title="Subscribe to PixelVivid Emails" />
 			<div className="row-1col" suppressHydrationWarning={true} >
 				<div>
-					Subscribe to the Pixelated newsletter and get regular updates on: 
+					Subscribe to the PixelVivid newsletter and get regular updates on: 
 					<ul>
 						<li>Monthly activities</li>
 						<li>New releases and custom sunglass drops</li>
