@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "Fix for paypal - totals match, zoid errors"
+git commit -m "email send on order approve"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
