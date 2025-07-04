@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "Contentful Discount Codes, fix for PayPal Discount"
+git commit -m "Fix for Discount Code rounded to nearest 1/100th"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
