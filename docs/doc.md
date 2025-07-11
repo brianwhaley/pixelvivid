@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "email send on order approve"
+git commit -m "table sort, new social media accounts, social media page feeds, beginning of non hubspot form integration and form data retrieve"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

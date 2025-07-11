@@ -15,7 +15,7 @@ const myRSSFeeds = {
 	SOOpx: { url: "https://500px.com/brianwhaley/rss" },
 	/* blog: { url: "https://blog.pixelated.tech/feed/", iconSrcAlt: "Pixelated Views Blog Post" }, */
 	/* BLURB */
-	ebay: { url: "https://rssbay.net/feed?keyword=sunglasses&globalId=EBAY-US&auction=1&buyitnow=1&condition=-&seller=pixelatedtech3&time-frame-type=-&time-frame-value=-" },
+	ebay: { url: "https://rssbay.net/feed?keyword=sunglasses&globalId=EBAY-US&auction=1&buyitnow=1&condition=-&seller=pixelatedtech&time-frame-type=-&time-frame-value=-" },
 	/* etsy: { url: "https://www.etsy.com/people/bwhaley73/favorites/items.rss" }, */
 	/* FACEBOOK */
 	flickr: { url : "https://www.flickr.com/services/feeds/photoset.gne?nsid=15473210@N04&set=72157712416706518&lang=en-us&format=rss2" },
@@ -26,7 +26,7 @@ const myRSSFeeds = {
 	/* INSTAGRAM */
 	/* iStockPhoto */
 	/* LinkedIn */
-	/* pinterest: { url: "https://www.pinterest.com/brianwhaley/feed.rss" }, */
+	pinterest: { url: "https://www.pinterest.com/pixelvivid/feed.rss" },
 	reddit: { url: "https://www.reddit.com/user/pixelvivid2025/submitted/.rss" },
 	/* https://ssl.reddit.com/prefs/feeds/ */
 	shutterfly: { url: "https://cmd.shutterfly.com/commands/format/rss?site=brianwhaley&page=brianwhaley" },

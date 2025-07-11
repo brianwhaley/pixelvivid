@@ -1,0 +1,12 @@
+#newRequestForm {
+	display: inline-block;
+}
+
+.newRequestFormWrapper {
+	display: flex;
+	justify-content: center;
+}
+
+div:has(> #newRequestFormSubmit)  {
+  	text-align: center;
+}
