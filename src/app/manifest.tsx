@@ -18,7 +18,7 @@ export default function manifest(): MetadataRoute.Manifest {
 		// @ts-expect-error - Object literal may only specify known properties, and 'author' does not exist in type 'Manifest'.ts(2353)
 		default_locale: "en",
 		display: "standalone",
-		homepage_url: "https://www.pixelvivid.tech",
+		homepage_url: "https://www.pixelvivid.com",
 		icons: [{
 			src: "/images/favicon.ico",
 			sizes: "64x64 32x32 24x24 16x16",
