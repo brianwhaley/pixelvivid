@@ -6,20 +6,26 @@
 			"title": "PixelVivid - Home",
 			"description": "PixelVivid offers a wide varity of products and services, including stock photography, touchup services, home design and remodeling, and more.",
 			"keywords": "PixelVivid, web development, small business, stock photography, home redesign, remodeling, social media"  
+		} , {
+			"name": "About Us", 
+			"path": "/about", 
+			"title": "PixelVivid - About us",
+			"description": "PixelVivid offers a wide varity of products and services, including stock photography, touchup services, home design and remodeling, and more.",
+			"keywords": "PixelVivid, web development, small business, stock photography, home redesign, remodeling, social media"  
 		} , { 
-			"name": "Customs Overview", 
+			"name": "Sunglasses Overview", 
 			"path": "/customsunglasses", 
 			"title": "PixelVivid - Custom Sunglasses",
 			"description": "A sampling of the custom sunglasses I paint in my spare time",
 			"keywords": "PixelVivid, custom sunglasses, oakley, refurbish, restore, custom paint, ebay, gallery, carousel" 
 		} , { 
-			"name": "Customs Store", 
+			"name": "Sunglass Store", 
 			"path": "/store", 
 			"title": "PixelVivid - Customs Store",
 			"description": "Check out my Custom Sunglasses store where I sell my custom painted sunglasses",
 			"keywords": "PixelVivid, online store, ecommerce, custom sunglasses" 
 		} , { 
-			"name": "Requests", 
+			"name": "Custom Requests", 
 			"path": "/requests", 
 			"title": "PixelVivid - Customs Request",
 			"description": "Request some custom sunglass work for yourself.",

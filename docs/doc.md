@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "table sort, new social media accounts, social media page feeds, beginning of non hubspot form integration and form data retrieve"
+git commit -m "product count on store list page, About Us page"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
