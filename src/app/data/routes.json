@@ -48,18 +48,18 @@
 			"title": "PixelVivid - Social Media",
 			"description": "Links to all my digital footprints",
 			"keywords": "PixelVivid, social media, photography, stock photography, istock, shutterstock, blurb, shutterfly, x, twitter, 500px, flickr, instagram" 
-		} , {
-			"name": "Terms of Service", 
-			"path": "/terms", 
-			"title": "PixelVivid - Terms of Service",
-			"description": "PixelVivid Terms of Service",
-			"keywords": "PixelVivid, terms of service"  
 		} , { 
-			"name": "Privacy Policy", 
-			"path": "/privacy", 
-			"title": "PixelVivid - Privacy Policy",
-			"description": "PixelVivid Privacy Policy",
-			"keywords": "PixelVivid, privacy policy, data retention"  
+			"name": "Return Policy", 
+			"path": "/returns", 
+			"title": "PixelVivid - Return Policy",
+			"description": "PixelVivid Return Policy",
+			"keywords": "PixelVivid, return policy"  
+		} , { 
+			"name": "Contact Us", 
+			"path": "/contact", 
+			"title": "PixelVivid - Contact Us",
+			"description": "PixelVivid Contact Us",
+			"keywords": "PixelVivid, contact us"  
 		}
 	]
 }

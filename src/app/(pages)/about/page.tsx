@@ -34,12 +34,12 @@ export default function About() {
 										title='A bit about our sunglasses'
 										content='Each pair of our creative upcycled sunglasses are carefully selected and prepared 
 										before beginning the creative process. Once prepped to receive the paint, each pair of 
-										sunglasses are styled using high end automotive paints from House of Kolor. 
-										Once all the colors are applied, each pair of sunglases are sprayed 
+										sunglasses are styled using high-end automotive paints from House of Kolor. 
+										Once all the colors are applied, each pair of sunglasses are sprayed 
 										with a two-stage gloss clear coat to protect them. Once hardened for 5 to 7 days, 
 										each creative upcycled sunglasses are fitted with new polarized lenses, ear socks, 
 										and any other rubber bits on the frame. The last step in the process is for 
-										the designer to sign their work. Each pair unique, earth-friendly and fun! '
+										the designer to sign their work. Each pair is unique, earth-friendly, and fun!'
 										layout='horizontal' />
 								</div>
 								<CalloutLibrary.sustainabilityMessage />
