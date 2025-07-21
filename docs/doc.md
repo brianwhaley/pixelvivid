@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "updates to layout"
+git commit -m "about us page, metadata fixes, sustainability message update"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

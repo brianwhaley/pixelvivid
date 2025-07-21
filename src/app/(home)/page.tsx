@@ -71,7 +71,7 @@ export default function Home() {
 			<section className="section-alt" id="upcycle-section">
 				<div className="section-container">
 					<div className="row-12col">
-						<div className="grid-s3-e8">
+						<div className="grid-s2-e9">
 							<CalloutLibrary.sustainabilityMessage />
 						</div>
 					</div>

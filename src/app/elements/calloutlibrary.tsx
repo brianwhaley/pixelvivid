@@ -87,9 +87,16 @@ export function sustainabilityMessage() {
 			img='/images/icons/globe-icon.png'
 			title='Sustainability Message'
 			content='By purchasing PixelVivid custom painted 
-                sunglasses, you are supporting “creative upcycling” 
-                by encouraging a culture that reconnects and reuses 
+                sunglasses, you are supporting “creative upcycling”, 
+				a form of waste reduction that focuses on extending 
+				the life of materials by giving them a new purpose through 
+				artistic and innovative means.  
+                PixelVivid encourages a culture that reconnects and reuses 
                 a quality product with a new and artistic aesthetic applied. 
+				We are happy to creative-upcycle quality sunglass frames from 
+				Oakley, Ray Ban, Costa del Mar, and more. Many of the frames 
+				are vintage and are no longer manufactured but bring back 
+				great times and great memories! Now, they are reborn at PixelVivid for you.  
                 Thank you for choosing a better product for our planet!'
 			layout='horizontal' />
 	);
