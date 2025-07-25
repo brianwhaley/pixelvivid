@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "contact us page, contact us form, return policy page, misc grammar fixes"
+git commit -m "added filtering by aspect to the ebay store component"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

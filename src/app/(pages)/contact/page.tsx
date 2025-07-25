@@ -31,7 +31,7 @@ export default function Contact() {
 	}
 	
 	useEffect(() => {
-		const form = document.getElementById("contactusForm") as HTMLFormElement;
+		const form = document.getElementById("contactUsForm") as HTMLFormElement;
 		if (form) {
 			const submitbutton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
 			const submitDiv = submitbutton.parentElement as HTMLDivElement;
@@ -57,7 +57,7 @@ export default function Contact() {
 							</div>
 							<FormEngine 
 								name="contactUs" 
-								id="contactusForm" 
+								id="contactUsForm" 
 								formData={formData} 
 								onSubmitHandler={handleSubmit} 
 							/>
