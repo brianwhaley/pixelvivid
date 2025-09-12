@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 							myMetadata = {
 								name: thisItem.title,
 								path: `/store/${thisItem.legacyItemId}`,
-								title: "PixelVivid - Item " + thisItem.legacyItemId + " - " + thisItem.title,
+								title: `PixelVivid - Item ${thisItem.legacyItemId} - ${thisItem.title}`,
 								description: thisItem.description.replace(/[\r\n]+/g, ' '), //.split('\n\n').slice(0, Math.min(4, thisItem.description.split('\n\n').length)).join(' '),
 								keywords: descriptionToKeywords(thisItem.title + " " + thisItem.description, 30).join(", "),
 							};
