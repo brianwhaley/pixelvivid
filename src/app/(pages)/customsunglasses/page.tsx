@@ -75,7 +75,8 @@ export default function CustomSunglasses() {
 								img='/images/customs/camo-marble.jpg' 
 								title='Marbles' 
 								content='Customized glasses with mottled streaks of color.  
-									Custom marbled paint can be done with a number of complimentary colors, or one single color.' 
+									Custom marbled paint can be done with a number of complimentary colors, one single color, 
+									with metallics, lographic or colorshift paints, or even with clear candy colors.' 
 								layout='vertical' 
 								shape='round' 
 								alt="Marbles" />
@@ -86,7 +87,7 @@ export default function CustomSunglasses() {
 								title='Splatters'
 								content='This style is customized with a splash of colors.  
 									Custom splatter paint can be one color, or a combination of complimentary colors.  
-									It can also be small or large, thin or thick, dense or sparse. '
+									Splatters can also be small or large, thin or thick, dense or sparse. '
 								layout='vertical' 
 								shape='round' />
 						</div><div className="gridItem">
@@ -96,7 +97,47 @@ export default function CustomSunglasses() {
 								title='Drips'
 								content='This style is customized with color dripped all over the frame.  
 									Dripping paint can be one color, or a combination of complimentary colors.  
-									It can also be done dense or sparse. '
+									It can also be done with the drips dense or sparse. '
+								layout='vertical' 
+								shape='round' />
+						</div><div className="gridItem">
+							<Callout
+								// url='https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg'
+								img='/images/customs/blended-fade.jpg'
+								title='Fades'
+								content='This style can be used on its own, or as a base for other styles like Drips or Splatters.  
+									The fade can be solid colors, metallics, or candy colors.  Candy fades look especially great on clear frames.  
+									The fade can be on part of the frame or end-to-end, can be one color or many, translucent or opaque. '
+								layout='vertical' 
+								shape='round' />
+						</div><div className="gridItem">
+							<Callout
+								// url='https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg'
+								img='/images/customs/green-confetti.jpg'
+								title='Confetti'
+								content='This style is customized with individual dots of color individually painted all over the frame.  
+									The dots paint can be one color, complimentary colors, or any color pattern you choose.  
+									It can also be done with confetti dots large or small, and dense or sparse. '
+								layout='vertical' 
+								shape='round' />
+						</div><div className="gridItem">
+							<Callout
+								// url='https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg'
+								img='/images/customs/fire-red-linear.jpg'
+								title='Linears'
+								content='This style is customized with individual lines of color individually drawn all over the frame.  
+									The lines can paint can be one color, a combination of complimentary colors, or a variety of colors of your preference.  
+									It can also be done with the lines dense or sparse. '
+								layout='vertical' 
+								shape='round' />
+						</div><div className="gridItem">
+							<Callout
+								// url='https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg'
+								img='/images/customs/holo-fade-drip-splatter.jpg'
+								title='Your Choice'
+								content='Combine styles and colors to create your own custom look - fades, drips, splatters, confetti, marbles, linears, 
+									all done in your choice pof paint - neon, metallics, colorshift, holographic, candy clears, and more.  
+									Contact us with your ideas and we will work with you to create a one-of-a-kind pair of custom sunglasses. '
 								layout='vertical' 
 								shape='round' />
 						</div><div className="gridItem">
@@ -105,7 +146,7 @@ export default function CustomSunglasses() {
 								img='/images/customs/repair-nose.jpg'
 								title='Repairs'
 								content='Reinforced with metal strips and glued back together.  
-									A new paint job is recommended after a repair to ensure color match.'
+									A new custom coat of paint is recommended after a repair to ensure color match.'
 								layout='vertical' 
 								shape='round' />
 						</div>
