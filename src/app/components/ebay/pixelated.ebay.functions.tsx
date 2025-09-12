@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import PropTypes from "prop-types";
+import PropTypes /* , { InferProps } */ from "prop-types";
 import type { ShoppingCartType } from "@brianwhaley/pixelated-components";
 const debug = false;
 
@@ -148,7 +148,7 @@ export function getEbayItemsSearch(props: any){
 
 
 export function getEbayItem(props: any){
-	const apiProps = props.apiProps;
+	const apiProps = { ...defaultEbayProps, ...props.apiProps };
 	const fetchData = async (token: string) => {
 		if (debug) console.log("Fetching ebay API Data");
 		try {
@@ -172,4 +172,32 @@ export function getEbayItem(props: any){
 		}
 	};
 	return fetchData(props.token);
+}
+
+
+/* ========== GET ITEM METADATA ========== */
+
+
+export function getEbayItemMetadata(props: any){
+
+	let myMetadata = undefined;
+	const apiProps = { ...defaultEbayProps, ...props.apiProps };
+	getEbayAppToken(apiProps)
+		.then((response: any) => {
+			getEbayItem({ apiProps, token: response })
+				.then((item: any) => {
+					const thisItem = { ...item } as any;
+					if (debug) console.log(thisItem);
+					myMetadata = {
+						name: thisItem.title,
+						path: `/store/${thisItem.legacyItemId}`,
+						title: "PixelVivid - " + thisItem.title,
+						description: thisItem.description.split('\n\n').slice(0, Math.min(4, thisItem.description.split('\n\n').length)).join(' '),
+						keywords: thisItem.description,
+					};
+					console.log("metadata 1", myMetadata);
+					return(myMetadata);
+					// description: thisItem.description.replace(/(<br\s*\/?>\s*){2,}/gi, ''),
+				});
+		});
 }

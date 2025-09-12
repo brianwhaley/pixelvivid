@@ -1,8 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"; 
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from 'next/navigation';
-import { getRouteByKey } from "@/app/components/metadata/pixelated.metadata";
+import type { Metadata } from "@/app/components/metadata/pixelated.metadata";
+import { descriptionToKeywords, getRouteByKey } from "@/app/components/metadata/pixelated.metadata";
+import { defaultEbayProps, getEbayAppToken, getEbayItem } from "./components/ebay/pixelated.ebay.functions";
+// import { getEbayItemMetadata } from "./components/ebay/pixelated.ebay.functions";
 // import { getRouteByKey } from "@brianwhaley/pixelated-components";
 // import { getMetadata } from "@brianwhaley/pixelated-components";
 import Header from "@/app/elements/header";
@@ -14,13 +18,60 @@ import "@/app/css/pixelated.grid.scss";
 import myRoutes from "@/app/data/routes.json";
 /* import "../globals.css"; */
 
-export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+
 	const pathname = usePathname();
-	const metadata = getRouteByKey(myRoutes.routes, "path", pathname);
 	const [ origin, setOrigin ] = useState<string | null>(null);
+	const [ metadata, setMetadata ] = useState<Metadata | null>();
 	// const [ host, setHost ] = useState<string | null>(null);
+	
+
 	useEffect(() => {
-		setOrigin(window.location.origin || null);
+		let myMetadata = getRouteByKey(myRoutes.routes, "path", pathname);
+		setMetadata(myMetadata);
+		if (!myMetadata) {
+			// NO METADATA FOUND - EBAY STORE ITEM 
+			const itemID = pathname.split("/store/")[1];
+			console.log("itemID", itemID);
+			let apiProps = {
+				proxyURL: "https://proxy.pixelated.tech/prod/proxy?url=",
+				qsItemURL: `/v1|${itemID}|0?fieldgroups=PRODUCT,ADDITIONAL_SELLER_DETAILS`,
+				appId: 'BrianWha-Pixelate-PRD-1fb4458de-1a8431fe', // clientId
+				appCertId: 'PRD-fb4458deef01-0d54-496a-b572-a04b', // clientSecret
+				tokenScope: 'https://api.ebay.com/oauth/api_scope',
+				globalId: 'EBAY-US',
+			};
+
+			apiProps = { ...defaultEbayProps, ...apiProps };
+			getEbayAppToken(apiProps)
+				.then((response: any) => {
+					getEbayItem({ apiProps, token: response })
+						.then((item: any) => {
+							const thisItem = { ...item } as any;
+							console.log(thisItem);
+							myMetadata = {
+								name: thisItem.title,
+								path: `/store/${thisItem.legacyItemId}`,
+								title: "PixelVivid - Item " + thisItem.legacyItemId + " - " + thisItem.title,
+								description: thisItem.description.replace(/[\r\n]+/g, ' '), //.split('\n\n').slice(0, Math.min(4, thisItem.description.split('\n\n').length)).join(' '),
+								keywords: descriptionToKeywords(thisItem.title + " " + thisItem.description, 30).join(", "),
+							};
+							setMetadata(myMetadata);
+							console.log("metadata", myMetadata);
+							// description: thisItem.description.replace(/(<br\s*\/?>\s*){2,}/gi, ''),
+						});
+				});
+			console.log("metadata", myMetadata);
+
+			/* 
+			myMetadata = getEbayItemMetadata({ apiProps });
+			setMetadata(myMetadata);
+			*/
+		}
+
+
+		setOrigin(window.location.href || null);
+		// setOrigin(window.location.origin || null);
 		// setHost(window.location.host || null);
 	}, []);
 
@@ -43,7 +94,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
 				<meta itemProp="name" content="PixelVivid" />
 				<meta itemProp="url" content={origin ?? undefined} />
 				<meta itemProp="description" content={metadata?.description} />
-				<meta itemProp="thumbnailUrl" content="/images/pixelvivid/pix-512.gif" />
+				<meta itemProp="thumbnaillUrl" content="/images/pixelvivid/pix-512.gif" />
 				<link rel="alternate" href={origin ?? undefined} hrefLang="en-us" />
 				<link rel="canonical" href={origin ?? undefined} />
 				<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
