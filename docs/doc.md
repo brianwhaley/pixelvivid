@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "fix store page metadata"
+git commit -m "updated color styles on customsunglasses page"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

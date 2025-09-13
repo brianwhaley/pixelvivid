@@ -28,11 +28,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 	useEffect(() => {
 		let myMetadata = getRouteByKey(myRoutes.routes, "path", pathname);
-		setMetadata(myMetadata);
-		if (!myMetadata) {
+		// setMetadata(myMetadata);
+		if (myMetadata) {
+			// METADATA FOUND - STANDARD PAGE
+			setMetadata(myMetadata);
+		} else {
 			// NO METADATA FOUND - EBAY STORE ITEM 
 			const itemID = pathname.split("/store/")[1];
-			console.log("itemID", itemID);
 			let apiProps = {
 				proxyURL: "https://proxy.pixelated.tech/prod/proxy?url=",
 				qsItemURL: `/v1|${itemID}|0?fieldgroups=PRODUCT,ADDITIONAL_SELLER_DETAILS`,
@@ -41,34 +43,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				tokenScope: 'https://api.ebay.com/oauth/api_scope',
 				globalId: 'EBAY-US',
 			};
-
 			apiProps = { ...defaultEbayProps, ...apiProps };
 			getEbayAppToken(apiProps)
 				.then((response: any) => {
 					getEbayItem({ apiProps, token: response })
 						.then((item: any) => {
 							const thisItem = { ...item } as any;
-							console.log(thisItem);
+							const thisItemTitle = "PixelVivid - Item " + thisItem.legacyItemId + " - " + thisItem.title;
 							myMetadata = {
 								name: thisItem.title,
 								path: `/store/${thisItem.legacyItemId}`,
-								title: `PixelVivid - Item ${thisItem.legacyItemId} - ${thisItem.title}`,
+								title: thisItemTitle,
 								description: thisItem.description.replace(/[\r\n]+/g, ' '), //.split('\n\n').slice(0, Math.min(4, thisItem.description.split('\n\n').length)).join(' '),
-								keywords: descriptionToKeywords(thisItem.title + " " + thisItem.description, 30).join(", "),
+								keywords: descriptionToKeywords(thisItemTitle + " " + thisItem.description, 30).join(", "),
 							};
 							setMetadata(myMetadata);
-							console.log("metadata", myMetadata);
 							// description: thisItem.description.replace(/(<br\s*\/?>\s*){2,}/gi, ''),
 						});
 				});
-			console.log("metadata", myMetadata);
-
-			/* 
-			myMetadata = getEbayItemMetadata({ apiProps });
-			setMetadata(myMetadata);
-			*/
-		}
-
+		} 
 
 		setOrigin(window.location.href || null);
 		// setOrigin(window.location.origin || null);
