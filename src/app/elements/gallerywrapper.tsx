@@ -37,7 +37,8 @@ export default async function GalleryWrapper(
 	async function getFlickrCards() {
 		const myPromise = GetFlickrData(flickr);
 		const myFlickrImages = await myPromise;
-		const myFlickrCards = await GenerateFlickrCards({flickrImages: myFlickrImages, photoSize: 'Medium'});
+		const myPhotoSize = flickr.flickr.urlProps.photoSize;
+		const myFlickrCards = await GenerateFlickrCards({flickrImages: myFlickrImages, photoSize: myPhotoSize});
 		// REMOVE LINKS
 		if (await myFlickrCards) { 
 			const myScrubbedFlickrCards = await myFlickrCards.map((obj: CarouselCardType) => {
