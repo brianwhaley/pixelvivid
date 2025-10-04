@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -8,6 +9,7 @@ import { Modal, handleModalOpen } from "@brianwhaley/pixelated-components";
 import { Carousel } from "@brianwhaley/pixelated-components";
 import GalleryWrapper from "@/app/elements/gallerywrapper";
 import type { CarouselCardType } from "@brianwhaley/pixelated-components";
+import { getContentfulEntriesByType } from "@brianwhaley/pixelated-components";
 
 export default function CustomSunglasses() {
 	const cloudinaryAPI = "https://res.cloudinary.com/dlbon7tpq/image/fetch/f_auto,q_auto/";
@@ -32,6 +34,34 @@ export default function CustomSunglasses() {
 		}
 		fetchGallery();
 	}, []); 
+
+
+	const [ feedbackCards , setFeedbackCards ] = useState<CarouselCardType[]>([]);
+	const apiProps = {
+		base_url: "https://cdn.contentful.com",
+		space_id: "soi9w77t7027",
+		environment: "master",
+		access_token: "muY9LfpCt4qoXosDsnRkkoH3DAVVuUFEuB0WRKRdBUM",
+	};
+	useEffect(() => {
+		async function getFeedbackCards() {
+			const contentType = "feedback"; 
+			const typeCards = await getContentfulEntriesByType({ apiProps: apiProps, contentType: contentType }); 
+			const items = typeCards.items.filter((card: any) => card.sys.contentType.sys.id === contentType);
+			const cardLength = items.length;
+			const reviewCards = items.map(function (card: any, index: number) {
+				return {
+					headerText: card.fields.feedbackText,
+					bodyText: card.fields.name,
+					index: index,
+					cardIndex: index,
+					cardLength: cardLength,
+				};
+			});
+			setFeedbackCards(reviewCards);
+		}
+		getFeedbackCards();
+	}, []);
 
 	return (
 		<>
@@ -63,8 +93,6 @@ export default function CustomSunglasses() {
 				</div>
 				<br />
 			</section>
-
-
 
 
 			<section className="section" id="styles-section">
@@ -155,6 +183,18 @@ export default function CustomSunglasses() {
 				</div>
 			</section>
 
+
+			<section className="section" id="feedback-section">
+				<div className="section-container">
+					<CalloutHeader title="Customer Feedback" />
+					<Carousel 
+						cards={feedbackCards} 
+						draggable={false}
+						imgFit='contain' />
+				</div>
+			</section>
+
+
 			<section className="section" id="examples-section">
 				<div className="section-container">
 					<CalloutHeader title="Color Examples" />
@@ -226,6 +266,9 @@ export default function CustomSunglasses() {
 						<div className="gridItem">
 							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51154097191_bbff7101f7_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-tiger-stripe.jpg" alt="Neon Tiger Stripe" title="Neon Tiger" shape="squircle" content={""} />
 						</div>
+						<div className="gridItem">
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54817521600_2c626d6486_b.jpg"} imgclick={handleImageClick} img="/images/customs/halloween.jpg" alt="Halloween" title="Halloween" shape="squircle" content={""} />
+						</div>
 
 						{/* 
 						<div className="gridItem">
@@ -267,6 +310,7 @@ export default function CustomSunglasses() {
 					</div>
 				</div>
 			</section>
+
 
 			<Modal modalContent={modalContent} />
 

@@ -1,18 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { PageHeader } from "@/app/components/general/pixelated.general";
 import { CalloutHeader } from "@brianwhaley/pixelated-components";
+import { getContentfulEntriesByType } from "@brianwhaley/pixelated-components";
 import { HubspotTrackingCode /* , getHubspotFormSubmissions */ } from "@brianwhaley/pixelated-components";
 import { FormEngine } from "@brianwhaley/pixelated-components";
 import { Table } from "@brianwhaley/pixelated-components";
 import { Loading, ToggleLoading } from "@brianwhaley/pixelated-components";
-import requestData from "@/app/data/requests.json";
 import formData from "@/app/data/requestform.json";
 import "./requests.css";
 
 export default function Requests() {
+
+	/* MANAGE CUSTOM REQUEST DIALOG */
 
 	async function saveDialog(){
 		ToggleLoading({show: true});
@@ -87,6 +89,51 @@ export default function Requests() {
 		}
 	}, []);
 
+
+	/* MANAGE CONTENTFUL CUSTOM REQUESTDATA FETCHING */
+
+	type CustomRequestType = {
+		name: string;
+		source: string;
+		description: string; 
+		email?: string; // Optional property
+		phone?: string; // Optional property
+		status: string;
+		requestDate: Date;
+	};
+
+	const [ customRequests , setCustomRequests ] = useState<CustomRequestType[]>([]);
+	const apiProps = {
+		base_url: "https://cdn.contentful.com",
+		space_id: "soi9w77t7027",
+		environment: "master",
+		access_token: "muY9LfpCt4qoXosDsnRkkoH3DAVVuUFEuB0WRKRdBUM",
+	};
+	useEffect(() => {
+		async function getCustomRequests() {
+			const contentType = "customRequest"; 
+			const customRequestEntries = await getContentfulEntriesByType({ apiProps: apiProps, contentType: contentType }); 
+			const items = customRequestEntries.items.filter((card: any) => card.sys.contentType.sys.id === contentType);
+			const entriesJSON = items.map(function (card: any) {
+				return {
+					name: card.fields.name,
+					source: card.fields.source,
+					description: card.fields.description,
+					// email: card.fields.email,
+					// phone: card.fields.phone,
+					status: card.fields.status,
+					requestDate: card.fields.requestDate,
+				};
+			});
+			entriesJSON.sort(function (a: any, b: any) { return a.requestDate > b.requestDate ? 1 : -1; });
+			setCustomRequests(entriesJSON);
+		}
+		getCustomRequests();
+	}, []);
+
+
+	/* RENDER THE COMPONENT */
+
 	return (
 		<>
 			<section id="custom-request-section">
@@ -112,7 +159,11 @@ export default function Requests() {
 			<section id="request-list-section">
 				<div className="section-container">
 					<PageHeader title="Custom Sunglass Request Work List" />
-					<Table data={requestData} id="customRequests" sortable={true}/>
+					{ customRequests.length > 0 ? (
+						<Table data={customRequests} id="customRequests" sortable={true}/>
+					) : (
+						<p>No custom requests found.</p>
+					)}
 				</div>
 			</section>
 		</>

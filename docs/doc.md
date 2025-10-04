@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "bump of pixelated-components - add shopping cart button to modal"
+git commit -m "add feedback carousel and data from contentful, replace request json with contentful"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

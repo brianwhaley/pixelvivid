@@ -431,3 +431,37 @@ main .carouselCardSubHeader h4 {
         -1px -1px 5px black;
 }
 
+
+/* ========================================
+=========  HOME PAGE FEEDBACK    ==========
+======================================== */
+
+#feedback-section {
+	margin-bottom: 50px;
+}
+#feedback-section .carouselContainer {
+	height: 350px;
+}
+#feedback-section .carouselCardsContainer {
+	width: 60%;
+	height: 300px;
+	margin: 0 auto;
+}
+#feedback-section .carouselCardWrapper {
+	background-color: white;
+	padding: 10px;
+}
+#feedback-section .carouselCardBody {
+	text-align: center;
+	padding-top: 40px;
+}
+@media screen and (max-width: 480px) {
+	#feedback-section .carouselCardsContainer {
+		width: 90%;
+		font-size: 0.9em;
+	}
+}
+#feedback-section .carouselCardHeader {
+	display: inline;
+	font-size: 1.2em;
+}
