@@ -440,7 +440,7 @@ main .carouselCardSubHeader h4 {
 	margin-bottom: 50px;
 }
 #feedback-section .carouselContainer {
-	height: 350px;
+	height: 300px;
 }
 #feedback-section .carouselCardsContainer {
 	width: 60%;
@@ -464,4 +464,7 @@ main .carouselCardSubHeader h4 {
 #feedback-section .carouselCardHeader {
 	display: inline;
 	font-size: 1.2em;
+}
+#feedback-section .carouselButtons {
+	display: none;
 }

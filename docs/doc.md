@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "add feedback carousel and data from contentful, replace request json with contentful"
+git commit -m "fix custom request bug, remvoe ebay refs in social, remove nav for feedback carousel"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

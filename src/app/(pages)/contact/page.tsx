@@ -11,11 +11,8 @@ import formData from "@/app/data/contactform.json";
 
 export default function Contact() {
 
-	const [modalContent, setModalContent] = useState<React.ReactNode>();
-	useEffect(() => {
-		const myContent = <div className="centered"><br /><br />Thank you for contacting us!<br />We will get back to you as soon as we can.<br /><br /><br /></div>;
-		setModalContent(myContent);
-	}, []);
+	const myContent = <div className="centered"><br /><br />Thank you for contacting us!<br />We will get back to you as soon as we can.<br /><br /><br /></div>;
+	const [modalContent /* , setModalContent */ ] = useState<React.ReactNode>(myContent);
 
 	function handleSubmit(e: Event) {
 		ToggleLoading({show: true});
@@ -23,7 +20,6 @@ export default function Contact() {
 	}
 
 	function postSubmit(e: Event) {
-		// alert("Thank you for contacting us! We will get back to you as soon as we can.");
 		handleModalOpen(e as MouseEvent);
 		ToggleLoading({show: false});
 		const myForm = e.target as HTMLFormElement;

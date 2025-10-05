@@ -19,7 +19,7 @@ export default function SocialTags() {
 				<div className="gridItem"><CalloutSmall shape="squircle" url="https://www.facebook.com/profile.php?id=61577216017129" img="/images/logos/facebook-logo.png" alt="Facebook" title={""} content={""} /></div>
 				<div className="gridItem"><CalloutSmall shape="squircle" url="http://twitter.com/pixelvivid2025" img="/images/logos/twitter-logo.png" alt="Twitter" title={""} content={""} /></div>
 				<div className="gridItem"><CalloutSmall shape="squircle" url="https://www.instagram.com/pixelvivid2025/" img="/images/logos/instagram-logo.jpg" alt="Instagram" title={""} content={""} /></div>
-				<div className="gridItem"><CalloutSmall shape="squircle" url="https://www.ebay.com/usr/pixelatedtech/" img="/images/logos/ebay-logo.png" alt="eBay" title={""} content={""} /></div>
+				{ /* <div className="gridItem"><CalloutSmall shape="squircle" url="https://www.ebay.com/usr/pixelatedtech/" img="/images/logos/ebay-logo.png" alt="eBay" title={""} content={""} /></div> */ }
 				<div className="gridItem"><CalloutSmall shape="squircle" url="https://www.linkedin.com/company/pixelvivid/" img="/images/logos/linkedin-logo.png" alt="LinkedIn" title={""} content={""} /></div>
 				<div className="gridItem"><CalloutSmall shape="squircle" url="https://www.pinterest.com/pixelvivid/" img="/images/logos/pinterest-logo.png" alt="Pinterest" title={""} content={""} /></div>
 				<div className="gridItem"><CalloutSmall shape="squircle" url="https://www.reddit.com/user/pixelvivid2025/" img="/images/logos/reddit-logo.png" alt="Reddit" title={""} content={""} /></div>

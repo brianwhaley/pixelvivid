@@ -37,11 +37,9 @@ export default function Home() {
 						<div className="gridItem">
 							<div className="callout-body">
 								Links to each of my social media accounts and a few recent postings from each,
-								including 500px, Ancestry, my Blog, Blurb, eBay, Etsy, Facebook, Flickr, Goodreads,
+								including 500px, Blurb, Etsy, Facebook, Flickr,
 								Instagram, iStock Photo, LinkedIn, Pinterest, Reddit, Shutterfly, Shutterstock, 
 								Twitter, Tumblr, Youtube, and more.
-								Check out the use of RSS feeds and APIs to generate dynamic cards on the page
-								using my React component library.
 								<br/>
 								<div className="centeredbutton"><a href="socialmedia">My Social Media</a></div>
 							</div>

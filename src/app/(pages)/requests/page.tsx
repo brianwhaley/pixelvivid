@@ -16,7 +16,7 @@ export default function Requests() {
 
 	/* MANAGE CUSTOM REQUEST DIALOG */
 
-	async function saveDialog(){
+	async function saveDialog() {
 		ToggleLoading({show: true});
 		// const sendmail_api = "https://nlbqdrixmj.execute-api.us-east-2.amazonaws.com/default/sendmail";
 		const sendmail_api = "https://sendmail.pixelated.tech/default/sendmail";
@@ -55,40 +55,6 @@ export default function Requests() {
 		const mydialog = document.getElementById(id) as HTMLDialogElement;
 		mydialog.close();
 	}
-
-	useEffect(() => {
-		/* getHubspotFormSubmissions(
-			{
-				proxyURL: "https://proxy.pixelated.tech/prod/proxy?url=",
-				formGUID: "7e9a928d-7905-4acf-9f07-c3db3a48619b", 
-				apiToken: "pat" + "-" + "na2" + "-" + "430684d2" + "-" + "d9e6-4969" + "-" + "acf8-5eee77c27aee"
-			})
-			.then((data)=>{
-				console.log(data);
-				const requests = data.results.map((item: any) => ({
-					Name: item.values.find((value: { name: string; }) => value.name === "firstname").value + 
-						" " + item.values.find((value: { name: string; }) => value.name === "lastname").value,
-					Email: item.values.find((value: { name: string; }) => value.name === "email").value,
-					Source: item.values.find((value: { name: string; }) => value.name === "source").value,
-					"Request": item.values.find((value: { name: string; }) => value.name === "message").value,
-					"Date": item.submittedAt,
-				}));
-				console.log(requests);
-			}); */
-		const submitModalButton = document.getElementById('newRequestFormSubmit');
-		const closeModalButton = document.getElementById('newRequestFormClose');
-		if (submitModalButton) {
-			submitModalButton.addEventListener('click', function() {
-				saveDialog();
-			});
-		}
-		if (closeModalButton) {
-			closeModalButton.addEventListener('click', function() {
-				closeDialog('newRequestDialog');
-			});
-		}
-	}, []);
-
 
 	/* MANAGE CONTENTFUL CUSTOM REQUESTDATA FETCHING */
 
@@ -142,7 +108,7 @@ export default function Requests() {
 					<PageHeader title="Request Your Custom Sunglasses" />
 					<Loading />
 					<div className="newRequestFormWrapper">
-						<FormEngine name="newrequest" id="newRequestForm" formData={formData} />
+						<FormEngine name="newrequest" id="newRequestForm" formData={formData} onSubmitHandler={saveDialog} />
 					</div>
 					<dialog id="thankYouDialog">
 						<CalloutHeader title="Thank you!" />
