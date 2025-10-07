@@ -122,7 +122,7 @@ export default function Requests() {
 				</div>
 			</section>
 
-			<section id="request-list-section">
+			<section className="section-alt2" id="request-list-section">
 				<div className="section-container">
 					<PageHeader title="Custom Sunglass Request Work List" />
 					{ customRequests.length > 0 ? (

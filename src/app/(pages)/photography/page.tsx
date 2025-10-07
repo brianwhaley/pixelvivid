@@ -26,7 +26,7 @@ export default function Photography() {
     
 	return (
 		<>
-			<section id="customs-section">
+			<section id="gallery-section">
 				<div className="section-container">
 					<PageHeader title="Pixelated Photography" />
 					<Carousel 

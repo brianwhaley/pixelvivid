@@ -67,7 +67,7 @@ export function subscribe() {
 export function specialOrder() {
 	return (
 		<Callout
-			url='/request'
+			url='/requests'
 			img='/images/icons/request-icon.jpg'
 			title='Special Sunglass Orders'
 			content='Pixelvivid can co-create a personalized pair of 

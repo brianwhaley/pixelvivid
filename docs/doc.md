@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "fix custom request bug, remvoe ebay refs in social, remove nav for feedback carousel"
+git commit -m "minor css change across the site to section backgrounds"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

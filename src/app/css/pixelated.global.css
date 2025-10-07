@@ -97,13 +97,20 @@ body {
 
 section {
 	/* margin-bottom: 50px; */
-	padding: 10px 0
+	padding: 30px 0
 }
 
 section.section-alt {
 	/* margin-bottom: 50px; */
 	padding: 30px 0;
     background-color: #CCC;
+
+}
+
+section.section-alt2 {
+	/* margin-bottom: 50px; */
+	padding: 30px 0;
+    background-color: #F9F9F9;
 
 }
 
@@ -381,6 +388,7 @@ input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:
 
 input.gsc-input {
 	font-size: 1.0em !important;
+	background: none !important;
 }
 
 .gsc-control-cse {
@@ -396,27 +404,36 @@ input.gsc-input {
 ===========  CUSTOM CAROUSEL    ===========
 ======================================== */
 
-main .carouselCardImage {
+/* #gallery-section {
+	margin-bottom: 50px;
+} */
+#gallery-section .carouselContainer {
+	background: none;
+	border: none;
+}
+#gallery-section .carouselCardImage {
     height: 550px !important;
 	margin-top: 5px !important;
 }
+/* #gallery-section .carouselCardImage .imgContain {
+    max-height: 98%;
+    height: 98%;
+    border: 1px solid black;
+} */
 @media screen and (max-width: 480px) {
-    main .carouselCardImage {
+    #gallery-section .carouselCardImage {
         height: 300px !important;
     }
 }
-
-main .carouselCardHeader { 
+#gallery-section .carouselCardHeader { 
     display: none;
 }
-
-main .carouselCardSubHeader { 
+#gallery-section .carouselCardSubHeader { 
     position: absolute;
     bottom: 5px;
     width: 100%;
-    
 }
-main .carouselCardSubHeader h4 {
+#gallery-section .carouselCardSubHeader h4 {
     text-align: center;
     font-size: 11px !important;
     font-weight: normal !important;
@@ -440,6 +457,8 @@ main .carouselCardSubHeader h4 {
 	margin-bottom: 50px;
 }
 #feedback-section .carouselContainer {
+	background: none;
+	border: none;
 	height: 300px;
 }
 #feedback-section .carouselCardsContainer {
@@ -448,7 +467,7 @@ main .carouselCardSubHeader h4 {
 	margin: 0 auto;
 }
 #feedback-section .carouselCardWrapper {
-	background-color: white;
+	background-color: #CCC; /* white */
 	padding: 10px;
 }
 #feedback-section .carouselCardBody {

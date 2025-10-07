@@ -52,7 +52,7 @@ export default function CustomSunglasses() {
 			const reviewCards = items.map(function (card: any, index: number) {
 				return {
 					headerText: card.fields.feedbackText,
-					bodyText: card.fields.name,
+					bodyText: "- " + card.fields.name,
 					index: index,
 					cardIndex: index,
 					cardLength: cardLength,
@@ -83,7 +83,7 @@ export default function CustomSunglasses() {
 			</section>
 
 
-			<section className="section" id="customs-section">
+			<section className="section-alt" id="gallery-section">
 				<div className="section-container">
 					<CalloutHeader title="Custom Sunglasses Gallery" />
 					<Carousel 
@@ -184,7 +184,7 @@ export default function CustomSunglasses() {
 			</section>
 
 
-			<section className="section" id="feedback-section">
+			<section className="section-alt" id="feedback-section">
 				<div className="section-container">
 					<CalloutHeader title="Customer Feedback" />
 					<Carousel 
