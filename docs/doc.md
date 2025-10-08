@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "minor css change across the site to section backgrounds"
+git commit -m "minor css changes and metadata fixes"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

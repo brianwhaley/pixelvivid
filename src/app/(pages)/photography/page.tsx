@@ -28,7 +28,7 @@ export default function Photography() {
 		<>
 			<section id="gallery-section">
 				<div className="section-container">
-					<PageHeader title="Pixelated Photography" />
+					<PageHeader title="PixelVivid Photography" />
 					<Carousel 
 						cards={flickrCards} 
 						draggable={true}
@@ -37,19 +37,6 @@ export default function Photography() {
 			</section>
 
 			<div className="section-container">
-				{ /* <div className="row-12col">
-					<div className="grid-s3-e6">
-						<Callout
-							url="/photogallery"
-							img='https://farm1.static.flickr.com/736/32093760946_27cb5b34fa_b.jpg'
-							title='Photo Gallery'
-							content='A carousel of some of my best photographs throughout my life.
-								They are primarily landscape photographs, macro photographs, and travel photographs.
-						The carousel was custom built using React and the Flickr API.
-								You can click on the left or right arrows to navigate, or swipe on a touch enabled device.'
-							layout='horizontal' />
-					</div>
-				</div> */ }
 				<div className="row-4col">
 					<Callout
 						url="https://secure.istockphoto.com/portfolio/brianwhaley" 
