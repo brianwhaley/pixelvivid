@@ -26,11 +26,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	const [ metadata, setMetadata ] = useState<Metadata | null>();
 	// const [ host, setHost ] = useState<string | null>(null);
 	
-	// useEffect(() => {
+	useEffect(() => {
 	// if (typeof window !== "undefined"){ 
     	CalloutAnimate();
 	// }
-	// }, []);
+	}, []);
 
 	useEffect(() => {
 		let myMetadata = getRouteByKey(myRoutes.routes, "path", pathname);
