@@ -14,7 +14,7 @@ export default function Footer() {
 			
 			<br />
 			<div className="centered">
-				<p className="footer-text">&copy; {new Date().getFullYear()} Pixelated Technologies. All rights reserved.</p>
+				<p className="footer-text">&copy; {new Date().getFullYear()} PixelVivid. All rights reserved.</p>
 			</div>
 			<br /><br />
 
