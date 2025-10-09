@@ -3,27 +3,27 @@ import { Callout } from "@brianwhaley/pixelated-components";
 export function customSunglasses() {
 	return (
 		<Callout
+			layout='vertical'
 			url='/customsunglasses' 
 			img='/images/customs/blue-splatter-3.jpg'
 			title='Customized Sunglasses'
 			content='PixelVivid sunglasses offer a wide variety of 
                 activewear sunglasses with color splashed, marbled, splattered, 
                 dripped and pixeled! Oakley frames are our favorite glasses 
-                to paint but we can paint on almost any brand. '
-			layout='vertical' />
+                to paint but we can paint on almost any brand. ' />
 	);
 }
 
 export function photography() {
 	return (
 		<Callout
+			layout='vertical' 
 			url='/photography' 
 			img='https://farm6.staticflickr.com/5682/21652998256_7c5d0ce495_b.jpg'
 			title='Stock Photography'
 			content='I have converted my passion of Landscape, Macro, and Travel Photography 
             into a budding Stock Photography Portfolio.  Check out my work on 
-            iStockPhoto or ShutterStock, or see my books on Blurb or Shutterfly. '
-			layout='vertical' />
+            iStockPhoto or ShutterStock, or see my books on Blurb or Shutterfly. '/>
 	);
 }
 
@@ -43,30 +43,31 @@ export function homeDesign() {
 export function sunglassStore(){
 	return (
 		<Callout
+			layout='vertical' 
 			url='/store'
 			img='/images/customs/neon-splatter.jpg'
 			title='Custom Sunglasses Store'
-			content='View some cutomized Oakley sunglasses available for purchase.'
-			layout='vertical' />
+			content='View some cutomized Oakley sunglasses available for purchase.'/>
 	);
 }
 
 export function subscribe() {
 	return (
 		<Callout
+			layout='vertical'
 			url='/subscribe'
 			img='/images/icons/email-icon.png'
+			shape="round" 
 			title='Subscribe'
 			content='Subscribe for updates and announcements about new products, 
-				launches, events, and upcoming drops.'
-			layout='vertical'
-			shape="round" />
+				launches, events, and upcoming drops.'/>
 	);
 }
 
 export function specialOrder() {
 	return (
 		<Callout
+			layout='vertical' 
 			url='/requests'
 			img='/images/icons/request-icon.jpg'
 			title='Special Sunglass Orders'
@@ -75,8 +76,7 @@ export function specialOrder() {
                 your sunglasses can include one color, or a combination of 
                 complimentary colors. Paint designs can be smaller or larger, 
                 thin or thick, dense or sparse. Your special order sunglasses 
-                are personal and vivid!'
-			layout='vertical' />
+                are personal and vivid!'/>
 	);
 }
 

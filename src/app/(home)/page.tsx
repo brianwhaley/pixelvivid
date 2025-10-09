@@ -7,6 +7,7 @@ import * as CalloutLibrary from "@/app/elements/calloutlibrary";
 import SocialTags from "@/app/elements/socialtags";
 
 export default function Home() {
+
 	return (
 		<>
 			<section id="products-section">

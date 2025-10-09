@@ -12,6 +12,12 @@ export default function Footer() {
 			<Analytics id="G-B1NZG3YT9Y" />
 			{ /* <GoogleAnalytics gaId="G-1J1W90VBE1" /> */ }
 			
+			<br />
+			<div className="centered">
+				<p className="footer-text">&copy; {new Date().getFullYear()} Pixelated Technologies. All rights reserved.</p>
+			</div>
+			<br /><br />
+
 		</div>
 	);
 }

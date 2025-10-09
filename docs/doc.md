@@ -56,7 +56,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "add google business social"
+git commit -m "footer, callouts are box-capable"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
