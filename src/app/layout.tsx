@@ -27,7 +27,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	// const [ host, setHost ] = useState<string | null>(null);
 	
 	// useEffect(() => {
-	CalloutAnimate();
+	// if (typeof window !== "undefined"){ 
+    	CalloutAnimate();
+	// }
 	// }, []);
 
 	useEffect(() => {
