@@ -80,6 +80,20 @@ export function specialOrder() {
 	);
 }
 
+export function feedback() {
+	return (
+		<Callout
+			url="https://www.google.com/maps/place/PixelVivid/@36.51455,-77.7273335,6z/data=!3m1!4b1!4m6!3m5!1s0x209fb9352c67abff:0xcee141d8b6841e15!8m2!3d36.51455!4d-77.7273335!16s%2Fg%2F11xzgp2g5v?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D" 
+			img='/images/logos/google-business.png'
+			title='Google Review'
+			content='If you have worked with us, and you were thrilled with your experience, please leave a review on our 
+				Google Business page. 
+				Your feedback is valuable to us to remain focused on you - our customers - and helps new customers learn about PixelVivid.
+				We appreciate your feedback!'
+			layout='horizontal' />
+	);
+}
+
 export function sustainabilityMessage() {
 	return (
 		<Callout

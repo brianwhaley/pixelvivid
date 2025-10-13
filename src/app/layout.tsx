@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import type { Metadata } from "@/app/components/metadata/pixelated.metadata";
 import { descriptionToKeywords, getRouteByKey } from "@/app/components/metadata/pixelated.metadata";
 import { defaultEbayProps, getEbayAppToken, getEbayItem } from "./components/ebay/pixelated.ebay.functions";
-import { CalloutAnimate } from "@brianwhaley/pixelated-components";
+import { MicroAnimations } from "@brianwhaley/pixelated-components";
 // import { getEbayItemMetadata } from "./components/ebay/pixelated.ebay.functions";
 // import { getRouteByKey } from "@brianwhaley/pixelated-components";
 // import { getMetadata } from "@brianwhaley/pixelated-components";
@@ -27,9 +27,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	// const [ host, setHost ] = useState<string | null>(null);
 	
 	useEffect(() => {
-	// if (typeof window !== "undefined"){ 
-    	CalloutAnimate();
-	// }
+		MicroAnimations({ 
+			imgtwist: true,
+			// buttonglow: true,
+			buttonring: true,
+			scrollfadeElements: '.callout , .calloutSmall , .carouselContainer',
+		});
 	}, []);
 
 	useEffect(() => {
