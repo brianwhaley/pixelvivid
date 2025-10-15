@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "pixelated-components version bump"
+git commit -m "fix for shoppink cart button micro interaction"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
