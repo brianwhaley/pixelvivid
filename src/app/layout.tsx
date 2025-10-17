@@ -10,12 +10,12 @@ import { MicroInteractions } from "@brianwhaley/pixelated-components";
 // import { getEbayItemMetadata } from "./components/ebay/pixelated.ebay.functions";
 // import { getRouteByKey } from "@brianwhaley/pixelated-components";
 // import { getMetadata } from "@brianwhaley/pixelated-components";
+import "@brianwhaley/pixelated-components/dist/css/pixelated.global.css";
+import "@brianwhaley/pixelated-components/dist/css/pixelated.grid.scss";
 import Header from "@/app/elements/header";
 import Nav from "@/app/elements/nav";
 import Search from '@/app/elements/search';
 import Footer from '@/app/elements/footer';
-import "@/app/css/pixelated.global.css";
-import "@/app/css/pixelated.grid.scss";
 import myRoutes from "@/app/data/routes.json";
 import "./globals.css";
 
