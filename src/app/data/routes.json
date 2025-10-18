@@ -43,12 +43,6 @@
 			"description": "An overview of the PixelVivid phtography portfolio.",
 			"keywords": "PixelVivid, photography, stock photography, overview, gallery, carousel, social media" 
 		} , { 
-			"name": "Social Media", 
-			"path": "/socialmedia", 
-			"title": "PixelVivid - Social Media",
-			"description": "Links to all my digital footprints",
-			"keywords": "PixelVivid, social media, photography, stock photography, istock, shutterstock, blurb, shutterfly, x, twitter, 500px, flickr, instagram" 
-		} , { 
 			"name": "Return Policy", 
 			"path": "/returns", 
 			"title": "PixelVivid - Return Policy",

@@ -42,7 +42,6 @@ export default function Home() {
 								Instagram, iStock Photo, LinkedIn, Pinterest, Reddit, Shutterfly, Shutterstock, 
 								Twitter, Tumblr, Youtube, and more.
 								<br/>
-								<div className="centeredbutton"><a href="socialmedia">My Social Media</a></div>
 							</div>
 						</div>
 					</div>
