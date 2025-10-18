@@ -1,6 +1,6 @@
 {
   "name": "pixelvivid",
-  "version": "1.0.46",
+  "version": "1.0.47",
   "private": true,
   "scripts": {
     "dev": "npm run clean && NODE_OPTIONS='--inspect' next dev  -p 3005 --experimental-https",
