@@ -1,109 +1,122 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-"use client"; 
-
-import React, { useState, useEffect } from "react";
-import { usePathname } from 'next/navigation';
-import type { Metadata } from "@/app/components/metadata/pixelated.metadata";
-import { descriptionToKeywords, getRouteByKey } from "@/app/components/metadata/pixelated.metadata";
-import { defaultEbayProps, getEbayAppToken, getEbayItem } from "./components/ebay/pixelated.ebay.functions";
-import { MicroInteractions } from "@brianwhaley/pixelated-components";
+import React from "react";
+import type { Metadata } from 'next';
+import type { Viewport } from 'next';
+import { headers } from 'next/headers';
 // import { getEbayItemMetadata } from "./components/ebay/pixelated.ebay.functions";
 // import { getRouteByKey } from "@brianwhaley/pixelated-components";
 // import { getMetadata } from "@brianwhaley/pixelated-components";
 import "@brianwhaley/pixelated-components/dist/css/pixelated.global.css";
 import "@brianwhaley/pixelated-components/dist/css/pixelated.grid.scss";
+import { descriptionToKeywords, getRouteByKey } from "@/app/components/metadata/pixelated.metadata";
+import { defaultEbayProps, getEbayAppToken, getEbayItem } from "./components/ebay/pixelated.ebay.functions";
 import Header from "@/app/elements/header";
+import Interactions from "@/app/elements/interactions";
 import Nav from "@/app/elements/nav";
 import Search from '@/app/elements/search';
 import Footer from '@/app/elements/footer';
 import myRoutes from "@/app/data/routes.json";
 import "./globals.css";
 
+// export const dynamic = 'force-static';
+export async function generateMetadata (): Promise<Metadata> {
+	// read route params
+	const headersList = await headers();
+	const url = headersList.get("x-url") || "";
+	const origin = headersList.get("x-origin") || "";
+	const pathname = headersList.get("x-pathname") || "";
+	let myMetadata = getRouteByKey(myRoutes.routes, "path", pathname);
+	if (!myMetadata) {
+		/// NO METADATA FOUND - EBAY STORE ITEM 
+		const itemID = pathname.split("/store/")[1];
+		let apiProps = {
+			proxyURL: "https://proxy.pixelated.tech/prod/proxy?url=",
+			qsItemURL: `/v1|${itemID}|0?fieldgroups=PRODUCT,ADDITIONAL_SELLER_DETAILS`,
+			appId: 'BrianWha-Pixelate-PRD-1fb4458de-1a8431fe', // clientId
+			appCertId: 'PRD-fb4458deef01-0d54-496a-b572-a04b', // clientSecret
+			tokenScope: 'https://api.ebay.com/oauth/api_scope',
+			globalId: 'EBAY-US',
+		};
+		apiProps = { ...defaultEbayProps, ...apiProps };
+
+		const tokenResponse = await getEbayAppToken(apiProps);
+		const ebayItem = await getEbayItem({ apiProps, token: tokenResponse });
+		const thisItem = await { ...ebayItem };
+		const thisItemTitle = "PixelVivid - Item " + await thisItem.legacyItemId + " - " + await thisItem.title;
+
+		myMetadata = {
+			name: await thisItem.title,
+			path: `/store/${ await thisItem.legacyItemId}`,
+			title: thisItemTitle,
+			description: await thisItem.description?.replace(/[\r\n]+/g, ' '), //.split('\n\n').slice(0, Math.min(4, thisItem.description.split('\n\n').length)).join(' '),
+			keywords: descriptionToKeywords(thisItemTitle + " " + await thisItem.description, 30).join(", "),
+		};
+	}
+ 
+	return {
+		// https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+		metadataBase: new URL(origin),
+		alternates: {
+			canonical: url,
+			languages: {
+      			'en-US': url
+    		},
+		},
+		applicationName: 'PixelVivid',
+		authors: [{ name: 'Brian Whaley', url: 'https://www.brianwhaley.com' }],
+		creator: 'Brian Whaley',
+		description: await myMetadata?.description,
+		icons: {
+			icon: { 
+				url: '/images/favicon.ico',
+				sizes: '48x48', 
+				type: 'image/x-icon' },
+			shortcut: {
+				url: '/images/favicon.ico',
+				sizes: '48x48',
+				type: 'image/x-icon' },
+		},
+		keywords: await myMetadata?.keywords,
+		manifest: '/manifest.webmanifest',
+		publisher: 'Pixelated Technologies',
+		// referrer: 'origin-when-cross-origin',
+		title: await myMetadata?.title,
+		openGraph: {
+			description: await myMetadata?.description,
+			images: [
+				{ url: "/images/pixelvivid/pix-512.gif", width: "512", height: "512" } 
+			],
+			locale: 'en_US',
+			siteName: 'PixelVivid',
+			title: await myMetadata?.title,
+			type: 'website',
+			url: url,
+		},
+	};
+}
+
+export function generateViewport(): Viewport {
+  	return {
+		width: 'device-width, shrink-to-fit=no',
+		initialScale: 1.0,
+		minimumScale: 1.0,
+		maximumScale: 1.0,
+		userScalable: false
+  	};
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-
-	const pathname = usePathname();
-	const [ origin, setOrigin ] = useState<string | null>(null);
-	const [ metadata, setMetadata ] = useState<Metadata | null>();
-	// const [ host, setHost ] = useState<string | null>(null);
-	
-	useEffect(() => {
-		MicroInteractions({ 
-			buttonring: true,
-			formglow: true,
-			imgtwist: true,
-			scrollfadeElements: '.callout , .calloutSmall , .carouselContainer',
-		});
-	}, []);
-
-	useEffect(() => {
-		let myMetadata = getRouteByKey(myRoutes.routes, "path", pathname);
-		// setMetadata(myMetadata);
-		if (myMetadata) {
-			// METADATA FOUND - STANDARD PAGE
-			setMetadata(myMetadata);
-		} else {
-			// NO METADATA FOUND - EBAY STORE ITEM 
-			const itemID = pathname.split("/store/")[1];
-			let apiProps = {
-				proxyURL: "https://proxy.pixelated.tech/prod/proxy?url=",
-				qsItemURL: `/v1|${itemID}|0?fieldgroups=PRODUCT,ADDITIONAL_SELLER_DETAILS`,
-				appId: 'BrianWha-Pixelate-PRD-1fb4458de-1a8431fe', // clientId
-				appCertId: 'PRD-fb4458deef01-0d54-496a-b572-a04b', // clientSecret
-				tokenScope: 'https://api.ebay.com/oauth/api_scope',
-				globalId: 'EBAY-US',
-			};
-			apiProps = { ...defaultEbayProps, ...apiProps };
-			getEbayAppToken(apiProps)
-				.then((response: any) => {
-					getEbayItem({ apiProps, token: response })
-						.then((item: any) => {
-							const thisItem = { ...item } as any;
-							const thisItemTitle = "PixelVivid - Item " + thisItem.legacyItemId + " - " + thisItem.title;
-							myMetadata = {
-								name: thisItem.title,
-								path: `/store/${thisItem.legacyItemId}`,
-								title: thisItemTitle,
-								description: thisItem.description.replace(/[\r\n]+/g, ' '), //.split('\n\n').slice(0, Math.min(4, thisItem.description.split('\n\n').length)).join(' '),
-								keywords: descriptionToKeywords(thisItemTitle + " " + thisItem.description, 30).join(", "),
-							};
-							setMetadata(myMetadata);
-							// description: thisItem.description.replace(/(<br\s*\/?>\s*){2,}/gi, ''),
-						});
-				});
-		} 
-
-		setOrigin(window.location.href || null);
-		// setOrigin(window.location.origin || null);
-		// setHost(window.location.host || null);
-	}, []);
-
 	return (
 		<html lang="en">
-			<head>
-				<title>{metadata?.title}</title>
+			{ /* <head>
 				<meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
-				<meta name="description" content={metadata?.description} />
-				<meta name="keywords" content={metadata?.keywords} />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-				<meta property="og:site_name" content="PixelVivid" />
-				<meta property="og:title" content={metadata?.title} />
-				<meta property="og:url" content={origin ?? undefined} />
-				<meta property="og:type" content="website" />
-				<meta property="og:description" content={metadata?.description} />
-				<meta property="og:image" content="/images/pixelvivid/pix-512.gif" />
-				<meta property="og:image:width" content="512" />
-				<meta property="og:image:height" content="512" />
 				<meta itemProp="name" content="PixelVivid" />
 				<meta itemProp="url" content={origin ?? undefined} />
 				<meta itemProp="description" content={metadata?.description} />
 				<meta itemProp="thumbnaillUrl" content="/images/pixelvivid/pix-512.gif" />
-				<link rel="alternate" href={origin ?? undefined} hrefLang="en-us" />
-				<link rel="canonical" href={origin ?? undefined} />
-				<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-				<link rel="manifest" href="/manifest.webmanifest" />
-				<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
-			</head>
+			</head> */ }
+
 			<body>
+				<Interactions />
 				<header>
 					<div id="page-header" className="fixed-header"><Header /></div>
 					<div id="fixed-header-spacer"></div>

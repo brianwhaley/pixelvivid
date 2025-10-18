@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "use exported css from pixelated-components"
+git commit -m "change layout.tsx to improve metadata timing for seo"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
