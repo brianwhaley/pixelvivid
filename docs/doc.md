@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "remove Social Media page, nave, home page link"
+git commit -m "update accordion menu to use routes json"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

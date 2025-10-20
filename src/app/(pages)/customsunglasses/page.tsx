@@ -67,7 +67,7 @@ export default function CustomSunglasses() {
 		<>
 			<section id="customs-section">
 				<div className="section-container">
-					<PageHeader title="Custom Painted Sunglasses by BTW" />
+					<PageHeader title="Custom Painted Sunglasses by PixelVivid" />
 					<div className="row-3col">
 						<div className="gridItem">
 							<CalloutLibrary.sunglassStore />
@@ -201,73 +201,73 @@ export default function CustomSunglasses() {
 					<div className="row-6col">
 							
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50797219348_a7f5b18dd5_b.jpg"} imgclick={handleImageClick} img="/images/customs/black-white-splatter.jpg" alt="Black White Splatter" title="Black & White" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50797219348_a7f5b18dd5_b.jpg"} imgclick={handleImageClick} img="/images/customs/black-white-splatter.jpg" alt="Black White Splatter" title="Black & White" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50652292218_3df2a75475_b.jpg"} imgclick={handleImageClick} img="/images/customs/blue-splatter-3.jpg" alt="Blue Splatter" title="Winter Blue" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50652292218_3df2a75475_b.jpg"} imgclick={handleImageClick} img="/images/customs/blue-splatter-3.jpg" alt="Blue Splatter" title="Winter Blue" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653036651_8cc8ec0a1c_b.jpg"} imgclick={handleImageClick} img="/images/customs/gold-silver-splatter.jpg" alt="Gold Silver Splatter" title="Gold & Silver" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653036651_8cc8ec0a1c_b.jpg"} imgclick={handleImageClick} img="/images/customs/gold-silver-splatter.jpg" alt="Gold Silver Splatter" title="Gold & Silver" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50664254938_bb746893d0_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-splatter.jpg" alt="Neon Splatter" title="Neon Splatter" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50664254938_bb746893d0_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-splatter.jpg" alt="Neon Splatter" title="Neon Splatter" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653037331_449ba8cece_b.jpg"} imgclick={handleImageClick} img="/images/customs/blue-marble.jpg" alt="Blue Marble" title={"Cobalt / Planet X"} shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653037331_449ba8cece_b.jpg"} imgclick={handleImageClick} img="/images/customs/blue-marble.jpg" alt="Blue Marble" title={"Cobalt / Planet X"} shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653126162_1479ff31f5_b.jpg"} imgclick={handleImageClick} img="/images/customs/camo-marble.jpg" alt="Camo Marble" title={"Camo Marble"} shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653126162_1479ff31f5_b.jpg"} imgclick={handleImageClick} img="/images/customs/camo-marble.jpg" alt="Camo Marble" title={"Camo Marble"} shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50755818913_37cdca4924_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-marble.jpg" alt="Neon Marble" title="Neon Marble" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50755818913_37cdca4924_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-marble.jpg" alt="Neon Marble" title="Neon Marble" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51152648154_918278d13f_b.jpg"} imgclick={handleImageClick} img="/images/customs/blue-clear-drip.jpg" alt="Blue Frost Clear Drip" title="Blue Frost" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51152648154_918278d13f_b.jpg"} imgclick={handleImageClick} img="/images/customs/blue-clear-drip.jpg" alt="Blue Frost Clear Drip" title="Blue Frost" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51152648149_1194b3d58d_b.jpg"} imgclick={handleImageClick} img="/images/customs/green-gold-drip-2.jpg" alt="Irish Green Gold Drip" title="Irish Gold" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51152648149_1194b3d58d_b.jpg"} imgclick={handleImageClick} img="/images/customs/green-gold-drip-2.jpg" alt="Irish Green Gold Drip" title="Irish Gold" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50920141601_54c8c15e8f_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-marble-clear.jpg" alt="Neon Marble Candy Clear" title={"Neon Candy"} shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50920141601_54c8c15e8f_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-marble-clear.jpg" alt="Neon Marble Candy Clear" title={"Neon Candy"} shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51370100893_fc70898a3d_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-splatter-3.jpg" alt="Neon Splatter" title="Neon Splatter" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51370100893_fc70898a3d_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-splatter-3.jpg" alt="Neon Splatter" title="Neon Splatter" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/53229618619_16517610cd_b.jpg"} imgclick={handleImageClick} img="/images/customs/blended-fade.jpg" alt="Blended Fade" title="Blended" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/53229618619_16517610cd_b.jpg"} imgclick={handleImageClick} img="/images/customs/blended-fade.jpg" alt="Blended Fade" title="Blended" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54784796846_b4d78b2392_b.jpg"} imgclick={handleImageClick} img="/images/customs/galaxy.jpg" alt="Galaxy" title="Galaxy" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54784796846_b4d78b2392_b.jpg"} imgclick={handleImageClick} img="/images/customs/galaxy.jpg" alt="Galaxy" title="Galaxy" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51272602619_d46db46cff_b.jpg"} imgclick={handleImageClick} img="/images/customs/red-white-blue-splatter.jpg" alt="Red White Blue Splatter" title="Red White Blue" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51272602619_d46db46cff_b.jpg"} imgclick={handleImageClick} img="/images/customs/red-white-blue-splatter.jpg" alt="Red White Blue Splatter" title="Red White Blue" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54594687134_161df8ef6f_b.jpg"} imgclick={handleImageClick} img="/images/customs/rainbow-confetti.jpg" alt="Rainbow Confetti" title="Rainbow Confetti" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54594687134_161df8ef6f_b.jpg"} imgclick={handleImageClick} img="/images/customs/rainbow-confetti.jpg" alt="Rainbow Confetti" title="Rainbow Confetti" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52463376820_6fc4201c0a_b.jpg"} imgclick={handleImageClick} img="/images/customs/colorshift-fade.jpg" alt="ColorShift Fade" title="ColorShift" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52463376820_6fc4201c0a_b.jpg"} imgclick={handleImageClick} img="/images/customs/colorshift-fade.jpg" alt="ColorShift Fade" title="ColorShift" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52193578261_1ccec2384e_b.jpg"} imgclick={handleImageClick} img="/images/customs/vintage-blue.jpg" alt="Vintage Mumbo Blue" title="Vintage Mumbo Blue" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52193578261_1ccec2384e_b.jpg"} imgclick={handleImageClick} img="/images/customs/vintage-blue.jpg" alt="Vintage Mumbo Blue" title="Vintage Mumbo Blue" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52235792754_f5309d7d08_b.jpg"} imgclick={handleImageClick} img="/images/customs/vintage-yellow.jpg" alt="Vintage Mumbo Yellow" title="Vintage Mumbo Yellow" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52235792754_f5309d7d08_b.jpg"} imgclick={handleImageClick} img="/images/customs/vintage-yellow.jpg" alt="Vintage Mumbo Yellow" title="Vintage Mumbo Yellow" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52253164864_3974441ee9_b.jpg"} imgclick={handleImageClick} img="/images/customs/vintage-pink.jpg" alt="Vintage Mumbo Pink" title="Vintage Mumbo Pink" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52253164864_3974441ee9_b.jpg"} imgclick={handleImageClick} img="/images/customs/vintage-pink.jpg" alt="Vintage Mumbo Pink" title="Vintage Mumbo Pink" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-drip.jpg" alt="Neon Drip Candy Stripe" title="Candy Stripe" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-drip.jpg" alt="Neon Drip Candy Stripe" title="Candy Stripe" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51025141073_903dab34df_b.jpg"} imgclick={handleImageClick} img="/images/customs/black-rain.jpg" alt="Black Rain" title="Black Rain" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51025141073_903dab34df_b.jpg"} imgclick={handleImageClick} img="/images/customs/black-rain.jpg" alt="Black Rain" title="Black Rain" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51154097191_bbff7101f7_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-tiger-stripe.jpg" alt="Neon Tiger Stripe" title="Neon Tiger" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51154097191_bbff7101f7_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-tiger-stripe.jpg" alt="Neon Tiger Stripe" title="Neon Tiger" shape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54817521600_2c626d6486_b.jpg"} imgclick={handleImageClick} img="/images/customs/halloween.jpg" alt="Halloween" title="Halloween" shape="squircle" content={""} />
+							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54817521600_2c626d6486_b.jpg"} imgclick={handleImageClick} img="/images/customs/halloween.jpg" alt="Halloween" title="Halloween" shape="squircle" />
 						</div>
 
 						{/* 

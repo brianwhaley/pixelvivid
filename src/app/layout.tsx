@@ -15,6 +15,7 @@ import Nav from "@/app/elements/nav";
 import Search from '@/app/elements/search';
 import Footer from '@/app/elements/footer';
 import myRoutes from "@/app/data/routes.json";
+import packageJSON from "../../package.json";
 import "./globals.css";
 
 // export const dynamic = 'force-static';
@@ -61,9 +62,9 @@ export async function generateMetadata (): Promise<Metadata> {
       			'en-US': url
     		},
 		},
-		applicationName: 'PixelVivid',
-		authors: [{ name: 'Brian Whaley', url: 'https://www.brianwhaley.com' }],
-		creator: 'Brian Whaley',
+		applicationName: packageJSON.name,
+		authors: [{ name: packageJSON.author.name, url: packageJSON.author.url }],
+		creator: packageJSON.author.name,
 		description: await myMetadata?.description,
 		icons: {
 			icon: { 
@@ -77,7 +78,10 @@ export async function generateMetadata (): Promise<Metadata> {
 		},
 		keywords: await myMetadata?.keywords,
 		manifest: '/manifest.webmanifest',
-		publisher: 'Pixelated Technologies',
+		other: {
+			version: packageJSON.version,
+		},
+		publisher: packageJSON.name,
 		// referrer: 'origin-when-cross-origin',
 		title: await myMetadata?.title,
 		openGraph: {
@@ -86,7 +90,7 @@ export async function generateMetadata (): Promise<Metadata> {
 				{ url: "/images/pixelvivid/pix-512.gif", width: "512", height: "512" } 
 			],
 			locale: 'en_US',
-			siteName: 'PixelVivid',
+			siteName: packageJSON.name,
 			title: await myMetadata?.title,
 			type: 'website',
 			url: url,
