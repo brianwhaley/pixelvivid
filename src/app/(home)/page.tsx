@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { PageHeader } from "@/app/components/general/pixelated.general";
-import { CalloutHeader } from "@brianwhaley/pixelated-components";
+import { PageHeader } from "@brianwhaley/pixelated-components";
+import { PageSectionHeader } from "@brianwhaley/pixelated-components";
 import * as CalloutLibrary from "@/app/elements/calloutlibrary";
 import SocialTags from "@/app/elements/socialtags";
 
@@ -50,7 +50,7 @@ export default function Home() {
 
 			<section id="spotlight-section">
 				<div className="section-container">
-					<CalloutHeader title="Featured Spotlights" />
+					<PageSectionHeader title="Featured Spotlights" />
 					<div className="row-3col">
 						<div className="gridItem">
 							<CalloutLibrary.sunglassStore />
@@ -78,8 +78,8 @@ export default function Home() {
 
 			<section className="section" id="upcycle-section">
 				<div className="section-container">
-					<div className="row-12col">
-						<div className="grid-s2-e9">
+					<div className="row-1col">
+						<div className="gridItem">
 							<CalloutLibrary.sustainabilityMessage />
 						</div>
 					</div>

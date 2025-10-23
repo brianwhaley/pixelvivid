@@ -2,8 +2,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PageHeader } from "@/app/components/general/pixelated.general";
-import { Callout, CalloutHeader, CalloutSmall } from "@brianwhaley/pixelated-components";
+import { PageHeader, PageSectionHeader } from "@brianwhaley/pixelated-components";
+import { Callout } from "@brianwhaley/pixelated-components";
 import * as CalloutLibrary from "@/app/elements/calloutlibrary";
 import { Modal, handleModalOpen } from "@brianwhaley/pixelated-components";
 import { Carousel } from "@brianwhaley/pixelated-components";
@@ -14,10 +14,10 @@ import { getContentfulEntriesByType } from "@brianwhaley/pixelated-components";
 export default function CustomSunglasses() {
 	const cloudinaryAPI = "https://res.cloudinary.com/dlbon7tpq/image/fetch/f_auto,q_auto/";
 	const [modalContent, setModalContent] = useState<React.ReactNode>();
-	const handleImageClick = (event: MouseEvent, url: string) => {
+	const handleImageClick = (event: React.MouseEvent, url: string) => {
 		const myContent = <img src={url} alt="Modal Image" />;
 		setModalContent(myContent);
-		handleModalOpen(event);
+		handleModalOpen(event.nativeEvent);
   	};
 
 	const [ flickrCards, setFlickrCards ] = useState<CarouselCardType[]>([]);
@@ -83,9 +83,9 @@ export default function CustomSunglasses() {
 			</section>
 
 
-			<section className="section-alt" id="gallery-section">
+			<section className="section-imgAlt" id="gallery-section">
 				<div className="section-container">
-					<CalloutHeader title="Custom Sunglasses Gallery" />
+					<PageSectionHeader title="Custom Sunglasses Gallery" />
 					<Carousel 
 						cards={flickrCards} 
 						draggable={true}
@@ -97,18 +97,18 @@ export default function CustomSunglasses() {
 
 			<section className="section" id="styles-section">
 				<div className="section-container">
-					<CalloutHeader title="Color Styles" />
+					<PageSectionHeader title="Color Styles" />
 					<div className="row-4col">
 						<div className="gridItem">
 							<Callout
+								layout='vertical'
 								img='/images/customs/camo-marble.jpg' 
+								imgShape='round' 
+								imgAlt="Marbles" 
 								title='Marbles' 
 								content='Customized glasses with mottled streaks of color.  
 									Custom marbled paint can be done with a number of complimentary colors, one single color, 
-									with metallics, lographic or colorshift paints, or even with clear candy colors.' 
-								layout='vertical' 
-								shape='round' 
-								alt="Marbles" />
+									with metallics, lographic or colorshift paints, or even with clear candy colors.'  />
 						</div><div className="gridItem">
 							<Callout
 								// url='https://farm66.static.flickr.com/65535/50652292218_3df2a75475_b.jpg'
@@ -118,7 +118,7 @@ export default function CustomSunglasses() {
 									Custom splatter paint can be one color, or a combination of complimentary colors.  
 									Splatters can also be small or large, thin or thick, dense or sparse. '
 								layout='vertical' 
-								shape='round' />
+								imgShape='round' />
 						</div><div className="gridItem">
 							<Callout
 								// url='https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg'
@@ -128,7 +128,7 @@ export default function CustomSunglasses() {
 									Dripping paint can be one color, or a combination of complimentary colors.  
 									It can also be done with the drips dense or sparse. '
 								layout='vertical' 
-								shape='round' />
+								imgShape='round' />
 						</div><div className="gridItem">
 							<Callout
 								// url='https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg'
@@ -138,7 +138,7 @@ export default function CustomSunglasses() {
 									The fade can be solid colors, metallics, or candy colors.  Candy fades look especially great on clear frames.  
 									The fade can be on part of the frame or end-to-end, can be one color or many, translucent or opaque. '
 								layout='vertical' 
-								shape='round' />
+								imgShape='round' />
 						</div><div className="gridItem">
 							<Callout
 								// url='https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg'
@@ -148,7 +148,7 @@ export default function CustomSunglasses() {
 									The dots paint can be one color, complimentary colors, or any color pattern you choose.  
 									It can also be done with confetti dots large or small, and dense or sparse. '
 								layout='vertical' 
-								shape='round' />
+								imgShape='round' />
 						</div><div className="gridItem">
 							<Callout
 								// url='https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg'
@@ -158,7 +158,7 @@ export default function CustomSunglasses() {
 									The lines can paint can be one color, a combination of complimentary colors, or a variety of colors of your preference.  
 									It can also be done with the lines dense or sparse. '
 								layout='vertical' 
-								shape='round' />
+								imgShape='round' />
 						</div><div className="gridItem">
 							<Callout
 								// url='https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg'
@@ -168,7 +168,7 @@ export default function CustomSunglasses() {
 									all done in your choice pof paint - neon, metallics, colorshift, holographic, candy clears, and more.  
 									Contact us with your ideas and we will work with you to create a one-of-a-kind pair of custom sunglasses. '
 								layout='vertical' 
-								shape='round' />
+								imgShape='round' />
 						</div><div className="gridItem">
 							<Callout
 								// url='https://farm66.static.flickr.com/65535/50652294433_b48c9ef0e4_b.jpg'
@@ -177,7 +177,7 @@ export default function CustomSunglasses() {
 								content='Reinforced with metal strips and glued back together.  
 									A new custom coat of paint is recommended after a repair to ensure color match.'
 								layout='vertical' 
-								shape='round' />
+								imgShape='round' />
 						</div>
 					</div>
 				</div>
@@ -186,7 +186,7 @@ export default function CustomSunglasses() {
 
 			<section className="section-alt" id="feedback-section">
 				<div className="section-container">
-					<CalloutHeader title="Customer Feedback" />
+					<PageSectionHeader title="Customer Feedback" />
 					<Carousel 
 						cards={feedbackCards} 
 						draggable={false}
@@ -197,113 +197,113 @@ export default function CustomSunglasses() {
 
 			<section className="section" id="examples-section">
 				<div className="section-container">
-					<CalloutHeader title="Color Examples" />
+					<PageSectionHeader title="Color Examples" />
 					<div className="row-6col">
 							
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50797219348_a7f5b18dd5_b.jpg"} imgclick={handleImageClick} img="/images/customs/black-white-splatter.jpg" alt="Black White Splatter" title="Black & White" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50797219348_a7f5b18dd5_b.jpg"} imgClick={handleImageClick} img="/images/customs/black-white-splatter.jpg" imgAlt="Black White Splatter" subtitle="Black & White" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50652292218_3df2a75475_b.jpg"} imgclick={handleImageClick} img="/images/customs/blue-splatter-3.jpg" alt="Blue Splatter" title="Winter Blue" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50652292218_3df2a75475_b.jpg"} imgClick ={handleImageClick} img="/images/customs/blue-splatter-3.jpg" imgAlt="Blue Splatter" subtitle="Winter Blue" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653036651_8cc8ec0a1c_b.jpg"} imgclick={handleImageClick} img="/images/customs/gold-silver-splatter.jpg" alt="Gold Silver Splatter" title="Gold & Silver" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653036651_8cc8ec0a1c_b.jpg"} imgClick ={handleImageClick} img="/images/customs/gold-silver-splatter.jpg" imgAlt="Gold Silver Splatter" subtitle="Gold & Silver" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50664254938_bb746893d0_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-splatter.jpg" alt="Neon Splatter" title="Neon Splatter" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50664254938_bb746893d0_b.jpg"} imgClick ={handleImageClick} img="/images/customs/neon-splatter.jpg" imgAlt="Neon Splatter" subtitle="Neon Splatter" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653037331_449ba8cece_b.jpg"} imgclick={handleImageClick} img="/images/customs/blue-marble.jpg" alt="Blue Marble" title={"Cobalt / Planet X"} shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653037331_449ba8cece_b.jpg"} imgClick ={handleImageClick} img="/images/customs/blue-marble.jpg" imgAlt="Blue Marble" subtitle={"Cobalt / Planet X"} imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653126162_1479ff31f5_b.jpg"} imgclick={handleImageClick} img="/images/customs/camo-marble.jpg" alt="Camo Marble" title={"Camo Marble"} shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50653126162_1479ff31f5_b.jpg"} imgClick ={handleImageClick} img="/images/customs/camo-marble.jpg" imgAlt="Camo Marble" subtitle="Camo Marble" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50755818913_37cdca4924_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-marble.jpg" alt="Neon Marble" title="Neon Marble" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50755818913_37cdca4924_b.jpg"} imgClick ={handleImageClick} img="/images/customs/neon-marble.jpg" imgAlt="Neon Marble" subtitle="Neon Marble" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51152648154_918278d13f_b.jpg"} imgclick={handleImageClick} img="/images/customs/blue-clear-drip.jpg" alt="Blue Frost Clear Drip" title="Blue Frost" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51152648154_918278d13f_b.jpg"} imgClick ={handleImageClick} img="/images/customs/blue-clear-drip.jpg" imgAlt="Blue Frost Clear Drip" subtitle="Blue Frost" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51152648149_1194b3d58d_b.jpg"} imgclick={handleImageClick} img="/images/customs/green-gold-drip-2.jpg" alt="Irish Green Gold Drip" title="Irish Gold" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51152648149_1194b3d58d_b.jpg"} imgClick ={handleImageClick} img="/images/customs/green-gold-drip-2.jpg" imgAlt="Irish Green Gold Drip" subtitle="Irish Gold" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50920141601_54c8c15e8f_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-marble-clear.jpg" alt="Neon Marble Candy Clear" title={"Neon Candy"} shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/50920141601_54c8c15e8f_b.jpg"} imgClick ={handleImageClick} img="/images/customs/neon-marble-clear.jpg" imgAlt="Neon Marble Candy Clear" subtitle="Neon Candy" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51370100893_fc70898a3d_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-splatter-3.jpg" alt="Neon Splatter" title="Neon Splatter" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51370100893_fc70898a3d_b.jpg"} imgClick ={handleImageClick} img="/images/customs/neon-splatter-3.jpg" imgAlt="Neon Splatter" subtitle="Neon Splatter" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/53229618619_16517610cd_b.jpg"} imgclick={handleImageClick} img="/images/customs/blended-fade.jpg" alt="Blended Fade" title="Blended" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/53229618619_16517610cd_b.jpg"} imgClick ={handleImageClick} img="/images/customs/blended-fade.jpg" imgAlt="Blended Fade" subtitle="Blended" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54784796846_b4d78b2392_b.jpg"} imgclick={handleImageClick} img="/images/customs/galaxy.jpg" alt="Galaxy" title="Galaxy" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54784796846_b4d78b2392_b.jpg"} imgClick ={handleImageClick} img="/images/customs/galaxy.jpg" imgAlt="Galaxy" subtitle="Galaxy" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51272602619_d46db46cff_b.jpg"} imgclick={handleImageClick} img="/images/customs/red-white-blue-splatter.jpg" alt="Red White Blue Splatter" title="Red White Blue" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51272602619_d46db46cff_b.jpg"} imgClick ={handleImageClick} img="/images/customs/red-white-blue-splatter.jpg" imgAlt="Red White Blue Splatter" subtitle="Red White Blue" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54594687134_161df8ef6f_b.jpg"} imgclick={handleImageClick} img="/images/customs/rainbow-confetti.jpg" alt="Rainbow Confetti" title="Rainbow Confetti" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54594687134_161df8ef6f_b.jpg"} imgClick ={handleImageClick} img="/images/customs/rainbow-confetti.jpg" imgAlt="Rainbow Confetti" subtitle="Rainbow Confetti" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52463376820_6fc4201c0a_b.jpg"} imgclick={handleImageClick} img="/images/customs/colorshift-fade.jpg" alt="ColorShift Fade" title="ColorShift" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52463376820_6fc4201c0a_b.jpg"} imgClick ={handleImageClick} img="/images/customs/colorshift-fade.jpg" imgAlt="ColorShift Fade" subtitle="ColorShift" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52193578261_1ccec2384e_b.jpg"} imgclick={handleImageClick} img="/images/customs/vintage-blue.jpg" alt="Vintage Mumbo Blue" title="Vintage Mumbo Blue" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52193578261_1ccec2384e_b.jpg"} imgClick ={handleImageClick} img="/images/customs/vintage-blue.jpg" imgAlt="Vintage Mumbo Blue" subtitle="Vintage Mumbo Blue" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52235792754_f5309d7d08_b.jpg"} imgclick={handleImageClick} img="/images/customs/vintage-yellow.jpg" alt="Vintage Mumbo Yellow" title="Vintage Mumbo Yellow" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52235792754_f5309d7d08_b.jpg"} imgClick ={handleImageClick} img="/images/customs/vintage-yellow.jpg" imgAlt="Vintage Mumbo Yellow" subtitle="Vintage Mumbo Yellow" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52253164864_3974441ee9_b.jpg"} imgclick={handleImageClick} img="/images/customs/vintage-pink.jpg" alt="Vintage Mumbo Pink" title="Vintage Mumbo Pink" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/52253164864_3974441ee9_b.jpg"} imgClick ={handleImageClick} img="/images/customs/vintage-pink.jpg" imgAlt="Vintage Mumbo Pink" subtitle="Vintage Mumbo Pink" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-drip.jpg" alt="Neon Drip Candy Stripe" title="Candy Stripe" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51062706291_097827a69d_b.jpg"} imgClick ={handleImageClick} img="/images/customs/neon-drip.jpg" imgAlt="Neon Drip Candy Stripe" subtitle="Candy Stripe" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51025141073_903dab34df_b.jpg"} imgclick={handleImageClick} img="/images/customs/black-rain.jpg" alt="Black Rain" title="Black Rain" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51025141073_903dab34df_b.jpg"} imgClick ={handleImageClick} img="/images/customs/black-rain.jpg" imgAlt="Black Rain" subtitle="Black Rain" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51154097191_bbff7101f7_b.jpg"} imgclick={handleImageClick} img="/images/customs/neon-tiger-stripe.jpg" alt="Neon Tiger Stripe" title="Neon Tiger" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/51154097191_bbff7101f7_b.jpg"} imgClick ={handleImageClick} img="/images/customs/neon-tiger-stripe.jpg" imgAlt="Neon Tiger Stripe" subtitle="Neon Tiger" imgShape="squircle" />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54817521600_2c626d6486_b.jpg"} imgclick={handleImageClick} img="/images/customs/halloween.jpg" alt="Halloween" title="Halloween" shape="squircle" />
+							<Callout style="full" layout="vertical" url={cloudinaryAPI + "https://farm66.static.flickr.com/65535/54817521600_2c626d6486_b.jpg"} imgClick ={handleImageClick} img="/images/customs/halloween.jpg" imgAlt="Halloween" subtitle="Halloween" imgShape="squircle" />
 						</div>
 
 						{/* 
 						<div className="gridItem">
-							<CalloutSmall url="" imgclick={handleImageClick} img="/images/customs/btw-signature.jpg" alt="Black Gold" title="Black Gold" content={""} />
+							<Callout style="full" layout="vertical" url="" imgClick ={handleImageClick} img="/images/customs/btw-signature.jpg" imgAlt="Black Gold" subtitle="Black Gold" content={""} />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url="" imgclick={handleImageClick} img="/images/customs/btw-signature.jpg" alt="Halloween" title="Halloween" content={""} />
+							<Callout style="full" layout="vertical" url="" imgClick ={handleImageClick} img="/images/customs/btw-signature.jpg" imgAlt="Halloween" subtitle="Halloween" content={""} />
 						</div>
 						*/}
 
 						{/* 
 						===== Additional Examples =====
 						<div className="gridItem">
-							<CalloutSmall url="https://farm66.static.flickr.com/65535/50797971781_69834d1b6f_b.jpg" imgclick={handleImageClick} img="/images/customs/brown-splatter.jpg" alt="Brown Splatter" title={""} content={""} />
+							<Callout style="full" layout="vertical" url="https://farm66.static.flickr.com/65535/50797971781_69834d1b6f_b.jpg" imgClick ={handleImageClick} img="/images/customs/brown-splatter.jpg" imgAlt="Brown Splatter" title={""} content={""} />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url="https://farm66.static.flickr.com/65535/50756659327_c4ca8fdb52_b.jpg" imgclick={handleImageClick} img="/images/customs/gold-silver-splatter-2.jpg" alt="Gold Silver Splatter" title={""} content={""} />
+							<Callout style="full" layout="vertical" url="https://farm66.static.flickr.com/65535/50756659327_c4ca8fdb52_b.jpg" imgClick ={handleImageClick} img="/images/customs/gold-silver-splatter-2.jpg" imgAlt="Gold Silver Splatter" title={""} content={""} />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url="https://farm66.static.flickr.com/65535/50685248287_3e8ebe5201_b.jpg" imgclick={handleImageClick} img="/images/customs/green-splatter.jpg" alt="Green Splatter" title={""} content={""} />
+							<Callout style="full" layout="vertical" url="https://farm66.static.flickr.com/65535/50685248287_3e8ebe5201_b.jpg" imgClick ={handleImageClick} img="/images/customs/green-splatter.jpg" imgAlt="Green Splatter" title={""} content={""} />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url="https://farm66.static.flickr.com/65535/50652294433_b48c9ef0e4_b.jpg'" imgclick={handleImageClick} img="/images/customs/repair-nose.jpg" alt="Repair Nose" title={""} content={""} />
+							<Callout style="full" layout="vertical" url="https://farm66.static.flickr.com/65535/50652294433_b48c9ef0e4_b.jpg'" imgClick ={handleImageClick} img="/images/customs/repair-nose.jpg" imgAlt="Repair Nose" title={""} content={""} />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url="https://farm66.static.flickr.com/65535/51202265371_9830735bb9_b.jpg" imgclick={handleImageClick} img="/images/customs/blue-drip.jpg" alt="Blue Drip" title={""} content={""} />
+							<Callout style="full" layout="vertical" url="https://farm66.static.flickr.com/65535/51202265371_9830735bb9_b.jpg" imgClick ={handleImageClick} img="/images/customs/blue-drip.jpg" imgAlt="Blue Drip" title={""} content={""} />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url="https://farm66.static.flickr.com/65535/50961082721_cb3bc6daf7_b.jpg" imgclick={handleImageClick} img="/images/customs/camo-drip-2.jpg" alt="Camo Drip" title={""} content={""} />
+							<Callout style="full" layout="vertical" url="https://farm66.static.flickr.com/65535/50961082721_cb3bc6daf7_b.jpg" imgClick ={handleImageClick} img="/images/customs/camo-drip-2.jpg" imgAlt="Camo Drip" title={""} content={""} />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url="https://farm66.static.flickr.com/65535/51062790717_0e1496d383_b.jpg" imgclick={handleImageClick} img="/images/customs/red-drip.jpg" alt="Red Drip" title={""} content={""} />
+							<Callout style="full" layout="vertical" url="https://farm66.static.flickr.com/65535/51062790717_0e1496d383_b.jpg" imgClick ={handleImageClick} img="/images/customs/red-drip.jpg" imgAlt="Red Drip" title={""} content={""} />
 						</div>
 						<div className="gridItem">
-							<CalloutSmall url="https://farm66.static.flickr.com/65535/51203329450_38d7a8bf74_b.jpg" imgclick={handleImageClick} img="/images/customs/red-white-blue-drip.jpg" alt="Red White Blue Drip" title={""} content={""} />
+							<Callout style="full" layout="vertical" url="https://farm66.static.flickr.com/65535/51203329450_38d7a8bf74_b.jpg" imgClick ={handleImageClick} img="/images/customs/red-white-blue-drip.jpg" imgAlt="Red White Blue Drip" title={""} content={""} />
 						</div>
 						*/}
 

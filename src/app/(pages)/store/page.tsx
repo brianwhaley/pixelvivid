@@ -2,7 +2,7 @@
 
 import React from "react";
 import { EbayItems } from "@brianwhaley/pixelated-components";
-import { PageHeader } from "@/app/components/general/pixelated.general";
+import { PageHeader } from "@brianwhaley/pixelated-components";
 
 export default function Ebay() {
 	const apiProps = {

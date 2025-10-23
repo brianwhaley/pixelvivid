@@ -2,8 +2,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PageHeader } from "@/app/components/general/pixelated.general";
-import { CalloutHeader } from "@brianwhaley/pixelated-components";
+import { PageHeader } from "@brianwhaley/pixelated-components";
+import { PageSectionHeader } from "@brianwhaley/pixelated-components";
 import { getContentfulEntriesByType } from "@brianwhaley/pixelated-components";
 import { HubspotTrackingCode /* , getHubspotFormSubmissions */ } from "@brianwhaley/pixelated-components";
 import { FormEngine } from "@brianwhaley/pixelated-components";
@@ -111,7 +111,7 @@ export default function Requests() {
 						<FormEngine name="newrequest" id="newRequestForm" formData={formData} onSubmitHandler={saveDialog} />
 					</div>
 					<dialog id="thankYouDialog">
-						<CalloutHeader title="Thank you!" />
+						<PageSectionHeader title="Thank you!" />
 						<center>Thank you for your your request.  Your request data has been sent for review.</center>
 						<br />
 						<center>
