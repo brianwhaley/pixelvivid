@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "update to new callout component, page / section headers"
+git commit -m "sitemap, robots, and manifest fixes"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

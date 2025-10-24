@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
 			allow: '/',
 			disallow: '',
 		},
-		sitemap: 'https://pixelvivid.com/sitemap.xml',
+		sitemap: 'https://www.pixelvivid.com/sitemap.xml',
 	};
 }
