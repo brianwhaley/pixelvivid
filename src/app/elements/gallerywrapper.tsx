@@ -1,6 +1,6 @@
 import { GetFlickrData, GenerateFlickrCards } from '@brianwhaley/pixelated-components';
 import type { CarouselCardType } from '@brianwhaley/pixelated-components';
-import { getCloudinaryRemoteFetchURL } from "@/app/components/pixelated.cloudinary";
+import { getCloudinaryRemoteFetchURL } from "@brianwhaley/pixelated-components";
 
 export default async function GalleryWrapper(
 	props: { 
@@ -38,15 +38,18 @@ export default async function GalleryWrapper(
 		const myPromise = GetFlickrData(flickr);
 		const myFlickrImages = await myPromise;
 		const myPhotoSize = flickr.flickr.urlProps.photoSize;
-		const myFlickrCards = await GenerateFlickrCards({flickrImages: myFlickrImages, photoSize: myPhotoSize});
+		const myFlickrCards = GenerateFlickrCards({flickrImages: myFlickrImages, photoSize: myPhotoSize});
 		// REMOVE LINKS
-		if (await myFlickrCards) { 
-			const myScrubbedFlickrCards = await myFlickrCards.map((obj: CarouselCardType) => {
-				delete obj.link;
-				delete obj.headerText;
-				delete obj.bodyText;
-				obj.image = getCloudinaryRemoteFetchURL(obj.image, "dlbon7tpq");
-				return obj;
+		if (myFlickrCards) { 
+			const myScrubbedFlickrCards = myFlickrCards.map((obj, index): CarouselCardType => {
+				return {
+					index: index,
+					cardIndex: index,
+					cardLength: myFlickrCards.length,
+					image: getCloudinaryRemoteFetchURL({url:obj.image, product_env:"dlbon7tpq"}),
+					imageAlt: obj.imageAlt,
+					subHeaderText: obj.subHeaderText
+				};
 			});
 			props.callback(myScrubbedFlickrCards);
 			return myScrubbedFlickrCards;
