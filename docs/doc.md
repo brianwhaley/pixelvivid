@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "remove tar file. again"
+git commit -m "remove tar file. again x2"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
