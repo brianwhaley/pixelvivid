@@ -54,9 +54,17 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "bump version for amplify build"
+git commit -m "disable tailwind to remove amplify lightningcss build error"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
+
+## ===== AWS Amplify build note (Lightning CSS) =====
+- Amplify Linux builders may not have the native Lightning CSS binary available. To avoid build failures like:
+	- `Cannot find module '../lightningcss.linux-x64-gnu.node'`
+- The build script sets `CSS_TRANSFORMER_WASM=1` to force the WASM fallback for Tailwind's PostCSS pipeline.
+- If configuring via Amplify Console, you can also add an environment variable:
+	- Key: `CSS_TRANSFORMER_WASM`
+	- Value: `1`
 
 ## ===== Hydration Error =====
 https://www.reddit.com/r/nextjs/comments/1gabiqn/hydration_error_when_installing_nextjs_15/?rdt=34262

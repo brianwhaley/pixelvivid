@@ -1,5 +1,6 @@
+// Tailwind disabled in this app; keep PostCSS config empty for now.
 const config = {
-	plugins: ["@tailwindcss/postcss"],
+  plugins: [],
 };
 
 export default config;
