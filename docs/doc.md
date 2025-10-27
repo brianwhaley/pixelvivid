@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "add gridColumns and boxShape to callouts, pass through some callout props to calloutLibrary"
+git commit -m "fix for gridColumns for callouts on about us page"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

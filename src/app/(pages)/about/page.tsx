@@ -15,7 +15,7 @@ export default function About() {
 						<div className="gridItem">
 							<Callout 
 								style='boxed grid'
-								gridColumns="1fr 3fr"
+								gridColumns={{left: 1, right: 3}}
 								layout='horizontal'
 								img='/images/customs/btw-mas.jpg'
 								imgShape="squircle"
@@ -32,7 +32,7 @@ export default function About() {
 						<div className="gridItem">
 							<Callout
 								style='boxed grid'
-								gridColumns="3fr 1fr"
+								gridColumns={{left: 3, right: 1}}
 								layout='horizontal'
 								direction='right'
 								img='/images/customs/green-confetti.jpg'
@@ -49,7 +49,7 @@ export default function About() {
 						</div>
 						<CalloutLibrary.sustainabilityMessage 
 							style='boxed grid'
-							gridColumns="1fr 3fr" />
+							gridColumns={{left: 1, right: 3}} />
 					</div>
 				</div>
 			</section>
