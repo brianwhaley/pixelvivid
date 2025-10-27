@@ -36,3 +36,7 @@
    		linear-gradient( 312deg, rgba(75, 0, 130, 0.5), transparent 60% ),
 		linear-gradient( 365deg, rgba(238, 130, 238, 0.5), transparent 60% );
 }
+
+.modalImageContainer {
+	overflow: hidden;
+}
