@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "disable tailwind to remove amplify lightningcss build error"
+git commit -m "create tiles gallery page, create gallery callout on overview page"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
@@ -119,3 +119,9 @@ https://dev.to/evansifyke/how-to-integrate-paypal-with-html-css-and-javascript-2
 # ===== GOOGLE ANALYTICS =====
 
 # ===== GOOGLE PROGRAMMABLE SEARCH =====
+
+
+# ===== COMPETITORS =====
+https://www.kustomflow.co.uk/
+https://www.niceshades.art/niceshades
+https://bobbielight.com/collections/sunglasses/sunglasses+custom-sunglasses+hand-painted-sunglasses+splatter-specs

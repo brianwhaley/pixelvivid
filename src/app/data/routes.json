@@ -13,17 +13,23 @@
 			"description": "PixelVivid, born during the COVID Pandemic, gives old boring sunglasses a second life, with bold vivid colors and an array of styles unique to each customer.",
 			"keywords": "PixelVivid, about us, Brian Whaley, Mary Ann Sarao, creative upcycling, sustainability, small business, stock photography, custom painted sunglasses"  
 		} , { 
-			"name": "Sunglasses Overview", 
-			"path": "/customsunglasses", 
-			"title": "PixelVivid - Custom Sunglasses Overview",
-			"description": "A sampling of the custom sunglasses I paint in my spare time",
-			"keywords": "PixelVivid, custom sunglasses, oakley, refurbish, restore, custom paint, ebay, gallery, carousel" 
-		} , { 
 			"name": "Sunglass Store", 
 			"path": "/store", 
 			"title": "PixelVivid - Custom Sunglasses Store",
 			"description": "Check out my Custom Sunglasses store where I sell my custom painted sunglasses",
 			"keywords": "PixelVivid, online store, ecommerce, custom sunglasses" 
+		} , { 
+			"name": "Sunglasses Overview", 
+			"path": "/customsunglasses", 
+			"title": "PixelVivid - Custom Sunglasses Overview",
+			"description": "A sampling of the custom sunglasses I paint in my spare time",
+			"keywords": "PixelVivid, custom painted sunglasses, oakley, refurbish, restore, custom paint, custom sunglasses, colors, styles, feedback, examples" 
+		}, { 
+			"name": "Sunglasses Gallery", 
+			"path": "/customsgallery", 
+			"title": "PixelVivid - Custom Sunglasses Gallery",
+			"description": "A sampling of the custom sunglasses I paint in my spare time",
+			"keywords": "PixelVivid, custom painted sunglasses, oakley, refurbish, restore, custom paint, custom sunglasses, gallery, carousel" 
 		} , { 
 			"name": "Custom Requests", 
 			"path": "/requests", 

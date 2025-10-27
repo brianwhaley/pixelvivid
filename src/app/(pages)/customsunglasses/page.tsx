@@ -7,7 +7,7 @@ import { Callout } from "@brianwhaley/pixelated-components";
 import * as CalloutLibrary from "@/app/elements/calloutlibrary";
 import { Modal, handleModalOpen } from "@brianwhaley/pixelated-components";
 import { Carousel } from "@brianwhaley/pixelated-components";
-import GalleryWrapper from "@/app/elements/gallerywrapper";
+// import GalleryWrapper from "@/app/elements/gallerywrapper";
 import type { CarouselCardType } from "@brianwhaley/pixelated-components";
 import { getContentfulEntriesByType } from "@brianwhaley/pixelated-components";
 
@@ -20,6 +20,7 @@ export default function CustomSunglasses() {
 		handleModalOpen(event.nativeEvent);
   	};
 
+	/* 
 	const [ flickrCards, setFlickrCards ] = useState<CarouselCardType[]>([]);
 	const props = { 
 		tags: "", // "customsunglasses"
@@ -34,6 +35,7 @@ export default function CustomSunglasses() {
 		}
 		fetchGallery();
 	}, []); 
+	*/
 
 
 	const [ feedbackCards , setFeedbackCards ] = useState<CarouselCardType[]>([]);
@@ -83,7 +85,7 @@ export default function CustomSunglasses() {
 			</section>
 
 
-			<section className="section-imgAlt" id="gallery-section">
+			{ /* <section className="section-imgAlt" id="gallery-section">
 				<div className="section-container">
 					<PageSectionHeader title="Custom Sunglasses Gallery" />
 					<Carousel 
@@ -92,7 +94,26 @@ export default function CustomSunglasses() {
 						imgFit="contain" />
 				</div>
 				<br />
+			</section> */ }
+
+
+			<section className="section-alt" id="gallery-section">
+				<div className="section-container">
+					<Callout
+						style='boxed'
+						layout='horizontal'
+						url='/customsgallery'
+						img='/images/customs/blue-holo-hex.jpg' 
+						imgAlt="Custom Sunglasses Gallery" 
+						title='Custom Sunglasses Gallery' 
+						content='Visit the PixelVivid Custom Sunglasses Gallery You will see 
+						unique, hand-painted designs of all colors and styles.  
+						These include Marbles, Splatters, Drips, Fades, Confetti, Linears, repairs, working photos and more.  
+						Styles can be applied to a variety of frames including 
+						Oakley, Ray-Ban, Costa del Mar, Maui Jim, and more.'  />
+				</div>
 			</section>
+
 
 
 			<section className="section" id="styles-section">
