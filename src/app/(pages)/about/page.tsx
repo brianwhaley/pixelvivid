@@ -14,6 +14,8 @@ export default function About() {
 					<div className="row-1col">
 						<div className="gridItem">
 							<Callout 
+								style='boxed grid'
+								gridColumns="1fr 3fr"
 								layout='horizontal'
 								img='/images/customs/btw-mas.jpg'
 								imgShape="squircle"
@@ -29,11 +31,13 @@ export default function About() {
 						</div>
 						<div className="gridItem">
 							<Callout
+								style='boxed grid'
+								gridColumns="3fr 1fr"
 								layout='horizontal'
-								direction='left'
+								direction='right'
 								img='/images/customs/green-confetti.jpg'
 								imgShape="squircle"
-								title='A bit about our sunglasses'
+								title='A Bit About Our Sunglasses'
 								content='Each pair of our creative upcycled sunglasses are carefully selected and prepared 
 										before beginning the creative process. Once prepped to receive the paint, each pair of 
 										sunglasses are styled using high-end automotive paints from House of Kolor. 
@@ -43,7 +47,9 @@ export default function About() {
 										and any other rubber bits on the frame. The last step in the process is for 
 										the designer to sign their work. Each pair is unique, earth-friendly, and fun!' />
 						</div>
-						<CalloutLibrary.sustainabilityMessage />
+						<CalloutLibrary.sustainabilityMessage 
+							style='boxed grid'
+							gridColumns="1fr 3fr" />
 					</div>
 				</div>
 			</section>

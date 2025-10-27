@@ -1,9 +1,19 @@
-import { Callout } from "@brianwhaley/pixelated-components";
+import { Callout, CalloutType } from "@brianwhaley/pixelated-components";
 
-export function customSunglasses() {
+export type CalloutLibraryType = {
+	style?: CalloutType["style"];
+	gridColumns?: CalloutType["gridColumns"];
+	layout?: CalloutType["layout"];
+	direction?: CalloutType["direction"];
+};
+
+export function customSunglasses(props: CalloutLibraryType) {
 	return (
 		<Callout
-			layout='vertical'
+			style={props.style || undefined}
+			gridColumns={props.gridColumns || undefined}
+			layout={props.layout || 'vertical'}
+			direction={props.direction || undefined}
 			url='/customsunglasses' 
 			img='/images/customs/blue-splatter-3.jpg'
 			imgShape='squircle'
@@ -15,10 +25,13 @@ export function customSunglasses() {
 	);
 }
 
-export function photography() {
+export function photography(props: CalloutLibraryType) {
 	return (
 		<Callout
-			layout='vertical' 
+			style={props.style || undefined}
+			gridColumns={props.gridColumns || undefined}
+			layout={props.layout || 'vertical'} 
+			direction={props.direction || undefined}
 			url='/photography' 
 			img='https://farm6.staticflickr.com/5682/21652998256_7c5d0ce495_b.jpg'
 			imgShape='squircle'
@@ -29,24 +42,30 @@ export function photography() {
 	);
 }
 
-export function homeDesign() {
+export function homeDesign(props: CalloutLibraryType) {
 	return (
 		<Callout
+			style={props.style || undefined} 
+			gridColumns={props.gridColumns || undefined}
+			layout={props.layout || 'vertical'}
+			direction={props.direction || undefined}
 			url='/homedesign' 
 			img='https://farm66.static.flickr.com/65535/54513221006_5d2117cdf3_b.jpg'
 			imgShape='squircle'
 			title='Home Design & Remodeling'
 			content='We design a holistic plan for interior and exterior design 
                 of homes, including kitchens, bathrooms, bedrooms, 
-                color schemes, artwork, garages, patios, decks, and more.'
-			layout='vertical' />
+                color schemes, artwork, garages, patios, decks, and more.' />
 	);
 }
 
-export function sunglassStore(){
+export function sunglassStore(props: CalloutLibraryType){
 	return (
 		<Callout
-			layout='vertical' 
+			style={props.style || undefined}
+			gridColumns={props.gridColumns || undefined}
+			layout={props.layout || 'vertical'} 
+			direction={props.direction || undefined}
 			url='/store'
 			img='/images/customs/neon-splatter.jpg'
 			imgShape='squircle'
@@ -55,10 +74,13 @@ export function sunglassStore(){
 	);
 }
 
-export function subscribe() {
+export function subscribe(props: CalloutLibraryType) {
 	return (
 		<Callout
-			layout='vertical'
+			style={props.style || undefined}
+			gridColumns={props.gridColumns || undefined}
+			layout={props.layout || 'vertical'}
+			direction={props.direction || undefined}
 			url='/subscribe'
 			img='/images/icons/email-icon.png'
 			imgShape="squircle" 
@@ -68,10 +90,13 @@ export function subscribe() {
 	);
 }
 
-export function specialOrder() {
+export function specialOrder(props: CalloutLibraryType) {
 	return (
 		<Callout
-			layout='vertical' 
+			style={props.style || undefined}
+			gridColumns={props.gridColumns || undefined}
+			layout={props.layout || 'vertical'} 
+			direction={props.direction || undefined}
 			url='/requests'
 			img='/images/icons/request-icon.jpg'
 			imgShape='squircle'
@@ -85,13 +110,16 @@ export function specialOrder() {
 	);
 }
 
-export function feedback() {
+export function feedback(props: CalloutLibraryType) {
 	return (
 		<>
 			<Callout
 			// url="https://www.google.com/maps/place/PixelVivid/@36.51455,-77.7273335,6z/data=!3m1!4b1!4m6!3m5!1s0x209fb9352c67abff:0xcee141d8b6841e15!8m2!3d36.51455!4d-77.7273335!16s%2Fg%2F11xzgp2g5v?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D" 
 			// url="https://share.google/35XwN8k9tpSwv9mX3"
-				layout='horizontal' 
+				style={props.style || undefined}
+				gridColumns={props.gridColumns || undefined}
+				layout={props.layout || 'horizontal'} 
+				direction={props.direction || undefined}
 				url="https://g.page/r/CRUehLbYQeHOEBM/review"
 				img='/images/logos/google-business.png'
 				imgShape='squircle'
@@ -104,10 +132,13 @@ export function feedback() {
 	);
 }
 
-export function sustainabilityMessage() {
+export function sustainabilityMessage(props: CalloutLibraryType) {
 	return (
 		<Callout
-			layout='horizontal' 
+			style={props.style || undefined}
+			gridColumns={props.gridColumns || undefined}
+			layout={props.layout || 'horizontal'} 
+			direction={props.direction || undefined}
 			url={undefined}
 			img='/images/icons/globe-icon.png'
 			imgShape='squircle'
