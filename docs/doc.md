@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "fix boxed grid callouts, bump component library"
+git commit -m "added micro interaction for sunglass gallery tiles"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
