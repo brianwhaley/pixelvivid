@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "added amount / percent support for shopping cart, removed canonical and alternate page metadata for seo, updated next to 16.0.1"
+git commit -m "version conflicts, bumped to 3.0.0"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
