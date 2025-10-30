@@ -8,7 +8,7 @@ import { headers } from 'next/headers';
 import "@brianwhaley/pixelated-components/css/pixelated.global.css";
 import "@brianwhaley/pixelated-components/css/pixelated.grid.scss";
 import { descriptionToKeywords, getRouteByKey } from "@brianwhaley/pixelated-components/server";
-import { defaultEbayProps, getEbayAppToken, getEbayItem } from "@brianwhaley/pixelated-components/server";
+import { defaultEbayProps, /* getEbayAppToken, */ getEbayItem } from "@brianwhaley/pixelated-components/server";
 import Header from "@/app/elements/header";
 import Interactions from "@/app/elements/interactions";
 import Nav from "@/app/elements/nav";
@@ -39,8 +39,8 @@ export async function generateMetadata (): Promise<Metadata> {
 		};
 		apiProps = { ...defaultEbayProps, ...apiProps };
 
-		const tokenResponse = await getEbayAppToken(apiProps);
-		const ebayItem = await getEbayItem({ apiProps, token: tokenResponse });
+		// const tokenResponse = await getEbayAppToken({ apiProps });
+		const ebayItem = await getEbayItem({ apiProps });
 		const thisItem = await { ...ebayItem };
 		const thisItemTitle = "PixelVivid - Item " + await thisItem.legacyItemId + " - " + await thisItem.title;
 
@@ -56,12 +56,12 @@ export async function generateMetadata (): Promise<Metadata> {
 	return {
 		// https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 		metadataBase: new URL(origin),
-		alternates: {
+		/* alternates: {
 			canonical: url,
 			languages: {
       			'en-US': url
     		},
-		},
+		}, */
 		applicationName: packageJSON.name,
 		authors: [{ name: packageJSON.author.name, url: packageJSON.author.url }],
 		creator: packageJSON.author.name,

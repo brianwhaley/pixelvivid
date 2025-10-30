@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "added micro interaction for sunglass gallery tiles"
+git commit -m "added amount / percent support for shopping cart, removed canonical and alternate page metadata for seo, updated next to 16.0.1"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
