@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "version conflicts, bumped to 3.0.0"
+git commit -m "remove gallerywrapper for flickrwrapper"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

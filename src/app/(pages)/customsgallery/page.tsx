@@ -3,14 +3,16 @@
 
 import React, { useEffect, useState } from 'react';
 import { PageHeader } from "@brianwhaley/pixelated-components";
+import { FlickrWrapper } from '@brianwhaley/pixelated-components';
 import type { CarouselCardType } from "@brianwhaley/pixelated-components";
 import { MicroInteractions } from "@brianwhaley/pixelated-components";
 import { Tiles } from "@brianwhaley/pixelated-components";
-import GalleryWrapper from "@/app/elements/gallerywrapper";
 
 export default function Portfolio() {
 	const [ flickrCards, setFlickrCards ] = useState<CarouselCardType[]>([]);
 	const props = { 
+		api_key: '882cab5548d53c9e6b5fb24d59cc321d',
+		user_id: '15473210@N04',
 		tags: "", // "customsunglasses"
 		method: "flickr.photosets.getPhotos", 
 		photoset_id: "72177720326925753",
@@ -19,7 +21,7 @@ export default function Portfolio() {
 	};
 	useEffect(() => {
 		async function fetchGallery() {
-			await GalleryWrapper(props);
+			await FlickrWrapper(props);
 		}
 		fetchGallery();
 	}, []); 
