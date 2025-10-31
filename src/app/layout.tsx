@@ -100,11 +100,11 @@ export async function generateMetadata (): Promise<Metadata> {
 
 export function generateViewport(): Viewport {
   	return {
-		width: 'device-width, shrink-to-fit=no',
+		width: 'device-width',
 		initialScale: 1.0,
-		minimumScale: 1.0,
-		maximumScale: 1.0,
-		userScalable: false
+		// minimumScale: 1.0,
+		// maximumScale: 1.0,
+		// userScalable: false
   	};
 }
 
