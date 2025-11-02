@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "viewport fix"
+git commit -m "new 404 component, bump component library"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
