@@ -2,20 +2,18 @@ import React from "react";
 import type { Metadata } from 'next';
 import type { Viewport } from 'next';
 import { headers } from 'next/headers';
-// import { getEbayItemMetadata } from "./components/ebay/pixelated.ebay.functions";
-// import { getRouteByKey } from "@brianwhaley/pixelated-components";
-// import { getMetadata } from "@brianwhaley/pixelated-components";
-import "@brianwhaley/pixelated-components/css/pixelated.global.css";
-import "@brianwhaley/pixelated-components/css/pixelated.grid.scss";
 import { descriptionToKeywords, getRouteByKey } from "@brianwhaley/pixelated-components/server";
 import { defaultEbayProps, /* getEbayAppToken, */ getEbayItem } from "@brianwhaley/pixelated-components/server";
 import Header from "@/app/elements/header";
-import Interactions from "@/app/elements/interactions";
 import Nav from "@/app/elements/nav";
 import Search from '@/app/elements/search';
 import Footer from '@/app/elements/footer';
+import Interactions from "@/app/elements/interactions";
+import LayoutPerformance from "./elements/performance";
 import myRoutes from "@/app/data/routes.json";
 import packageJSON from "../../package.json";
+import "@brianwhaley/pixelated-components/css/pixelated.global.css";
+import "@brianwhaley/pixelated-components/css/pixelated.grid.scss";
 import "./globals.css";
 
 // export const dynamic = 'force-static';
@@ -56,12 +54,12 @@ export async function generateMetadata (): Promise<Metadata> {
 	return {
 		// https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 		metadataBase: new URL(origin),
-		/* alternates: {
+		alternates: {
 			canonical: url,
-			languages: {
+			/* languages: {
       			'en-US': url
-    		},
-		}, */
+    		}, */
+		},
 		applicationName: packageJSON.name,
 		authors: [{ name: packageJSON.author.name, url: packageJSON.author.url }],
 		creator: packageJSON.author.name,
@@ -75,6 +73,14 @@ export async function generateMetadata (): Promise<Metadata> {
 				url: '/images/favicon.ico',
 				sizes: '48x48',
 				type: 'image/x-icon' },
+			other: [
+				{ rel: 'preconnect', url: 'https://images.ctfassets.net/'},
+				{ rel: 'preconnect', url: 'https://res.cloudinary.com/'},
+				{ rel: 'preconnect', url: 'https://farm2.static.flickr.com'},
+				{ rel: 'preconnect', url: 'https://farm6.static.flickr.com'},
+				{ rel: 'preconnect', url: 'https://farm8.static.flickr.com'},
+				{ rel: 'preconnect', url: 'https://farm66.static.flickr.com'},
+			],
 		},
 		keywords: await myMetadata?.keywords,
 		manifest: '/manifest.webmanifest',
@@ -111,6 +117,7 @@ export function generateViewport(): Viewport {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
+			<LayoutPerformance />
 			{ /* <head>
 				<meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
 				<meta itemProp="name" content="PixelVivid" />

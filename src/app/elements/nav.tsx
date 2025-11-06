@@ -10,6 +10,8 @@ const allRoutes = myroutes.routes;
 
 export default function Nav() {
 	return (
-		<MenuAccordion menuItems={allRoutes} />
+		<>
+			<MenuAccordion menuItems={allRoutes} />
+		</>
 	);
 }
