@@ -40,3 +40,10 @@
 .modalImageContainer {
 	overflow: hidden;
 }
+
+/* NEED TO FIND A FIX FOR THIS IN PIXELATED-COMPONENTS
+.callout.left,
+.callout.right {
+	float: unset !important
+} */
+ 

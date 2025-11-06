@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "performance improvements for microinteractions, css, js, added canonical url, bump component library"
+git commit -m "fix for .callout.left .callout.right"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
