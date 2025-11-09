@@ -59,9 +59,9 @@
     color: white;
     z-index: 2000;
     /* background-color: var(--accent1-color); */
-	background-image: url(/images/pixelvivid/pix-bg.gif);
-    background-color: rgba(255, 255, 255, 0.75);
-    background-blend-mode: overlay; /* or lighten */
+	background-image: url(/images/pixelvivid/pix-bg-lite.gif);
+    /* background-color: rgba(255, 255, 255, 0.75); */
+    /* background-blend-mode: overlay; */ /* or lighten */
     height: 40px;
 }
 

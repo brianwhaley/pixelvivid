@@ -54,7 +54,7 @@ npm version minor
 eslint --fix
 npm version patch --force
 git add * -v
-git commit -m "add simple menu for desktop, accordion menu for mobile, fix for loading spinner to ebay listing component"
+git commit -m "fix for desktop menu background image"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
