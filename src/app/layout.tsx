@@ -5,6 +5,7 @@ import { headers } from 'next/headers';
 import { descriptionToKeywords, getRouteByKey } from "@brianwhaley/pixelated-components/server";
 import { defaultEbayProps, /* getEbayAppToken, */ getEbayItem } from "@brianwhaley/pixelated-components/server";
 import Header from "@/app/elements/header";
+import HeaderNav from "./elements/headernav";
 import Nav from "@/app/elements/nav";
 import Search from '@/app/elements/search';
 import Footer from '@/app/elements/footer';
@@ -129,8 +130,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body>
 				<Interactions />
 				<header>
-					<div id="page-header" className="fixed-header"><Header /></div>
+					<div id="page-header" className="fixed-header"><Header /></div><div id="page-header-nav" className="fixed-header-nav">
+						<div className="section-container">
+							<HeaderNav />
+						</div>
+					</div>
 					<div id="fixed-header-spacer"></div>
+					<div id="fixed-header-nav-spacer"></div>
 					<div id="page-search" className="noMobile"><Search id="e336d1c9d0e5e48e5" /></div>
 				</header>
 				<nav><Nav /></nav>
