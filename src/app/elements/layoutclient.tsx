@@ -6,7 +6,7 @@ import { loadAllImagesFromCloudinary } from "@brianwhaley/pixelated-components";
 import { preloadImages } from "@brianwhaley/pixelated-components";
 
 
-export default function LayoutPerformance() {
+export default function LayoutClient() {
 	useEffect(() => {
 		// document.addEventListener('DOMContentLoaded', deferAllCSS);
 		preloadImages();

@@ -52,9 +52,13 @@ npm version major
 npm version minor
 
 eslint --fix
+
+npm outdated | awk 'NR>1 {print $1"@"$4}' | xargs npm install --force --save
+npm audit fix --force
 npm version patch --force
 git add * -v
-git commit -m "new contentful store components"
+git commit -m "
+git commit -m "breaking changes for pixelated-components, config implementation, sitemap images""
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 
@@ -125,3 +129,9 @@ https://dev.to/evansifyke/how-to-integrate-paypal-with-html-css-and-javascript-2
 https://www.kustomflow.co.uk/
 https://www.niceshades.art/niceshades
 https://bobbielight.com/collections/sunglasses/sunglasses+custom-sunglasses+hand-painted-sunglasses+splatter-specs
+
+
+# ===== JSON TO BASE 64 CONVERTER =====
+This is for env.local and amplify environment variables
+
+https://jsonformatter.org/json-to-base64

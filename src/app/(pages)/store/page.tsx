@@ -3,26 +3,28 @@
 import React from "react";
 import { ContentfulItems, EbayItems } from "@brianwhaley/pixelated-components";
 import { PageHeader } from "@brianwhaley/pixelated-components";
+import { getFullPixelatedConfig } from "@brianwhaley/pixelated-components";
+
+const pixelatedConfig = getFullPixelatedConfig();
 
 export default function Ebay() {
 	const ebayApiProps = {
-		proxyURL: "https://proxy.pixelated.tech/prod/proxy?url=",
+		proxyURL: pixelatedConfig.ebay?.proxyURL || '',
 		// qsSearchURL: '?q=sunglasses&fieldgroups=full&category_ids=79720&aspect_filter=categoryId:79720&filter=sellers:{pixelatedtech}&sort=newlyListed&limit=200',
 		qsSearchURL: '?q=sunglasses&fieldgroups=FULL&category_ids=79720&aspect_filter=categoryId:79720&filter=sellers:{pixelatedtech}&sort=newlyListed&limit=200',
-		appId: 'BrianWha-Pixelate-PRD-1fb4458de-1a8431fe', // clientId
-		appCertId: 'PRD-fb4458deef01-0d54-496a-b572-a04b', // clientSecret
-		tokenScope: 'https://api.ebay.com/oauth/api_scope',
-		globalId: 'EBAY-US',
+		appId: pixelatedConfig.ebay?.appId || '', // clientId
+		appCertId: pixelatedConfig.ebay?.appCertId || '', // clientSecret
+		tokenScope: pixelatedConfig.ebay?.tokenScope || '',
+		globalId: pixelatedConfig.ebay?.globalId || 'EBAY-US',
 	};
 	const contentfulApiProps = {
-		proxyURL: 'https://proxy.pixelated.tech/prod/proxy?url=',
-		base_url: "https://cdn.contentful.com",
-		space_id: "soi9w77t7027",
-		environment: "master",
-		access_token: "muY9LfpCt4qoXosDsnRkkoH3DAVVuUFEuB0WRKRdBUM",
-
+		proxyURL: pixelatedConfig.contentful?.proxyURL || '',
+		base_url: pixelatedConfig.contentful?.base_url || "",
+		space_id: pixelatedConfig.contentful?.space_id || "",
+		environment: pixelatedConfig.contentful?.environment || "",
+		delivery_access_token: pixelatedConfig.contentful?.delivery_access_token || "",
 	};
-	const cloudinaryProductEnv = "dzjibwmev"; // Cloudinary environment for product images
+	const cloudinaryProductEnv = pixelatedConfig.cloudinary?.product_env || ""; // Cloudinary environment for product images
 
 	return (
 		<>

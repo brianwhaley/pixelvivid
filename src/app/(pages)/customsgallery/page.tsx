@@ -7,12 +7,15 @@ import { FlickrWrapper } from '@brianwhaley/pixelated-components';
 import type { CarouselCardType } from "@brianwhaley/pixelated-components";
 import { MicroInteractions } from "@brianwhaley/pixelated-components";
 import { Tiles } from "@brianwhaley/pixelated-components";
+import { getFullPixelatedConfig } from '@brianwhaley/pixelated-components';
+
+const pixelatedConfig = getFullPixelatedConfig();
 
 export default function Portfolio() {
 	const [ flickrCards, setFlickrCards ] = useState<CarouselCardType[]>([]);
 	const props = { 
-		api_key: '882cab5548d53c9e6b5fb24d59cc321d',
-		user_id: '15473210@N04',
+		api_key: pixelatedConfig.flickr?.urlProps.api_key || "",
+		user_id: pixelatedConfig.flickr?.urlProps.user_id || "",
 		tags: "", // "customsunglasses"
 		method: "flickr.photosets.getPhotos", 
 		photoset_id: "72177720326925753",

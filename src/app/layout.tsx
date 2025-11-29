@@ -2,15 +2,16 @@ import React from "react";
 import type { Metadata } from 'next';
 import type { Viewport } from 'next';
 import { headers } from 'next/headers';
+import { PixelatedServerConfigProvider } from "@brianwhaley/pixelated-components/server";
 import { descriptionToKeywords, getRouteByKey } from "@brianwhaley/pixelated-components/server";
-import { defaultEbayProps, /* getEbayAppToken, */ getEbayItem } from "@brianwhaley/pixelated-components/server";
+import { defaultEbayProps, getEbayItem } from "@brianwhaley/pixelated-components/server";
 import Header from "@/app/elements/header";
 import HeaderNav from "./elements/headernav";
 import Nav from "@/app/elements/nav";
 import Search from '@/app/elements/search';
 import Footer from '@/app/elements/footer';
 import Interactions from "@/app/elements/interactions";
-import LayoutPerformance from "./elements/performance";
+import LayoutClient from "./elements/layoutclient";
 import myRoutes from "@/app/data/routes.json";
 import packageJSON from "../../package.json";
 import "@brianwhaley/pixelated-components/css/pixelated.global.css";
@@ -118,7 +119,7 @@ export function generateViewport(): Viewport {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<LayoutPerformance />
+			<LayoutClient />
 			{ /* <head>
 				<meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
 				<meta itemProp="name" content="PixelVivid" />
@@ -128,20 +129,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			</head> */ }
 
 			<body>
-				<Interactions />
-				<header>
-					<div id="page-header" className="fixed-header"><Header /></div><div id="page-header-nav" className="fixed-header-nav">
-						<div className="section-container">
-							<HeaderNav />
+				<PixelatedServerConfigProvider>
+					<Interactions />
+					<header>
+						<div id="page-header" className="fixed-header">
+							<Header />
 						</div>
-					</div>
-					<div id="fixed-header-spacer"></div>
-					<div id="fixed-header-nav-spacer"></div>
-					<div id="page-search" className="noMobile"><Search id="e336d1c9d0e5e48e5" /></div>
-				</header>
-				<nav><Nav /></nav>
-				<main>{children}</main>
-				<footer><Footer /></footer>
+						<div id="page-header-nav" className="fixed-header-nav">
+							<div className="section-container">
+								<HeaderNav />
+							</div>
+						</div>
+						<div id="fixed-header-spacer" />
+						<div id="fixed-header-nav-spacer" />
+						<div id="page-search" className="noMobile">
+							<Search id="e336d1c9d0e5e48e5" />
+						</div>
+					</header>
+					<nav>
+						<Nav />
+					</nav>
+					<main>
+						{children}
+					</main>
+					<footer>
+						<Footer />
+					</footer>
+				</PixelatedServerConfigProvider>
 			</body>
 		</html>
 	);

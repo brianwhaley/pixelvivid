@@ -5,13 +5,16 @@ import { PageHeader } from "@brianwhaley/pixelated-components";
 import { Callout } from "@brianwhaley/pixelated-components";
 import { Carousel, FlickrWrapper } from "@brianwhaley/pixelated-components";
 import type { CarouselCardType } from "@brianwhaley/pixelated-components";
+import { getFullPixelatedConfig } from '@brianwhaley/pixelated-components';
+
+const pixelatedConfig = getFullPixelatedConfig();
 
 export default function Photography() {
 
 	const [ flickrCards, setFlickrCards ] = useState<CarouselCardType[]>([]);
 	const props = { 
-		api_key: '882cab5548d53c9e6b5fb24d59cc321d',
-		user_id: '15473210@N04',
+		api_key: pixelatedConfig.flickr?.urlProps.api_key || "",
+		user_id: pixelatedConfig.flickr?.urlProps.user_id || "",
 		tags: "", // "pixelatedviewsgallery"
 		method: "flickr.photosets.getPhotos", 
 		photoset_id: "72157712416706518",

@@ -1,18 +1,24 @@
-import { NextResponse } from 'next/server';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-export function proxy(request: Request) {
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-	const url = new URL(request.url);
-	const origin = url.origin;
-	const pathname = url.pathname;
-	const requestHeaders = new Headers(request.headers);
-	requestHeaders.set('x-url', request.url);
-	requestHeaders.set('x-origin', origin);
-	requestHeaders.set('x-pathname', pathname);
-
+export function proxy(req: NextRequest) {
+	const path = req.nextUrl.pathname + (req.nextUrl.search || "");
+	const origin = (req.nextUrl as any)?.origin ?? new URL(req.url).origin;
+	const url = (req.nextUrl as any)?.href ?? req.url ?? `${origin}${path}`;
+	const headers = new Headers(req.headers);
+	headers.set("x-pathname", path);
+	headers.set("x-origin", String(origin));
+	headers.set("x-url", String(url));
 	return NextResponse.next({
 		request: {
-			headers: requestHeaders,
-		}
+			headers,
+		},
 	});
 }
+
+// Limit middleware to page routes (avoid _next static, api, etc.)
+export const config = {
+	matcher: ["/((?!_next/image|_next/static|api|favicon.ico).*)"],
+};

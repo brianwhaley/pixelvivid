@@ -8,7 +8,7 @@ export default function SocialTags() {
 		<>
 
 			<div className="row-12col">
-				<div className="grid-s1-e12">
+				<div className="grid-s1-e13">
 					<PageSectionHeader url="" title="PixelVivid Custom Sunglasses Social Media" />
 				</div>
 			</div>
@@ -29,7 +29,7 @@ export default function SocialTags() {
 			</div>
 
 			<div className="row-12col">
-				<div className="grid-s1-e12">
+				<div className="grid-s1-e13">
 					<PageSectionHeader url="" title="PixelVivid Photography Social Media" />
 				</div>
 			</div>

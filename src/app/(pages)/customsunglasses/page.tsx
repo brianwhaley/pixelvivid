@@ -10,40 +10,28 @@ import { Carousel } from "@brianwhaley/pixelated-components";
 // import GalleryWrapper from "@/app/elements/gallerywrapper";
 import type { CarouselCardType } from "@brianwhaley/pixelated-components";
 import { getContentfulEntriesByType } from "@brianwhaley/pixelated-components";
+import { getFullPixelatedConfig } from '@brianwhaley/pixelated-components';
+import { SmartImage } from "@brianwhaley/pixelated-components";
+
+const pixelatedConfig = getFullPixelatedConfig();
 
 export default function CustomSunglasses() {
 	const cloudinaryAPI = "https://res.cloudinary.com/dlbon7tpq/image/fetch/f_auto,q_auto/";
 	const [modalContent, setModalContent] = useState<React.ReactNode>();
 	const handleImageClick = (event: React.MouseEvent, url: string) => {
-		const myContent = <div className="modalImageContainer"><img src={url} alt="Modal Image" /></div>;
+		const myContent = <div className="modalImageContainer">
+			<SmartImage src={url} alt="Modal Image" />
+		</div>;
 		setModalContent(myContent);
 		handleModalOpen(event.nativeEvent);
   	};
 
-	/* 
-	const [ flickrCards, setFlickrCards ] = useState<CarouselCardType[]>([]);
-	const props = { 
-		tags: "", // "customsunglasses"
-		method: "flickr.photosets.getPhotos", 
-		photoset_id: "72177720326925753",
-		photoSize: "Large", 
-		callback: setFlickrCards 
-	};
-	useEffect(() => {
-		async function fetchGallery() {
-			await GalleryWrapper(props);
-		}
-		fetchGallery();
-	}, []); 
-	*/
-
-
 	const [ feedbackCards , setFeedbackCards ] = useState<CarouselCardType[]>([]);
 	const apiProps = {
-		base_url: "https://cdn.contentful.com",
-		space_id: "soi9w77t7027",
-		environment: "master",
-		access_token: "muY9LfpCt4qoXosDsnRkkoH3DAVVuUFEuB0WRKRdBUM",
+		base_url: pixelatedConfig.contentful?.base_url || "",
+		space_id: pixelatedConfig.contentful?.space_id || "",
+		environment: pixelatedConfig.contentful?.environment || "",
+		delivery_access_token: pixelatedConfig.contentful?.delivery_access_token || "",
 	};
 	useEffect(() => {
 		async function getFeedbackCards() {
@@ -85,18 +73,6 @@ export default function CustomSunglasses() {
 			</section>
 
 
-			{ /* <section className="section-imgAlt" id="gallery-section">
-				<div className="section-container">
-					<PageSectionHeader title="Custom Sunglasses Gallery" />
-					<Carousel 
-						cards={flickrCards} 
-						draggable={true}
-						imgFit="contain" />
-				</div>
-				<br />
-			</section> */ }
-
-
 			<section className="section-alt" id="gallery-section">
 				<div className="section-container">
 					<Callout
@@ -113,7 +89,6 @@ export default function CustomSunglasses() {
 						Oakley, Ray-Ban, Costa del Mar, Maui Jim, and more.'  />
 				</div>
 			</section>
-
 
 
 			<section className="section" id="styles-section">

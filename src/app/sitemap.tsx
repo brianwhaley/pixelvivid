@@ -1,7 +1,7 @@
 
 import type { MetadataRoute } from 'next';
 import { headers } from 'next/headers';
-import { createPageURLs, createEbayItemURLs, createImageURLs } from "@brianwhaley/pixelated-components/server";
+import { createPageURLs, createEbayItemURLs, createImageURLsFromJSON } from "@brianwhaley/pixelated-components/server";
 // import type { SitemapEntry } from '@brianwhaley/pixelated-components';
 import myRoutes from "@/app/data/routes.json";
 
@@ -17,7 +17,7 @@ export default async function SiteMapXML(): Promise<MetadataRoute.Sitemap> {
 	const sitemap = [
 		...(await createPageURLs(myRoutes.routes, origin)),
 		...(await createEbayItemURLs(origin)),
-		...(await createImageURLs(origin)),
+		...(await createImageURLsFromJSON(origin)),
 	];
 	return sitemap;
 }

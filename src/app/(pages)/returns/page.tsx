@@ -10,7 +10,7 @@ export default function Returns() {
 				<div className="section-container">
 					<PageHeader title="PixelVivid Return Policy" />
 					<div className="row-12col">
-						<div className="grid-s4-e6">
+						<div className="grid-s4-e10">
 							PixelVivid returns are rare because most customers are very happy with their purchase. If you are not happy, please contact us to discuss the reason. We hope to make your purchase a good experience. 
 							<ul>
 								<li>Notification of return to PixelVivid must be within 7 days of receipt of item purchased</li>

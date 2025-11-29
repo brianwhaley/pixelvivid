@@ -15,7 +15,7 @@ export default function Home() {
 					<br />
 					<PageHeader title="PixelVivid Products & Services" />
 					<div className="row-12col">
-						<div className="grid-s3-e8">
+						<div className="grid-s3-e11">
 							PixelVivid offers a wide variety of artistic products 
 							and services such as unique one-of-a-kind painted sunglasses, 
 							photography, jewelry, commissioned paintings, and more. 
@@ -69,7 +69,7 @@ export default function Home() {
 			<section className="section-alt" id="review-section">
 				<div className="section-container">
 					<div className="row-12col">
-						<div className="grid-s2-e9">
+						<div className="grid-s2-e11">
 							<CalloutLibrary.feedback />
 						</div>
 					</div>

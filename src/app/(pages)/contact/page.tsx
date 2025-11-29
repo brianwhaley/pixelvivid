@@ -44,7 +44,7 @@ export default function Contact() {
 			<section className="" id="contactus-section">
 				<div className="section-container">
 					<div className="row-12col">
-						<div className="grid-s4-e6">
+						<div className="grid-s4-e10">
 							<div>
 								Please fill out the form below. 
 								We would LOVE to hear about your experience with PixelVivid products 

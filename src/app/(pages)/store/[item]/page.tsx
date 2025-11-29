@@ -3,6 +3,9 @@
 import React, { use } from 'react';
 import { EbayItemDetail } from "@brianwhaley/pixelated-components";
 import { ContentfulItemDetail } from "@brianwhaley/pixelated-components";
+import { getFullPixelatedConfig } from "@brianwhaley/pixelated-components";
+
+const pixelatedConfig = getFullPixelatedConfig();
 const debug = false;
 
 // EBAY ITEM ID = 12 DIGIT AND NUMERIC ONLY
@@ -18,21 +21,22 @@ export default function EbayItem({params}: { params: Promise<{ item: string }> }
 	const { item } = use(params);
 	if (debug) console.log(item);
 	const ebayApiProps = {
-		proxyURL: "https://proxy.pixelated.tech/prod/proxy?url=",
+		proxyURL: pixelatedConfig.ebay?.proxyURL || '',
 		qsItemURL: `/v1|${item}|0?fieldgroups=PRODUCT,ADDITIONAL_SELLER_DETAILS`,
-		appId: 'BrianWha-Pixelate-PRD-1fb4458de-1a8431fe', // clientId
-		appCertId: 'PRD-fb4458deef01-0d54-496a-b572-a04b', // clientSecret
-		tokenScope: 'https://api.ebay.com/oauth/api_scope',
-		globalId: 'EBAY-US',
+		appId: pixelatedConfig.ebay?.appId || '', // clientId
+		appCertId: pixelatedConfig.ebay?.appCertId || '', // clientSecret
+		tokenScope: pixelatedConfig.ebay?.tokenScope || '',
+		globalId: pixelatedConfig.ebay?.globalId || 'EBAY-US',
 	};
 	const contentfulApiProps = {
-		proxyURL: 'https://proxy.pixelated.tech/prod/proxy?url=',
-		base_url: "https://cdn.contentful.com",
-		space_id: "soi9w77t7027",
-		environment: "master",
-		access_token: "muY9LfpCt4qoXosDsnRkkoH3DAVVuUFEuB0WRKRdBUM",
+		proxyURL: pixelatedConfig.contentful?.proxyURL || '',
+		base_url: pixelatedConfig.contentful?.base_url || "",
+		space_id: pixelatedConfig.contentful?.space_id || "",
+		environment: pixelatedConfig.contentful?.environment || "",
+		delivery_access_token: pixelatedConfig.contentful?.delivery_access_token || "",
 	};
-	const cloudinaryProductEnv = "dzjibwmev"; // Cloudinary environment for product images
+	const cloudinaryProductEnv = pixelatedConfig.cloudinary?.product_env || ""; // Cloudinary environment for product images
+	
 	return (
 		<>
 			<section id="ebay-item-section">

@@ -9,8 +9,11 @@ import { HubspotTrackingCode /* , getHubspotFormSubmissions */ } from "@brianwha
 import { FormEngine } from "@brianwhaley/pixelated-components";
 import { Table } from "@brianwhaley/pixelated-components";
 import { Loading, ToggleLoading } from "@brianwhaley/pixelated-components";
+import { getFullPixelatedConfig } from "@brianwhaley/pixelated-components";
 import formData from "@/app/data/requestform.json";
 import "./requests.css";
+
+const pixelatedConfig = getFullPixelatedConfig();
 
 export default function Requests() {
 
@@ -70,10 +73,10 @@ export default function Requests() {
 
 	const [ customRequests , setCustomRequests ] = useState<CustomRequestType[]>([]);
 	const apiProps = {
-		base_url: "https://cdn.contentful.com",
-		space_id: "soi9w77t7027",
-		environment: "master",
-		access_token: "muY9LfpCt4qoXosDsnRkkoH3DAVVuUFEuB0WRKRdBUM",
+		base_url: pixelatedConfig.contentful?.base_url || "",
+		space_id: pixelatedConfig.contentful?.space_id || "",
+		environment: pixelatedConfig.contentful?.environment || "",
+		delivery_access_token: pixelatedConfig.contentful?.delivery_access_token || "",
 	};
 	useEffect(() => {
 		async function getCustomRequests() {
