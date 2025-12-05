@@ -2,12 +2,12 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { PageHeader } from "@brianwhaley/pixelated-components";
-import { FlickrWrapper } from '@brianwhaley/pixelated-components';
-import type { CarouselCardType } from "@brianwhaley/pixelated-components";
-import { MicroInteractions } from "@brianwhaley/pixelated-components";
-import { Tiles } from "@brianwhaley/pixelated-components";
-import { getFullPixelatedConfig } from '@brianwhaley/pixelated-components';
+import { PageHeader } from "@pixelated-tech/components";
+import { FlickrWrapper } from '@pixelated-tech/components';
+import type { CarouselCardType } from "@pixelated-tech/components";
+import { MicroInteractions } from "@pixelated-tech/components";
+import { Tiles } from "@pixelated-tech/components";
+import { getFullPixelatedConfig } from '@pixelated-tech/components';
 
 const pixelatedConfig = getFullPixelatedConfig();
 

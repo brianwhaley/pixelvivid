@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { PageHeader } from "@brianwhaley/pixelated-components";
-import { HubSpotForm, initializeHubSpotScript } from "@brianwhaley/pixelated-components";
+import { PageHeader } from "@pixelated-tech/components";
+import { HubSpotForm, initializeHubSpotScript } from "@pixelated-tech/components";
 
 export default function Subscribe() {
 	useEffect(() => {

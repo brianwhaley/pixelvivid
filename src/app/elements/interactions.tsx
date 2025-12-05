@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { MicroInteractions } from "@brianwhaley/pixelated-components";
+import { MicroInteractions } from "@pixelated-tech/components";
 
 export default function Interactions() {
 

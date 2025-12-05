@@ -1,9 +1,9 @@
 "use client";
 
 import React, { use } from 'react';
-import { EbayItemDetail } from "@brianwhaley/pixelated-components";
-import { ContentfulItemDetail } from "@brianwhaley/pixelated-components";
-import { getFullPixelatedConfig } from "@brianwhaley/pixelated-components";
+import { EbayItemDetail } from "@pixelated-tech/components";
+import { ContentfulItemDetail } from "@pixelated-tech/components";
+import { getFullPixelatedConfig } from "@pixelated-tech/components";
 
 const pixelatedConfig = getFullPixelatedConfig();
 const debug = false;

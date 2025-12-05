@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { ShoppingCart } from "@brianwhaley/pixelated-components";
-import { getFullPixelatedConfig } from "@brianwhaley/pixelated-components";
+import { ShoppingCart } from "@pixelated-tech/components";
+import { getFullPixelatedConfig } from "@pixelated-tech/components";
 
 const pixelatedConfig = getFullPixelatedConfig();
 

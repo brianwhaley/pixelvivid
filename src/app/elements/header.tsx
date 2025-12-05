@@ -3,8 +3,8 @@
 import React from "react";
 
 // import { MenuAccordionButton } from "../components/menu/pixelated.menu-accordion";
-import { MenuAccordionButton } from "@brianwhaley/pixelated-components";
-import { CartButton } from "@brianwhaley/pixelated-components";
+import { MenuAccordionButton } from "@pixelated-tech/components";
+import { CartButton } from "@pixelated-tech/components";
 import "./header.css";
 
 export default function Header() {

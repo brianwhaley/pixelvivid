@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { PageSectionHeader, Callout } from "@brianwhaley/pixelated-components";
+import { PageSectionHeader, Callout } from "@pixelated-tech/components";
 
 export default function SocialTags() {
 	return (

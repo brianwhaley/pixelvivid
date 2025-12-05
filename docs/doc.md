@@ -28,7 +28,7 @@ https://localhost:3000
 
 npm outdated | awk 'NR>1 {print $1"@"$4}' | xargs npm install --force --save
 npm audit fix --force
-npm install @brianwhaley/pixelated-components@latest --force --save
+npm install @pixelated-tech/components@latest --force --save
 
 rm -rf node_modules && rm -rf package-lock.json && npm install --force
 
@@ -39,13 +39,6 @@ git config --global remote.pixelvivid.url https://github.com/brianwhaley/pixelvi
 git config --global core.editor "code --wait"
 git fetch
 
-## ===== CREATE NEW DEV BRANCH =====
-
-git branch -a
-git checkout -b dev
-
-## ===== BUILD PIXELATED APP =====
-
 eslint --fix --ext .jsx --ext .js .
 [//]: # npm --no-git-tag-version version patch
 npm version major
@@ -53,11 +46,18 @@ npm version minor
 
 eslint --fix
 
+## ===== CREATE NEW DEV BRANCH =====
+
+git branch -a
+git checkout -b dev
+
+## ===== BUILD PIXELATED APP =====
+
 npm outdated | awk 'NR>1 {print $1"@"$4}' | xargs npm install --force --save
 npm audit fix --force
 npm version patch --force
 git add * -v
-git commit -m "breaking changes for pixelated-components, config implementation, sitemap images"
+git commit -m "migrate components from @brianwhaley to @pixelated-tech"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

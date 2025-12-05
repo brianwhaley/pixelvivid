@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { ContentfulItems, EbayItems } from "@brianwhaley/pixelated-components";
-import { PageHeader } from "@brianwhaley/pixelated-components";
-import { getFullPixelatedConfig } from "@brianwhaley/pixelated-components";
+import { ContentfulItems, EbayItems } from "@pixelated-tech/components";
+import { PageHeader } from "@pixelated-tech/components";
+import { getFullPixelatedConfig } from "@pixelated-tech/components";
 
 const pixelatedConfig = getFullPixelatedConfig();
 

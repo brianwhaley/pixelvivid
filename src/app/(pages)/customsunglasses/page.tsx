@@ -2,16 +2,16 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PageHeader, PageSectionHeader } from "@brianwhaley/pixelated-components";
-import { Callout } from "@brianwhaley/pixelated-components";
+import { PageHeader, PageSectionHeader } from "@pixelated-tech/components";
+import { Callout } from "@pixelated-tech/components";
 import * as CalloutLibrary from "@/app/elements/calloutlibrary";
-import { Modal, handleModalOpen } from "@brianwhaley/pixelated-components";
-import { Carousel } from "@brianwhaley/pixelated-components";
+import { Modal, handleModalOpen } from "@pixelated-tech/components";
+import { Carousel } from "@pixelated-tech/components";
 // import GalleryWrapper from "@/app/elements/gallerywrapper";
-import type { CarouselCardType } from "@brianwhaley/pixelated-components";
-import { getContentfulEntriesByType } from "@brianwhaley/pixelated-components";
-import { getFullPixelatedConfig } from '@brianwhaley/pixelated-components';
-import { SmartImage } from "@brianwhaley/pixelated-components";
+import type { CarouselCardType } from "@pixelated-tech/components";
+import { getContentfulEntriesByType } from "@pixelated-tech/components";
+import { getFullPixelatedConfig } from '@pixelated-tech/components';
+import { SmartImage } from "@pixelated-tech/components";
 
 const pixelatedConfig = getFullPixelatedConfig();
 

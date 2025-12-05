@@ -2,14 +2,14 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PageHeader } from "@brianwhaley/pixelated-components";
-import { PageSectionHeader } from "@brianwhaley/pixelated-components";
-import { getContentfulEntriesByType } from "@brianwhaley/pixelated-components";
-import { HubspotTrackingCode /* , getHubspotFormSubmissions */ } from "@brianwhaley/pixelated-components";
-import { FormEngine } from "@brianwhaley/pixelated-components";
-import { Table } from "@brianwhaley/pixelated-components";
-import { Loading, ToggleLoading } from "@brianwhaley/pixelated-components";
-import { getFullPixelatedConfig } from "@brianwhaley/pixelated-components";
+import { PageHeader } from "@pixelated-tech/components";
+import { PageSectionHeader } from "@pixelated-tech/components";
+import { getContentfulEntriesByType } from "@pixelated-tech/components";
+import { HubspotTrackingCode /* , getHubspotFormSubmissions */ } from "@pixelated-tech/components";
+import { FormEngine } from "@pixelated-tech/components";
+import { Table } from "@pixelated-tech/components";
+import { Loading, ToggleLoading } from "@pixelated-tech/components";
+import { getFullPixelatedConfig } from "@pixelated-tech/components";
 import formData from "@/app/data/requestform.json";
 import "./requests.css";
 
