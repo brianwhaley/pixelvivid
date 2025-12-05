@@ -11,6 +11,7 @@ export function customSunglasses(props: CalloutLibraryType) {
 	return (
 		<Callout
 			variant={props.variant || undefined}
+			aboveFold={true}
 			gridColumns={props.gridColumns || undefined}
 			layout={props.layout || 'vertical'}
 			direction={props.direction || undefined}
@@ -29,6 +30,7 @@ export function photography(props: CalloutLibraryType) {
 	return (
 		<Callout
 			variant={props.variant || undefined}
+			aboveFold={true}
 			gridColumns={props.gridColumns || undefined}
 			layout={props.layout || 'vertical'} 
 			direction={props.direction || undefined}

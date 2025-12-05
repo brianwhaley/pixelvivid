@@ -1,27 +1,14 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { PageHeader } from "@brianwhaley/pixelated-components";
+import { HubSpotForm, initializeHubSpotScript } from "@brianwhaley/pixelated-components";
 
 export default function Subscribe() {
-    
-	const [bodyContent, setBodyContent] = useState<React.ReactNode>(null);
-	
 	useEffect(() => {
-		setBodyContent(
-			<div>
-				<script async 
-					src="https://js-na2.hsforms.net/forms/embed/243048355.js" defer />
-				<div 
-					className="gridItem hs-form-frame" 
-					data-region="na2" 
-					data-form-id="f5236434-f88f-4f87-a150-54070be4494c" 
-					data-portal-id="243048355" 
-					suppressHydrationWarning={true} />
-			</div>
-		);
+		initializeHubSpotScript("na2", "243048355");
 	}, []);
-	
+
 	return (
 		<div className="section-container">
 			<PageHeader title="Subscribe to PixelVivid Emails" />
@@ -35,7 +22,11 @@ export default function Subscribe() {
 						<li>Announcements of upcoming drips and previews of their designs</li>
 					</ul>
 				</div>
-				{bodyContent}
+				<HubSpotForm
+					region="na2"
+					portalId="243048355"
+					formId="f5236434-f88f-4f87-a150-54070be4494c"
+				/>
 			</div>
 		</div>
 	);
