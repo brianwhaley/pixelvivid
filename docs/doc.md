@@ -57,8 +57,7 @@ npm outdated | awk 'NR>1 {print $1"@"$4}' | xargs npm install --force --save
 npm audit fix --force
 npm version patch --force
 git add * -v
-git commit -m "
-git commit -m "breaking changes for pixelated-components, config implementation, sitemap images""
+git commit -m "breaking changes for pixelated-components, config implementation, sitemap images"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

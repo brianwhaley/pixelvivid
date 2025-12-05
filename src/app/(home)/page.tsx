@@ -29,7 +29,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="section-alt" id="social-section">
+			<section style={{backgroundColor: "var(--accent1-color)"}} id="social-section">
 				<div className="section-container">
 
 					<SocialTags />
@@ -66,7 +66,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="section-alt" id="review-section">
+			<section style={{backgroundColor: "var(--accent1-color)"}} id="review-section">
 				<div className="section-container">
 					<div className="row-12col">
 						<div className="grid-s2-e11">

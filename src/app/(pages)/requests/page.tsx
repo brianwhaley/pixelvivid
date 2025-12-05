@@ -125,7 +125,7 @@ export default function Requests() {
 				</div>
 			</section>
 
-			<section className="section-alt2" id="request-list-section">
+			<section style={{backgroundColor: "var(--accent1-color)"}} id="request-list-section">
 				<div className="section-container">
 					<PageHeader title="Custom Sunglass Request Work List" />
 					{ customRequests.length > 0 ? (

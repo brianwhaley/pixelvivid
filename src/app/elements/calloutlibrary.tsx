@@ -1,7 +1,7 @@
 import { Callout, CalloutType } from "@brianwhaley/pixelated-components";
 
 export type CalloutLibraryType = {
-	style?: CalloutType["style"];
+	variant?: CalloutType["variant"];
 	gridColumns?: CalloutType["gridColumns"];
 	layout?: CalloutType["layout"];
 	direction?: CalloutType["direction"];
@@ -10,7 +10,7 @@ export type CalloutLibraryType = {
 export function customSunglasses(props: CalloutLibraryType) {
 	return (
 		<Callout
-			style={props.style || undefined}
+			variant={props.variant || undefined}
 			gridColumns={props.gridColumns || undefined}
 			layout={props.layout || 'vertical'}
 			direction={props.direction || undefined}
@@ -28,7 +28,7 @@ export function customSunglasses(props: CalloutLibraryType) {
 export function photography(props: CalloutLibraryType) {
 	return (
 		<Callout
-			style={props.style || undefined}
+			variant={props.variant || undefined}
 			gridColumns={props.gridColumns || undefined}
 			layout={props.layout || 'vertical'} 
 			direction={props.direction || undefined}
@@ -45,7 +45,7 @@ export function photography(props: CalloutLibraryType) {
 export function homeDesign(props: CalloutLibraryType) {
 	return (
 		<Callout
-			style={props.style || undefined} 
+			variant={props.variant || undefined} 
 			gridColumns={props.gridColumns || undefined}
 			layout={props.layout || 'vertical'}
 			direction={props.direction || undefined}
@@ -62,7 +62,7 @@ export function homeDesign(props: CalloutLibraryType) {
 export function sunglassStore(props: CalloutLibraryType){
 	return (
 		<Callout
-			style={props.style || undefined}
+			variant={props.variant || undefined}
 			gridColumns={props.gridColumns || undefined}
 			layout={props.layout || 'vertical'} 
 			direction={props.direction || undefined}
@@ -77,7 +77,7 @@ export function sunglassStore(props: CalloutLibraryType){
 export function subscribe(props: CalloutLibraryType) {
 	return (
 		<Callout
-			style={props.style || undefined}
+			variant={props.variant || undefined}
 			gridColumns={props.gridColumns || undefined}
 			layout={props.layout || 'vertical'}
 			direction={props.direction || undefined}
@@ -93,7 +93,7 @@ export function subscribe(props: CalloutLibraryType) {
 export function specialOrder(props: CalloutLibraryType) {
 	return (
 		<Callout
-			style={props.style || undefined}
+			variant={props.variant || undefined}
 			gridColumns={props.gridColumns || undefined}
 			layout={props.layout || 'vertical'} 
 			direction={props.direction || undefined}
@@ -116,7 +116,7 @@ export function feedback(props: CalloutLibraryType) {
 			<Callout
 			// url="https://www.google.com/maps/place/PixelVivid/@36.51455,-77.7273335,6z/data=!3m1!4b1!4m6!3m5!1s0x209fb9352c67abff:0xcee141d8b6841e15!8m2!3d36.51455!4d-77.7273335!16s%2Fg%2F11xzgp2g5v?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D" 
 			// url="https://share.google/35XwN8k9tpSwv9mX3"
-				style={props.style || undefined}
+				variant={props.variant || undefined}
 				gridColumns={props.gridColumns || undefined}
 				layout={props.layout || 'horizontal'} 
 				direction={props.direction || undefined}
@@ -135,7 +135,7 @@ export function feedback(props: CalloutLibraryType) {
 export function sustainabilityMessage(props: CalloutLibraryType) {
 	return (
 		<Callout
-			style={props.style || undefined}
+			variant={props.variant || undefined}
 			gridColumns={props.gridColumns || undefined}
 			layout={props.layout || 'horizontal'} 
 			direction={props.direction || undefined}

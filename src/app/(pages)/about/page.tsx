@@ -14,7 +14,7 @@ export default function About() {
 					<div className="row-1col">
 						<div className="gridItem">
 							<Callout 
-								style='boxed grid'
+								variant='boxed grid'
 								gridColumns={{left: 1, right: 3}}
 								layout='horizontal'
 								img='/images/customs/btw-mas.jpg'
@@ -31,7 +31,7 @@ export default function About() {
 						</div>
 						<div className="gridItem">
 							<Callout
-								style='boxed grid'
+								variant='boxed grid'
 								gridColumns={{left: 3, right: 1}}
 								layout='horizontal'
 								direction='right'
@@ -48,7 +48,7 @@ export default function About() {
 										the designer to sign their work. Each pair is unique, earth-friendly, and fun!' />
 						</div>
 						<CalloutLibrary.sustainabilityMessage 
-							style='boxed grid'
+							variant='boxed grid'
 							gridColumns={{left: 1, right: 3}} />
 					</div>
 				</div>
