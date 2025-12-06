@@ -57,9 +57,10 @@ npm outdated | awk 'NR>1 {print $1"@"$4}' | xargs npm install --force --save
 npm audit fix --force
 npm version patch --force
 git add * -v
-git commit -m "migrate components from @brianwhaley to @pixelated-tech"
+git commit -m "new sitemap and metatag generators"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
+
 
 ## ===== AWS Amplify build note (Lightning CSS) =====
 - Amplify Linux builders may not have the native Lightning CSS binary available. To avoid build failures like:
