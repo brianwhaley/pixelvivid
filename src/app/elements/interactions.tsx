@@ -10,7 +10,7 @@ export default function Interactions() {
 			buttonring: true,
 			formglow: true,
 			imgtwist: true,
-			scrollfadeElements: '.callout , .calloutSmall , .carouselContainer',
+			scrollfadeElements: '.callout , .calloutSmall , .carousel-container',
 		});
 	}, []);
 

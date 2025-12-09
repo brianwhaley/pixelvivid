@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { PageHeader } from "@pixelated-tech/components";
+import { PageTitleHeader } from "@pixelated-tech/components";
 import { FlickrWrapper } from '@pixelated-tech/components';
 import type { CarouselCardType } from "@pixelated-tech/components";
 import { MicroInteractions } from "@pixelated-tech/components";
@@ -36,7 +36,7 @@ export default function Portfolio() {
 	return ( 
 		<section id="portfolio-section">
 			<div className='section-container'>
-				<PageHeader title="PixelVivid Custom Sunglasses Gallery" />
+				<PageTitleHeader title="PixelVivid Custom Sunglasses Gallery" />
 				<Tiles cards={flickrCards} rowCount={3}/>
 			</div>
 		</section>

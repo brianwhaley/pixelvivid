@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import { PageHeader } from "@pixelated-tech/components";
+import { PageTitleHeader } from "@pixelated-tech/components";
 
 export default function Returns() {
 	return (
 		<>
 			<section id="returns-section">
 				<div className="section-container">
-					<PageHeader title="PixelVivid Return Policy" />
+					<PageTitleHeader title="PixelVivid Return Policy" />
 					<div className="row-12col">
 						<div className="grid-s4-e10">
 							PixelVivid returns are rare because most customers are very happy with their purchase. If you are not happy, please contact us to discuss the reason. We hope to make your purchase a good experience. 

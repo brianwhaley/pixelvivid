@@ -142,7 +142,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 						</div>
 						<div id="fixed-header-spacer" />
 						<div id="fixed-header-nav-spacer" />
-						<div id="page-search" className="noMobile">
+						<div id="page-search" className="no-mobile">
 							<Search id="e336d1c9d0e5e48e5" />
 						</div>
 					</header>

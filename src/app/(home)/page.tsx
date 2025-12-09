@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { PageHeader } from "@pixelated-tech/components";
+import { PageTitleHeader } from "@pixelated-tech/components";
 import { PageSectionHeader } from "@pixelated-tech/components";
 import * as CalloutLibrary from "@/app/elements/calloutlibrary";
 import SocialTags from "@/app/elements/socialtags";
@@ -13,7 +13,7 @@ export default function Home() {
 			<section id="products-section">
 				<div className="section-container">
 					<br />
-					<PageHeader title="PixelVivid Products & Services" />
+					<PageTitleHeader title="PixelVivid Products & Services" />
 					<div className="row-12col">
 						<div className="grid-s3-e11">
 							PixelVivid offers a wide variety of artistic products 

@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PageHeader } from "@pixelated-tech/components";
+import { PageTitleHeader } from "@pixelated-tech/components";
 import { PageSectionHeader } from "@pixelated-tech/components";
 import { getContentfulEntriesByType } from "@pixelated-tech/components";
 import { HubspotTrackingCode /* , getHubspotFormSubmissions */ } from "@pixelated-tech/components";
@@ -108,7 +108,7 @@ export default function Requests() {
 			<section id="custom-request-section">
 				<div className="section-container">
 					<HubspotTrackingCode hubID={"243048355"} />
-					<PageHeader title="Request Your Custom Sunglasses" />
+					<PageTitleHeader title="Request Your Custom Sunglasses" />
 					<Loading />
 					<div className="newRequestFormWrapper">
 						<FormEngine name="newrequest" id="newRequestForm" formData={formData} onSubmitHandler={saveDialog} />
@@ -127,7 +127,7 @@ export default function Requests() {
 
 			<section style={{backgroundColor: "var(--accent2-color)"}} id="request-list-section">
 				<div className="section-container">
-					<PageHeader title="Custom Sunglass Request Work List" />
+					<PageTitleHeader title="Custom Sunglass Request Work List" />
 					{ customRequests.length > 0 ? (
 						<Table data={customRequests} id="customRequests" sortable={true}/>
 					) : (

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PageHeader } from "@pixelated-tech/components";
+import { PageTitleHeader } from "@pixelated-tech/components";
 import { Callout } from "@pixelated-tech/components";
 import { Carousel, FlickrWrapper } from "@pixelated-tech/components";
 import type { CarouselCardType } from "@pixelated-tech/components";
@@ -32,7 +32,7 @@ export default function Photography() {
 		<>
 			<section id="gallery-section">
 				<div className="section-container">
-					<PageHeader title="PixelVivid Photography" />
+					<PageTitleHeader title="PixelVivid Photography" />
 					<Carousel 
 						cards={flickrCards} 
 						draggable={true}

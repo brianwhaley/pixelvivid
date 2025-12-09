@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { PageHeader } from "@pixelated-tech/components";
+import { PageTitleHeader } from "@pixelated-tech/components";
 import { Callout } from "@pixelated-tech/components";
 import * as CalloutLibrary from "@/app/elements/calloutlibrary";
 
@@ -10,7 +10,7 @@ export default function About() {
 		<>
 			<section id="aboutus-section">
 				<div className="section-container">
-					<PageHeader title="About PixelVivid" />
+					<PageTitleHeader title="About PixelVivid" />
 					<div className="row-1col">
 						<div className="gridItem">
 							<Callout 

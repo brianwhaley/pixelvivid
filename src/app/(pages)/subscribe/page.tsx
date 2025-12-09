@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { PageHeader } from "@pixelated-tech/components";
+import { PageTitleHeader } from "@pixelated-tech/components";
 import { HubSpotForm, initializeHubSpotScript } from "@pixelated-tech/components";
 
 export default function Subscribe() {
@@ -11,7 +11,7 @@ export default function Subscribe() {
 
 	return (
 		<div className="section-container">
-			<PageHeader title="Subscribe to PixelVivid Emails" />
+			<PageTitleHeader title="Subscribe to PixelVivid Emails" />
 			<div className="row-1col" suppressHydrationWarning={true} >
 				<div>
 					Subscribe to the PixelVivid newsletter and get regular updates on: 

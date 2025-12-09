@@ -2,7 +2,7 @@
 
 import React from "react";
 import { ContentfulItems, EbayItems } from "@pixelated-tech/components";
-import { PageHeader } from "@pixelated-tech/components";
+import { PageTitleHeader } from "@pixelated-tech/components";
 import { getFullPixelatedConfig } from "@pixelated-tech/components";
 
 const pixelatedConfig = getFullPixelatedConfig();
@@ -30,7 +30,7 @@ export default function Ebay() {
 		<>
 			<section id="ebay-section">
 				<div className="section-container">
-					<PageHeader title="Custom Sunglasses For Sale" />
+					<PageTitleHeader title="Custom Sunglasses For Sale" />
 					<ContentfulItems apiProps={contentfulApiProps} cloudinaryProductEnv={cloudinaryProductEnv} />
 					<EbayItems apiProps={ebayApiProps} cloudinaryProductEnv={cloudinaryProductEnv} />
 				</div>

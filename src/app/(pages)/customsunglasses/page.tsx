@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PageHeader, PageSectionHeader } from "@pixelated-tech/components";
+import { PageTitleHeader, PageSectionHeader } from "@pixelated-tech/components";
 import { Callout } from "@pixelated-tech/components";
 import * as CalloutLibrary from "@/app/elements/calloutlibrary";
 import { Modal, handleModalOpen } from "@pixelated-tech/components";
@@ -57,7 +57,7 @@ export default function CustomSunglasses() {
 		<>
 			<section id="customs-section">
 				<div className="section-container">
-					<PageHeader title="Custom Painted Sunglasses by PixelVivid" />
+					<PageTitleHeader title="Custom Painted Sunglasses by PixelVivid" />
 					<div className="row-3col">
 						<div className="gridItem">
 							<CalloutLibrary.sunglassStore />

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { PageHeader } from "@pixelated-tech/components";
+import { PageTitleHeader } from "@pixelated-tech/components";
 import { FormEngine } from "@pixelated-tech/components";
 import { emailFormData } from "@pixelated-tech/components";
 import { Loading, ToggleLoading } from "@pixelated-tech/components";
@@ -40,7 +40,7 @@ export default function Contact() {
 
 	return (
 		<>
-			<PageHeader title="Contact Us" />
+			<PageTitleHeader title="Contact Us" />
 			<section className="" id="contactus-section">
 				<div className="section-container">
 					<div className="row-12col">

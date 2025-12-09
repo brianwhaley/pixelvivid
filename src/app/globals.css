@@ -12,7 +12,7 @@
 	align-content: start;
 }
 
-/* .tileImageOverlay {
+/* .tile-image-overlay {
 	background: linear-gradient(
 		135deg, 
 		rgba(255, 0, 0, 0.5), 
@@ -26,7 +26,7 @@
 } */
 
 
-.tileImageOverlay {
+.tile-image-overlay {
 	background: 
 		linear-gradient( 52deg, rgba(255, 0, 0, 0.5), transparent 60% ),
    		linear-gradient( 104deg, rgba(255, 165, 0, 0.5), transparent 60% ),
@@ -75,7 +75,7 @@
 
 .fixed-header-nav {
 
-    .menuWrapper, .menuWrapper * {
+    .menu-wrapper, .menu-wrapper * {
         display: flex;
         flex-direction: row;
         flex-basis: 100%;
@@ -84,7 +84,7 @@
         text-align: center;
     }
 
-    .menuWrapper hr {
+    .menu-wrapper hr {
         display: none;
     }
 
@@ -97,7 +97,7 @@
         --do-nothing: true;
     }
 
-    .menuItem {
+    .menu-item {
         background: none;
         width: auto;
         height: 30px;
@@ -107,16 +107,16 @@
         flex-basis: content; /* each item is its own size instead of auto */
     }
 
-    .menuItem:hover {
+    .menu-item:hover {
         /* background-image: url(/images/pix/pix-bg-bw.gif); */
         background-color: var(--accent1-color);
     }
 
-    .menuItem:not(:first-child) {
+    .menu-item:not(:first-child) {
         border-left: 2px solid var(--primary-color);
     }
 
-    .menuItem a {
+    .menu-item a {
         text-indent: unset;
         font-size: unset;
         background: none;
@@ -124,7 +124,7 @@
     }
 
 
-    .menuItem a:hover {
+    .menu-item a:hover {
         background: none;
         text-indent: 0;
         border: none;
