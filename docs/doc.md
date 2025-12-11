@@ -58,7 +58,7 @@ npm audit fix --force
 npm run lint
 npm version patch --force
 git add * -v
-git commit -m "kebab case css, bump pixelated components"
+git commit -m "bump pixelated components, fix linting"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main
 

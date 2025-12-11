@@ -6,6 +6,9 @@
     background-blend-mode: lighten;
 }
 
+header .section-container { 
+	justify-content: space-between;
+}
 
 .pixCartItem * {
 	/* FIX FOR SAME HEIGHT GRID COLUMNS */
@@ -170,3 +173,5 @@
         top: 60px;
     } */
 }
+
+
