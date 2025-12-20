@@ -3,7 +3,7 @@ import { headers } from 'next/headers';
 import { PixelatedServerConfigProvider } from "@pixelated-tech/components/server";
 import { descriptionToKeywords, getRouteByKey } from "@pixelated-tech/components/server";
 import { defaultEbayProps, getEbayItem } from "@pixelated-tech/components/server";
-import { LocalBusinessSchema } from "@pixelated-tech/components";
+import { LocalBusinessSchema } from "@pixelated-tech/components/server";
 import Header from "@/app/elements/header";
 import HeaderNav from "./elements/headernav";
 import Nav from "@/app/elements/nav";
@@ -121,7 +121,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 						<div id="fixed-header-spacer" />
 						<div id="fixed-header-nav-spacer" />
 						<div id="page-search" className="no-mobile">
-							<Search id="e336d1c9d0e5e48e5" />
+							<Search />
 						</div>
 					</header>
 					<nav>

@@ -1,4 +1,17 @@
 {
+	"siteInfo": {
+		"name": "PixelVivid",
+		"author": "Brian Whaley",
+		"description": "PixelVivid - Custom Painted Sunglasses and Creative Services",
+		"url": "https://www.pixelvivid.com",
+		"favicon": "/favicon.ico",
+		"favicon_sizes": "64x64 32x32 24x24 16x16",
+		"favicon_type": "image/x-icon",
+		"theme_color": "#ffffff",
+		"background_color": "#ffffff",
+		"default_locale": "en",
+		"display": "standalone"
+	},
 	"routes": [
 		{ 
 			"name": "Home", 
