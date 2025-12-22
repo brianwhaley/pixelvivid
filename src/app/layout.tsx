@@ -4,6 +4,7 @@ import { PixelatedServerConfigProvider } from "@pixelated-tech/components/server
 import { descriptionToKeywords, getRouteByKey } from "@pixelated-tech/components/server";
 import { defaultEbayProps, getEbayItem } from "@pixelated-tech/components/server";
 import { LocalBusinessSchema } from "@pixelated-tech/components/server";
+import { VisualDesignStyles } from "@pixelated-tech/components/server";
 import Header from "@/app/elements/header";
 import HeaderNav from "./elements/headernav";
 import Nav from "@/app/elements/nav";
@@ -104,6 +105,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 						"https://share.google/an1Yqe6CTFA946zZV",
 					]}
 				/>
+				<VisualDesignStyles visualdesign={myRoutes.visualdesign} />
 			</head>
 
 			<body>

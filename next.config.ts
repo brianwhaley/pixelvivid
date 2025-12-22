@@ -1,15 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-
-  
-	/* config options here */
+	experimental: {
+    	optimizeCss: true,
+  	},
 	transpilePackages: ['@pixelated-tech/components'],
 	trailingSlash: false,
 	typescript: {
 		ignoreBuildErrors: true,
 	},
-
 	env: {
 		// Unified pixelated config: prefer supplying the full JSON or base64 blob
 		PIXELATED_CONFIG_JSON: process.env.PIXELATED_CONFIG_JSON,
@@ -32,7 +31,6 @@ const nextConfig: NextConfig = {
 	},
 
 	turbopack: {},
-	// webpack5: true,
 	webpack: (config) => {
 		config.resolve.fallback = { 
 			fs: false,
@@ -40,7 +38,6 @@ const nextConfig: NextConfig = {
 		};
 		return config;
 	},
-	// output:'export'
 
 };
 
