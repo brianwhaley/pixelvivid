@@ -1,6 +1,6 @@
 {
   "name": "PixelVivid",
-  "version": "3.0.21",
+  "version": "3.0.22",
   "private": true,
   "author": {
     "name": "Pixelated Technologies",
@@ -15,7 +15,7 @@
     "generate-site-images": "node scripts/generate-site-images.js"
   },
   "dependencies": {
-    "@pixelated-tech/components": "^3.3.0",
+    "@pixelated-tech/components": "^3.3.1",
     "date-fns": "^4.1.0",
     "globals": "^16.5.0",
     "html-entities": "^2.6.0",
