@@ -58,53 +58,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 			<LayoutClient />
 			<head>
 				{ generateMetaTags({
-					title: myMetadata?.title ?? "",
-					description: myMetadata?.description ?? "",
-					keywords: myMetadata?.keywords ?? "",
-					site_name: "PixelVivid",
-					email: "info@pixelvivid.com",
+					title: metadata?.title ?? "",
+					description: metadata?.description ?? "",
+					keywords: metadata?.keywords ?? "",
 					origin: origin ?? "",
-					url: url ?? "",
-					image: "/images/pixelvivid/pix-512.gif",
-					image_height: "512",
-					image_width: "512",
-					favicon: "/images/favicon.ico"
+					url: url ?? ""
 				}) }
-				<LocalBusinessSchema
-					name="PixelVivid"
-					streetAddress="10 Jade Circle"
-					addressLocality="Denville"
-					addressRegion="NJ"
-					postalCode="07834"
-					addressCountry="US"
-					telephone="+1-973-710-8008"
-					url="https://pixelvivid.com"
-					email="info@pixelvivid.com"
-					image="/images/pixelvivid/pix-512.gif"
-					priceRange="$"
-					description="PixelVivid offers a wide variety of artistic products and services such as unique one-of-a-kind painted sunglasses, photography, jewelry, commissioned paintings, and more."
-					sameAs={[
-						"https://www.facebook.com/profile.php?id=61577216017129",
-						"https://twitter.com/pixelvivid2025",
-						"https://www.linkedin.com/company/pixelvivid/",
-						"https://www.pinterest.com/pixelvivid/",
-						"https://www.ebay.com/str/pixelvivid",
-						"https://www.instagram.com/pixelvivid",
-						"https://www.reddit.com/user/pixelvivid2025/",
-						"https://share.google/JhXXmqpY4m1FEc6Y1",
-						"https://www.linkedin.com/company/106825397/",
-						"https://www.facebook.com/profile.php?id=61577216017129",
-						"https://www.instagram.com/pixelated.views/",
-						"https://500px.com/brianwhaley",
-						"http://www.flickr.com/photos/brianwhaley/",
-						"https://secure.istockphoto.com/portfolio/brianwhaley",
-						"http://www.shutterstock.com/g/brianwhaley",
-						"http://www.blurb.com/user/brianwhaley",
-						"http://brianwhaley.shutterfly.com",
-						"https://blog.pixelvivid.com",
-						"https://share.google/an1Yqe6CTFA946zZV",
-					]}
-				/>
+				<LocalBusinessSchema siteInfo={myRoutes.siteInfo} />
 				<VisualDesignStyles visualdesign={myRoutes.visualdesign} />
 			</head>
 
