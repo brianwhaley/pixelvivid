@@ -58,9 +58,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 			<LayoutClient />
 			<head>
 				{ generateMetaTags({
-					title: metadata?.title ?? "",
-					description: metadata?.description ?? "",
-					keywords: metadata?.keywords ?? "",
+					title: myMetadata?.title ?? "",
+					description: myMetadata?.description ?? "",
+					keywords: myMetadata?.keywords ?? "",
 					origin: origin ?? "",
 					url: url ?? "",
 					siteInfo: myRoutes.siteInfo
