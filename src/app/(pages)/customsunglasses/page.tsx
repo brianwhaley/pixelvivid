@@ -9,8 +9,8 @@ import { Modal, handleModalOpen } from "@pixelated-tech/components";
 import { Carousel } from "@pixelated-tech/components";
 // import GalleryWrapper from "@/app/elements/gallerywrapper";
 import type { CarouselCardType } from "@pixelated-tech/components";
-import { getContentfulEntriesByType } from "@pixelated-tech/components";
-import { getFullPixelatedConfig } from '@pixelated-tech/components';
+import { getContentfulEntriesByType } from "@pixelated-tech/components/server";
+import { getFullPixelatedConfig } from '@pixelated-tech/components/server';
 import { SmartImage } from "@pixelated-tech/components";
 
 const pixelatedConfig = getFullPixelatedConfig();

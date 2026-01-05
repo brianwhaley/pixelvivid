@@ -7,7 +7,7 @@ import { FlickrWrapper } from '@pixelated-tech/components';
 import type { CarouselCardType } from "@pixelated-tech/components";
 import { MicroInteractions } from "@pixelated-tech/components";
 import { Tiles } from "@pixelated-tech/components";
-import { getFullPixelatedConfig } from '@pixelated-tech/components';
+import { getFullPixelatedConfig } from '@pixelated-tech/components/server';
 
 const pixelatedConfig = getFullPixelatedConfig();
 

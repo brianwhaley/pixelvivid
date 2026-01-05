@@ -3,7 +3,7 @@
 import React, { use } from 'react';
 import { EbayItemDetail } from "@pixelated-tech/components";
 import { ContentfulItemDetail } from "@pixelated-tech/components";
-import { getFullPixelatedConfig } from "@pixelated-tech/components";
+import { getFullPixelatedConfig } from "@pixelated-tech/components/server";
 
 const pixelatedConfig = getFullPixelatedConfig();
 const debug = false;

@@ -30,7 +30,9 @@ const nextConfig: NextConfig = {
 		return [];
 	},
 
-	turbopack: {},
+	turbopack: {
+		root: __dirname,
+	},
 	webpack: (config) => {
 		config.resolve.fallback = { 
 			fs: false,

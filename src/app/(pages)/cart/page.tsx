@@ -2,7 +2,7 @@
 
 import React from "react";
 import { ShoppingCart } from "@pixelated-tech/components";
-import { getFullPixelatedConfig } from "@pixelated-tech/components";
+import { getFullPixelatedConfig } from "@pixelated-tech/components/server";
 
 const pixelatedConfig = getFullPixelatedConfig();
 

@@ -4,12 +4,12 @@
 import React, { useState, useEffect } from "react";
 import { PageTitleHeader } from "@pixelated-tech/components";
 import { PageSectionHeader } from "@pixelated-tech/components";
-import { getContentfulEntriesByType } from "@pixelated-tech/components";
+import { getContentfulEntriesByType } from "@pixelated-tech/components/server";
 import { HubspotTrackingCode /* , getHubspotFormSubmissions */ } from "@pixelated-tech/components";
 import { FormEngine } from "@pixelated-tech/components";
 import { Table } from "@pixelated-tech/components";
 import { Loading, ToggleLoading } from "@pixelated-tech/components";
-import { getFullPixelatedConfig } from "@pixelated-tech/components";
+import { getFullPixelatedConfig } from "@pixelated-tech/components/server";
 import formData from "@/app/data/requestform.json";
 import "./requests.css";
 

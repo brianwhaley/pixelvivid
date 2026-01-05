@@ -5,7 +5,7 @@ import { PageTitleHeader } from "@pixelated-tech/components";
 import { Callout } from "@pixelated-tech/components";
 import { Carousel, FlickrWrapper } from "@pixelated-tech/components";
 import type { CarouselCardType } from "@pixelated-tech/components";
-import { getFullPixelatedConfig } from '@pixelated-tech/components';
+import { getFullPixelatedConfig } from '@pixelated-tech/components/server';
 
 const pixelatedConfig = getFullPixelatedConfig();
 

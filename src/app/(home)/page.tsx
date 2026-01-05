@@ -68,8 +68,8 @@ export default function Home() {
 
 			<section style={{backgroundColor: "var(--accent1-color)"}} id="review-section">
 				<div className="section-container">
-					<div className="row-12col">
-						<div className="grid-s2-e11">
+					<div className="row-1col">
+						<div className="gridItem">
 							<CalloutLibrary.feedback />
 						</div>
 					</div>
