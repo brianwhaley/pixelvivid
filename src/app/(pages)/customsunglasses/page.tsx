@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+ 
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -17,7 +17,7 @@ const pixelatedConfig = getFullPixelatedConfig();
 
 export default function CustomSunglasses() {
 	const cloudinaryAPI = "https://res.cloudinary.com/dlbon7tpq/image/fetch/f_auto,q_auto/";
-	const [modalContent, setModalContent] = useState<React.ReactNode>();
+	const [modalContent, setModalContent] = useState<NonNullable<React.ReactNode>>(<></>);
 	const handleImageClick = (event: React.MouseEvent, url: string) => {
 		const myContent = <div className="modalImageContainer">
 			<SmartImage src={url} alt="Modal Image" />

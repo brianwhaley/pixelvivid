@@ -4,17 +4,17 @@ const nextConfig: NextConfig = {
 	experimental: {
     	optimizeCss: true,
   	},
+	outputFileTracingIncludes: {
+		'/**': ['./src/app/config/pixelated.config.json'],
+	},
 	transpilePackages: ['@pixelated-tech/components'],
 	trailingSlash: false,
 	typescript: {
 		ignoreBuildErrors: true,
 	},
 	env: {
-		// Unified pixelated config: prefer supplying the full JSON or base64 blob
-		PIXELATED_CONFIG_JSON: process.env.PIXELATED_CONFIG_JSON,
-		PIXELATED_CONFIG_B64: process.env.PIXELATED_CONFIG_B64,
+		PIXELATED_CONFIG_KEY: process.env.PIXELATED_CONFIG_KEY,
 	},
-
 	images: {
 		remotePatterns: [
 			{

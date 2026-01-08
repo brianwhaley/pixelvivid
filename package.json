@@ -1,6 +1,6 @@
 {
   "name": "PixelVivid",
-  "version": "3.0.27",
+  "version": "3.0.29",
   "private": true,
   "author": {
     "name": "Pixelated Technologies",
@@ -12,10 +12,14 @@
     "start": "npm run clean && next build && next start",
     "lint": "eslint --fix",
     "clean": "rm -rf .next && rm -rf out",
-    "generate-site-images": "node scripts/generate-site-images.js"
+    "generate-site-images": "node ./node_modules/@pixelated-tech/components/dist/scripts/generate-site-images.js",
+    "config:vault": "npx tsx ./node_modules/@pixelated-tech/components/dist/scripts/config-vault.ts",
+    "config:encrypt": "npm run config:vault -- encrypt src/app/config/pixelated.config.json",
+    "config:decrypt": "npm run config:vault -- decrypt src/app/config/pixelated.config.json",
+    "release": "./node_modules/@pixelated-tech/components/dist/scripts/release.sh"
   },
   "dependencies": {
-    "@pixelated-tech/components": "^3.5.7",
+    "@pixelated-tech/components": "^3.7.13",
     "date-fns": "^4.1.0",
     "globals": "^17.0.0",
     "html-entities": "^2.6.0",
@@ -35,16 +39,16 @@
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "@typescript-eslint/eslint-plugin": "^8.51.0",
-    "@typescript-eslint/parser": "^8.51.0",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.39.2",
     "eslint-config-next": "^16.1.1",
     "eslint-plugin-react": "^7.37.5",
-    "sass": "^1.97.1",
+    "sass": "^1.97.2",
     "sass-loader": "^16.0.6",
     "style-loader": "^4.0.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.51.0"
+    "typescript-eslint": "^8.52.0"
   }
 }

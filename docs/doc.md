@@ -57,7 +57,7 @@ npm outdated | awk 'NR>1 {print $1"@"$4}' | xargs npm install --force --save
 npm audit fix --force
 npm run lint
 npm version patch --force
-git add * -v
+git add . -v
 git commit -m "bump components, add amplify.yml"
 git push pixelvivid dev --tags
 git push pixelvivid dev:main

@@ -3,7 +3,6 @@
 .env*
 *.tsbuildinfo
 next-env.d.ts
-/.local
 /certificates
 /node_modules
 /.pnp

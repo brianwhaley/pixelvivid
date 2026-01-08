@@ -12,7 +12,7 @@ const debug = false;
 // CONTENTFUL ITEM ID = 1 - 64 CHARACTERS, ALPHANUMERIC (entry ids seem to be 22 characters)
 
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+ 
 function isNumeric(value: any) {
 	return !isNaN(parseFloat(value)) && isFinite(value);
 }

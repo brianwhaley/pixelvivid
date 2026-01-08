@@ -1,9 +1,9 @@
 import React from "react";
 import { headers } from 'next/headers';
-import { PixelatedServerConfigProvider } from "@pixelated-tech/components/server";
+import { PixelatedServerConfigProvider, type SiteInfo } from "@pixelated-tech/components/server";
 import { descriptionToKeywords, getRouteByKey } from "@pixelated-tech/components/server";
 import { defaultEbayProps, getEbayItem } from "@pixelated-tech/components/server";
-import { LocalBusinessSchema } from "@pixelated-tech/components/server";
+import { WebsiteSchema, LocalBusinessSchema, ServicesSchema } from "@pixelated-tech/components/server";
 import { VisualDesignStyles } from "@pixelated-tech/components/server";
 import Header from "@/app/elements/header";
 import HeaderNav from "./elements/headernav";
@@ -53,6 +53,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 		};
 	}
 
+	const siteInfo = myRoutes.siteInfo;
+
 	return (
 		<html lang="en">
 			<LayoutClient />
@@ -63,9 +65,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 					keywords: myMetadata?.keywords ?? "",
 					origin: origin ?? "",
 					url: url ?? "",
-					siteInfo: myRoutes.siteInfo
+					siteInfo: siteInfo
 				}) }
-				<LocalBusinessSchema siteInfo={myRoutes.siteInfo} />
+				<WebsiteSchema siteInfo={siteInfo as SiteInfo} />
+				<LocalBusinessSchema siteInfo={siteInfo} />
+				<ServicesSchema siteInfo={siteInfo} />
 				<VisualDesignStyles visualdesign={myRoutes.visualdesign} />
 			</head>
 
