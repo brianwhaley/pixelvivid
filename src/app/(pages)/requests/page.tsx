@@ -2,20 +2,20 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PageTitleHeader } from "@pixelated-tech/components";
-import { PageSectionHeader } from "@pixelated-tech/components";
-import { getContentfulEntriesByType } from "@pixelated-tech/components/server";
+import { PageTitleHeader, PageSectionHeader, getContentfulEntriesByType } from "@pixelated-tech/components";
 import { HubspotTrackingCode /* , getHubspotFormSubmissions */ } from "@pixelated-tech/components";
 import { FormEngine } from "@pixelated-tech/components";
 import { Table } from "@pixelated-tech/components";
-import { Loading, ToggleLoading } from "@pixelated-tech/components";
-import { getFullPixelatedConfig } from "@pixelated-tech/components/server";
+import { Loading, ToggleLoading, usePixelatedConfig } from "@pixelated-tech/components";
 import formData from "@/app/data/requestform.json";
 import "./requests.css";
 
-const pixelatedConfig = getFullPixelatedConfig();
-
 export default function Requests() {
+	const pixelatedConfig = usePixelatedConfig();
+
+	if (!pixelatedConfig) {
+		return <Loading />;
+	}
 
 	/* MANAGE CUSTOM REQUEST DIALOG */
 
@@ -73,10 +73,10 @@ export default function Requests() {
 
 	const [ customRequests , setCustomRequests ] = useState<CustomRequestType[]>([]);
 	const apiProps = {
-		base_url: pixelatedConfig.contentful?.base_url || "",
-		space_id: pixelatedConfig.contentful?.space_id || "",
-		environment: pixelatedConfig.contentful?.environment || "",
-		delivery_access_token: pixelatedConfig.contentful?.delivery_access_token || "",
+		base_url: pixelatedConfig?.contentful?.base_url || "",
+		space_id: pixelatedConfig?.contentful?.space_id || "",
+		environment: pixelatedConfig?.contentful?.environment || "",
+		delivery_access_token: pixelatedConfig?.contentful?.delivery_access_token || "",
 	};
 	useEffect(() => {
 		async function getCustomRequests() {

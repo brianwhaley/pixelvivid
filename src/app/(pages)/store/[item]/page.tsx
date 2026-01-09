@@ -1,24 +1,20 @@
 "use client";
 
 import React, { use } from 'react';
-import { EbayItemDetail } from "@pixelated-tech/components";
+import { EbayItemDetail, usePixelatedConfig } from "@pixelated-tech/components";
 import { ContentfulItemDetail } from "@pixelated-tech/components";
-import { getFullPixelatedConfig } from "@pixelated-tech/components/server";
 
-const pixelatedConfig = getFullPixelatedConfig();
-const debug = false;
-
-// EBAY ITEM ID = 12 DIGIT AND NUMERIC ONLY
-// CONTENTFUL ITEM ID = 1 - 64 CHARACTERS, ALPHANUMERIC (entry ids seem to be 22 characters)
-
-
- 
 function isNumeric(value: any) {
 	return !isNaN(parseFloat(value)) && isFinite(value);
 }
 
 export default function EbayItem({params}: { params: Promise<{ item: string }> }){
+	const pixelatedConfig = usePixelatedConfig();
+	const debug = false;
 	const { item } = use(params);
+
+	if (!pixelatedConfig) return null;
+
 	if (debug) console.log(item);
 	const ebayApiProps = {
 		proxyURL: pixelatedConfig.ebay?.proxyURL || '',

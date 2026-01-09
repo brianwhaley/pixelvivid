@@ -1,30 +1,33 @@
 "use client";
 
 import React from "react";
-import { ContentfulItems, EbayItems } from "@pixelated-tech/components";
+import { ContentfulItems, EbayItems, usePixelatedConfig, Loading } from "@pixelated-tech/components";
 import { PageTitleHeader } from "@pixelated-tech/components";
-import { getFullPixelatedConfig } from "@pixelated-tech/components/server";
-
-const pixelatedConfig = getFullPixelatedConfig();
 
 export default function Ebay() {
+	const pixelatedConfig = usePixelatedConfig();
+
+	if (!pixelatedConfig) {
+		return <Loading />;
+	}
+
 	const ebayApiProps = {
-		proxyURL: pixelatedConfig.ebay?.proxyURL || '',
+		proxyURL: pixelatedConfig?.ebay?.proxyURL || '',
 		// qsSearchURL: '?q=sunglasses&fieldgroups=full&category_ids=79720&aspect_filter=categoryId:79720&filter=sellers:{pixelatedtech}&sort=newlyListed&limit=200',
 		qsSearchURL: '?q=sunglasses&fieldgroups=FULL&category_ids=79720&aspect_filter=categoryId:79720&filter=sellers:{pixelatedtech}&sort=newlyListed&limit=200',
-		appId: pixelatedConfig.ebay?.appId || '', // clientId
-		appCertId: pixelatedConfig.ebay?.appCertId || '', // clientSecret
-		tokenScope: pixelatedConfig.ebay?.tokenScope || '',
-		globalId: pixelatedConfig.ebay?.globalId || 'EBAY-US',
+		appId: pixelatedConfig?.ebay?.appId || '', // clientId
+		appCertId: pixelatedConfig?.ebay?.appCertId || '', // clientSecret
+		tokenScope: pixelatedConfig?.ebay?.tokenScope || '',
+		globalId: pixelatedConfig?.ebay?.globalId || 'EBAY-US',
 	};
 	const contentfulApiProps = {
-		proxyURL: pixelatedConfig.contentful?.proxyURL || '',
-		base_url: pixelatedConfig.contentful?.base_url || "",
-		space_id: pixelatedConfig.contentful?.space_id || "",
-		environment: pixelatedConfig.contentful?.environment || "",
-		delivery_access_token: pixelatedConfig.contentful?.delivery_access_token || "",
+		proxyURL: pixelatedConfig?.contentful?.proxyURL || '',
+		base_url: pixelatedConfig?.contentful?.base_url || "",
+		space_id: pixelatedConfig?.contentful?.space_id || "",
+		environment: pixelatedConfig?.contentful?.environment || "",
+		delivery_access_token: pixelatedConfig?.contentful?.delivery_access_token || "",
 	};
-	const cloudinaryProductEnv = pixelatedConfig.cloudinary?.product_env || ""; // Cloudinary environment for product images
+	const cloudinaryProductEnv = pixelatedConfig?.cloudinary?.product_env || ""; // Cloudinary environment for product images
 
 	return (
 		<>

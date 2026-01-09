@@ -1,20 +1,22 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PageTitleHeader } from "@pixelated-tech/components";
+import { PageTitleHeader, Loading } from "@pixelated-tech/components";
 import { Callout } from "@pixelated-tech/components";
-import { Carousel, FlickrWrapper } from "@pixelated-tech/components";
+import { Carousel, FlickrWrapper, usePixelatedConfig } from "@pixelated-tech/components";
 import type { CarouselCardType } from "@pixelated-tech/components";
-import { getFullPixelatedConfig } from '@pixelated-tech/components/server';
-
-const pixelatedConfig = getFullPixelatedConfig();
 
 export default function Photography() {
+	const pixelatedConfig = usePixelatedConfig();
+
+	if (!pixelatedConfig) {
+		return <Loading />;
+	}
 
 	const [ flickrCards, setFlickrCards ] = useState<CarouselCardType[]>([]);
 	const props = { 
-		api_key: pixelatedConfig.flickr?.urlProps.api_key || "",
-		user_id: pixelatedConfig.flickr?.urlProps.user_id || "",
+		api_key: pixelatedConfig?.flickr?.urlProps.api_key || "",
+		user_id: pixelatedConfig?.flickr?.urlProps.user_id || "",
 		tags: "", // "pixelatedviewsgallery"
 		method: "flickr.photosets.getPhotos", 
 		photoset_id: "72157712416706518",

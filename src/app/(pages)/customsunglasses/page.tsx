@@ -2,20 +2,22 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PageTitleHeader, PageSectionHeader } from "@pixelated-tech/components";
+import { PageTitleHeader, PageSectionHeader, Loading } from "@pixelated-tech/components";
 import { Callout } from "@pixelated-tech/components";
 import * as CalloutLibrary from "@/app/elements/calloutlibrary";
 import { Modal, handleModalOpen } from "@pixelated-tech/components";
-import { Carousel } from "@pixelated-tech/components";
+import { Carousel, usePixelatedConfig, getContentfulEntriesByType } from "@pixelated-tech/components";
 // import GalleryWrapper from "@/app/elements/gallerywrapper";
 import type { CarouselCardType } from "@pixelated-tech/components";
-import { getContentfulEntriesByType } from "@pixelated-tech/components/server";
-import { getFullPixelatedConfig } from '@pixelated-tech/components/server';
 import { SmartImage } from "@pixelated-tech/components";
 
-const pixelatedConfig = getFullPixelatedConfig();
-
 export default function CustomSunglasses() {
+	const pixelatedConfig = usePixelatedConfig();
+
+	if (!pixelatedConfig) {
+		return <Loading />;
+	}
+
 	const cloudinaryAPI = "https://res.cloudinary.com/dlbon7tpq/image/fetch/f_auto,q_auto/";
 	const [modalContent, setModalContent] = useState<NonNullable<React.ReactNode>>(<></>);
 	const handleImageClick = (event: React.MouseEvent, url: string) => {
@@ -28,10 +30,10 @@ export default function CustomSunglasses() {
 
 	const [ feedbackCards , setFeedbackCards ] = useState<CarouselCardType[]>([]);
 	const apiProps = {
-		base_url: pixelatedConfig.contentful?.base_url || "",
-		space_id: pixelatedConfig.contentful?.space_id || "",
-		environment: pixelatedConfig.contentful?.environment || "",
-		delivery_access_token: pixelatedConfig.contentful?.delivery_access_token || "",
+		base_url: pixelatedConfig?.contentful?.base_url || "",
+		space_id: pixelatedConfig?.contentful?.space_id || "",
+		environment: pixelatedConfig?.contentful?.environment || "",
+		delivery_access_token: pixelatedConfig?.contentful?.delivery_access_token || "",
 	};
 	useEffect(() => {
 		async function getFeedbackCards() {
