@@ -2,7 +2,7 @@ import React from "react";
 import { headers } from 'next/headers';
 import { PixelatedServerConfigProvider, type SiteInfo } from "@pixelated-tech/components/server";
 import { descriptionToKeywords, getRouteByKey } from "@pixelated-tech/components/server";
-import { defaultEbayProps, getEbayItem } from "@pixelated-tech/components/server";
+import { getEbayItem } from "@pixelated-tech/components/server";
 import { WebsiteSchema, LocalBusinessSchema, ServicesSchema } from "@pixelated-tech/components/server";
 import { VisualDesignStyles } from "@pixelated-tech/components/server";
 import Header from "@/app/elements/header";
@@ -29,15 +29,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	if (!myMetadata) {
 		/// NO METADATA FOUND - EBAY STORE ITEM 
 		const itemID = pathname.split("/store/")[1];
-		let apiProps = {
-			proxyURL: "https://proxy.pixelated.tech/prod/proxy?url=",
+		const apiProps = {
 			qsItemURL: `/v1|${itemID}|0?fieldgroups=PRODUCT,ADDITIONAL_SELLER_DETAILS`,
-			appId: 'BrianWha-Pixelate-PRD-1fb4458de-1a8431fe', // clientId
-			appCertId: 'PRD-fb4458deef01-0d54-496a-b572-a04b', // clientSecret
-			tokenScope: 'https://api.ebay.com/oauth/api_scope',
-			globalId: 'EBAY-US',
 		};
-		apiProps = { ...defaultEbayProps, ...apiProps };
 
 		// const tokenResponse = await getEbayAppToken({ apiProps });
 		const ebayItem = await getEbayItem({ apiProps });
