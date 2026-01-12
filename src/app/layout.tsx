@@ -24,7 +24,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	const headersList = await headers();
 	const url = headersList.get("x-url") || "";
 	const origin = headersList.get("x-origin") || "";
-	const pathname = headersList.get("x-pathname") || "";
+	const pathname = headersList.get("x-path") || "";
 	let myMetadata = getRouteByKey(myRoutes.routes, "path", pathname);
 	if (!myMetadata) {
 		/// NO METADATA FOUND - EBAY STORE ITEM 
@@ -59,7 +59,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 					keywords: myMetadata?.keywords ?? "",
 					origin: origin ?? "",
 					url: url ?? "",
-					siteInfo: siteInfo
+					siteInfo: siteInfo as SiteInfo,
 				}) }
 				<WebsiteSchema siteInfo={siteInfo as SiteInfo} />
 				<LocalBusinessSchema siteInfo={siteInfo} />
