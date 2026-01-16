@@ -14,6 +14,8 @@ frontend:
       commands:
         - echo "Building Next.js app..."
         - node -v
+        - echo "Attempting to decrypt pixelated.config.json.enc (non-fatal)"
+        - npm run config:decrypt || true
         - npm run build
         - npm run generate-site-images
   artifacts:
