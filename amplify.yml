@@ -15,6 +15,14 @@ frontend:
         - echo "Building Next.js app..."
         - node -v
         - echo "Attempting to decrypt pixelated.config.json.enc (non-fatal)"
+        - echo "Looking for encrypted/plaintext config files (for diagnostics)"
+        - ls -la src/app/config || true
+        - ls -la src/config || true
+        - ls -la src || true
+        - ls -la dist/config || true
+        - [ -f src/app/config/pixelated.config.json.enc ] && echo "FOUND: src/app/config/pixelated.config.json.enc" || true
+        - [ -f src/config/pixelated.config.json.enc ] && echo "FOUND: src/config/pixelated.config.json.enc" || true
+        - [ -f src/pixelated.config.json.enc ] && echo "FOUND: src/pixelated.config.json.enc" || true
         - npm run config:decrypt || true
         - npm run build
         - npm run generate-site-images
