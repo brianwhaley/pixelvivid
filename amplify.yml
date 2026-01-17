@@ -12,21 +12,21 @@ frontend:
         - echo "Dependencies installed"
     build:
       commands:
-        - echo "Building Next.js app..."
+        - echo "Building Next.js app"
         - node -v
         - npm run build
         - npm run generate-site-images
     postBuild:
       commands:
-        - echo "Post-build: decrypting config and injecting into .next/server (fail build on error)"
-        - echo "Looking for encrypted/plaintext config files (for diagnostics)"
+        - echo "Post-build decrypting config and injecting into .next/server - fail build on error"
+        - echo "Looking for encrypted plaintext config files - for diagnostics"
         - ls -la src/app/config || true
         - ls -la src/config || true
         - ls -la src || true
         - ls -la dist/config || true
-        - test -f src/app/config/pixelated.config.json.enc && echo "FOUND: src/app/config/pixelated.config.json.enc" || true
-        - test -f src/config/pixelated.config.json.enc && echo "FOUND: src/config/pixelated.config.json.enc" || true
-        - test -f src/pixelated.config.json.enc && echo "FOUND: src/pixelated.config.json.enc" || true
+        - test -f src/app/config/pixelated.config.json.enc && echo FOUND src/app/config/pixelated.config.json.enc || true
+        - test -f src/config/pixelated.config.json.enc && echo FOUND src/config/pixelated.config.json.enc || true
+        - test -f src/pixelated.config.json.enc && echo FOUND src/pixelated.config.json.enc || true
         - if [ -f src/app/config/pixelated.config.json.enc ]; then npm run config:decrypt -- src/app/config/pixelated.config.json.enc || (echo "Config decryption failed" && exit 1); fi
         - if [ -f src/config/pixelated.config.json.enc ]; then npm run config:decrypt -- src/config/pixelated.config.json.enc || (echo "Config decryption failed" && exit 1); fi
         - if [ -f src/pixelated.config.json.enc ]; then npm run config:decrypt -- src/pixelated.config.json.enc || (echo "Config decryption failed" && exit 1); fi
