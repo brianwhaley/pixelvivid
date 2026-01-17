@@ -24,9 +24,9 @@ frontend:
         - ls -la src/config || true
         - ls -la src || true
         - ls -la dist/config || true
-        - [ -f src/app/config/pixelated.config.json.enc ] && echo "FOUND: src/app/config/pixelated.config.json.enc" || true
-        - [ -f src/config/pixelated.config.json.enc ] && echo "FOUND: src/config/pixelated.config.json.enc" || true
-        - [ -f src/pixelated.config.json.enc ] && echo "FOUND: src/pixelated.config.json.enc" || true
+        - test -f src/app/config/pixelated.config.json.enc && echo "FOUND: src/app/config/pixelated.config.json.enc" || true
+        - test -f src/config/pixelated.config.json.enc && echo "FOUND: src/config/pixelated.config.json.enc" || true
+        - test -f src/pixelated.config.json.enc && echo "FOUND: src/pixelated.config.json.enc" || true
         - if [ -f src/app/config/pixelated.config.json.enc ]; then npm run config:decrypt -- src/app/config/pixelated.config.json.enc || (echo "Config decryption failed" && exit 1); fi
         - if [ -f src/config/pixelated.config.json.enc ]; then npm run config:decrypt -- src/config/pixelated.config.json.enc || (echo "Config decryption failed" && exit 1); fi
         - if [ -f src/pixelated.config.json.enc ]; then npm run config:decrypt -- src/pixelated.config.json.enc || (echo "Config decryption failed" && exit 1); fi
