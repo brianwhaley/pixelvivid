@@ -14,7 +14,11 @@ frontend:
       commands:
         - echo "Building Next.js app..."
         - node -v
-        - echo "Attempting to decrypt pixelated.config.json.enc (non-fatal)"
+        - npm run build
+        - npm run generate-site-images
+    postBuild:
+      commands:
+        - echo "Post-build: decrypting config and injecting into .next/server (fail build on error)"
         - echo "Looking for encrypted/plaintext config files (for diagnostics)"
         - ls -la src/app/config || true
         - ls -la src/config || true
@@ -23,9 +27,14 @@ frontend:
         - [ -f src/app/config/pixelated.config.json.enc ] && echo "FOUND: src/app/config/pixelated.config.json.enc" || true
         - [ -f src/config/pixelated.config.json.enc ] && echo "FOUND: src/config/pixelated.config.json.enc" || true
         - [ -f src/pixelated.config.json.enc ] && echo "FOUND: src/pixelated.config.json.enc" || true
-        - npm run config:decrypt || true
-        - npm run build
-        - npm run generate-site-images
+        - if [ -f src/app/config/pixelated.config.json.enc ]; then npm run config:decrypt -- src/app/config/pixelated.config.json.enc || (echo "Config decryption failed" && exit 1); fi
+        - if [ -f src/config/pixelated.config.json.enc ]; then npm run config:decrypt -- src/config/pixelated.config.json.enc || (echo "Config decryption failed" && exit 1); fi
+        - if [ -f src/pixelated.config.json.enc ]; then npm run config:decrypt -- src/pixelated.config.json.enc || (echo "Config decryption failed" && exit 1); fi
+        - mkdir -p .next/server
+        - if [ -f src/app/config/pixelated.config.json ]; then cp src/app/config/pixelated.config.json .next/server/pixelated.config.json; fi
+        - if [ -f src/config/pixelated.config.json ]; then cp src/config/pixelated.config.json .next/server/pixelated.config.json; fi
+        - if [ -f src/pixelated.config.json ]; then cp src/pixelated.config.json .next/server/pixelated.config.json; fi
+        - if [ -f .next/server/pixelated.config.json ]; then node -e "const fs=require('fs'); JSON.parse(fs.readFileSync('.next/server/pixelated.config.json','utf8')); console.log('pixelated.config.json valid');" || (echo "Decrypted config invalid JSON" && exit 1); fi
   artifacts:
     baseDirectory: .next
     files:
