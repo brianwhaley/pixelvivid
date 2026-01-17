@@ -1,6 +1,6 @@
 {
   "name": "PixelVivid",
-  "version": "3.0.39",
+  "version": "3.0.40",
   "private": true,
   "author": {
     "name": "Pixelated Technologies",
@@ -19,7 +19,7 @@
     "release": "./node_modules/@pixelated-tech/components/dist/scripts/release.sh"
   },
   "dependencies": {
-    "@pixelated-tech/components": "^3.9.15",
+    "@pixelated-tech/components": "^3.9.16",
     "date-fns": "^4.1.0",
     "globals": "^17.0.0",
     "html-entities": "^2.6.0",
