@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from 'path';
 
 const nextConfig: NextConfig = {
 	experimental: {
@@ -30,14 +31,16 @@ const nextConfig: NextConfig = {
 		return [];
 	},
 
-	turbopack: {
-		root: __dirname,
-	},
+	turbopack: {},
+	
 	webpack: (config) => {
-		config.resolve.fallback = { 
+		config.resolve.fallback = {
 			fs: false,
 			path: false
 		};
+		if (!config.resolve) config.resolve = {};
+		if (!config.resolve.alias) config.resolve.alias = {};
+		config.resolve.alias['@'] = path.resolve(__dirname, 'src');
 		return config;
 	},
 
