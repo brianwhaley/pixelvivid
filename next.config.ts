@@ -3,7 +3,7 @@ import path from 'path';
 
 const nextConfig: NextConfig = {
 	experimental: {
-    	optimizeCss: true,
+    	optimizeCss: false,
   	},
 	outputFileTracingIncludes: {
 		'/**': ['./src/app/config/pixelated.config.json.enc'],

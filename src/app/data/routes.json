@@ -109,6 +109,28 @@
 			"title": "PixelVivid - Contact Us",
 			"description": "PixelVivid Contact Us",
 			"keywords": "PixelVivid, contact us"  
+		},
+		{
+			"name": "Style Guide",
+			"hidden": true,
+			"path": "/styleguide",
+			"title": "PixelVivid - Style Guide",
+			"description": "A full style guide for this website, including color pallete, fonts, and information architecture. ",
+			"keywords": [
+				"PixelVivid",
+				"style guide"
+			]
+		},
+		{
+			"name": "Humans Txt",
+			"hidden": true,
+			"path": "/humans.txt",
+			"title": "PixelVivid - Humans Txt",
+			"description": "A Humans-Only page describing the people who worked on this website. ",
+			"keywords": [
+				"PixelVivid",
+				"humans txt"
+			]
 		}
 	],
 	"visualdesign": {

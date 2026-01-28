@@ -96,6 +96,13 @@
 			}
 		},
 		{
+			"component" : "FormHoneypot",
+			"props" : {
+				"id": "winnie",
+				"name" : "website"
+			}
+		},
+		{
 			"component" : "FormButton",
 			"props" : {
 				"type" : "submit",
