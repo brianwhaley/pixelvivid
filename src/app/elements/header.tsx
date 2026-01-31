@@ -11,7 +11,7 @@ export default function Header() {
 	// DIRTY FIX FOR CSS DEFER AND ACCORDION MENU
 	// copied from pixelated-components/src/shoppingcart/pixelated.shoppingcart.css
 	const customCSS = `
-      	#pixCartButton.pixCartButton img {
+      	#pix-cart-button.pix-cart-button img {
 			width: 20px;
 		}
     `;

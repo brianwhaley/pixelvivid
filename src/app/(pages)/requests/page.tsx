@@ -110,7 +110,7 @@ export default function Requests() {
 					<HubspotTrackingCode hubID={"243048355"} />
 					<PageTitleHeader title="Request Your Custom Sunglasses" />
 					<Loading />
-					<div className="newRequestFormWrapper">
+					<div className="new-request-form-wrapper">
 						<FormEngine name="newrequest" id="newRequestForm" formData={formData} onSubmitHandler={saveDialog} />
 					</div>
 					<dialog id="thankYouDialog">

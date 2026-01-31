@@ -9,7 +9,7 @@ header .section-container {
 	justify-content: space-between;
 }
 
-.pixCartItem * {
+.pix-cart-item * {
 	/* FIX FOR SAME HEIGHT GRID COLUMNS */
 	align-content: start;
 }
@@ -39,7 +39,7 @@ header .section-container {
 		linear-gradient( 365deg, rgba(238, 130, 238, 0.5), transparent 60% );
 }
 
-.modalImageContainer {
+.modal-image-container {
 	overflow: hidden;
 }
 
@@ -158,18 +158,18 @@ header .section-container {
 	top: 100px;
 } */
 
-.panelMenuButton,
-#panelMenuButton {
+.panel-menu-button,
+#panel-menu-button {
     display: none;
 }
 
 @media screen and (max-width: 480px) {
-    .panelMenuButton,
-    #panelMenuButton {
+    .panel-menu-button,
+    #panel-menu-button {
         display: block;
     }
-    /* .accordionDown, 
-    .accordionUp {
+    /* .accordion-down, 
+    .accordion-up {
         top: 60px;
     } */
 }

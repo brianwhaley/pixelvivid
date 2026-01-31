@@ -35,7 +35,7 @@ export default function Home() {
 					<SocialTags />
 
 					<div className="row-1col">
-						<div className="gridItem">
+						<div className="grid-item">
 							<div className="callout-body">
 								Links to each of my social media accounts and a few recent postings from each,
 								including 500px, Blurb, Etsy, Facebook, Flickr,
@@ -52,13 +52,13 @@ export default function Home() {
 				<div className="section-container">
 					<PageSectionHeader title="Featured Spotlights" />
 					<div className="row-3col">
-						<div className="gridItem">
+						<div className="grid-item">
 							<CalloutLibrary.sunglassStore />
 						</div>
-						<div className="gridItem">
+						<div className="grid-item">
 							<CalloutLibrary.subscribe />
 						</div>
-						<div className="gridItem">
+						<div className="grid-item">
 							<CalloutLibrary.specialOrder />
 						</div>
 						
@@ -69,7 +69,7 @@ export default function Home() {
 			<section style={{backgroundColor: "var(--accent1-color)"}} id="review-section">
 				<div className="section-container">
 					<div className="row-1col">
-						<div className="gridItem">
+						<div className="grid-item">
 							<CalloutLibrary.feedback />
 						</div>
 					</div>
@@ -79,7 +79,7 @@ export default function Home() {
 			<section className="section" id="upcycle-section">
 				<div className="section-container">
 					<div className="row-1col">
-						<div className="gridItem">
+						<div className="grid-item">
 							<CalloutLibrary.sustainabilityMessage />
 						</div>
 					</div>

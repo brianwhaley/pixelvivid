@@ -12,7 +12,7 @@ export default function About() {
 				<div className="section-container">
 					<PageTitleHeader title="About PixelVivid" />
 					<div className="row-1col">
-						<div className="gridItem">
+						<div className="grid-item">
 							<Callout 
 								variant='boxed grid'
 								gridColumns={{left: 1, right: 3}}
@@ -29,7 +29,7 @@ export default function About() {
 										expanding our line of sunglasses to include our own frames, 
 										as well as other product lines. Keep your eyes out for lots more to come from us! ' />
 						</div>
-						<div className="gridItem">
+						<div className="grid-item">
 							<Callout
 								variant='boxed grid'
 								gridColumns={{left: 3, right: 1}}

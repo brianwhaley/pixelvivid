@@ -131,6 +131,14 @@
 				"PixelVivid",
 				"humans txt"
 			]
+		},
+		{
+			"name": "Security Txt",
+			"hidden": true,
+			"path": "/security.txt",
+			"title": "PixelVivid - Security Txt",
+			"description": "Security contact and vulnerability disclosure information.",
+			"keywords": ["PixelVivid","security txt","security"]
 		}
 	],
 	"visualdesign": {
