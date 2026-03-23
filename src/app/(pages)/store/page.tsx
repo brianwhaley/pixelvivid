@@ -14,6 +14,7 @@ export default function Ebay() {
 	const ebayApiProps = {
 		proxyURL: pixelatedConfig?.ebay?.proxyURL || '',
 		// qsSearchURL: '?q=sunglasses&fieldgroups=full&category_ids=79720&aspect_filter=categoryId:79720&filter=sellers:{pixelatedtech}&sort=newlyListed&limit=200',
+		// eslint-disable-next-line pixelated/no-hardcoded-config-keys
 		qsSearchURL: '?q=sunglasses&fieldgroups=FULL&category_ids=79720&aspect_filter=categoryId:79720&filter=sellers:{pixelatedtech}&sort=newlyListed&limit=200',
 		appId: pixelatedConfig?.ebay?.appId || '', // clientId
 		appCertId: pixelatedConfig?.ebay?.appCertId || '', // clientSecret

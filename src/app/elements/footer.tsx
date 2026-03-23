@@ -2,7 +2,7 @@
 
 import React from "react";
 import { GoogleAnalytics } from "@pixelated-tech/components";
-// import { GoogleAnalytics } from '@next/third-parties/google';
+import { PixelatedFooter } from "@pixelated-tech/components";
 
 
 export default function Footer() {
@@ -16,6 +16,9 @@ export default function Footer() {
 			<br />
 			<div className="centered">
 				<p className="footer-text">&copy; {new Date().getFullYear()} PixelVivid. All rights reserved.</p>
+
+				<PixelatedFooter />
+					
 			</div>
 			<br /><br />
 

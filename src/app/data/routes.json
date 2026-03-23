@@ -120,25 +120,53 @@
 				"PixelVivid",
 				"style guide"
 			]
-		},
-		{
-			"name": "Humans Txt",
+		} , {
+			"name": "Admin",
 			"hidden": true,
-			"path": "/humans.txt",
-			"title": "PixelVivid - Humans Txt",
-			"description": "A Humans-Only page describing the people who worked on this website. ",
-			"keywords": [
-				"PixelVivid",
-				"humans txt"
+			"routes": [ 
+				{ 
+					"name": "404", 
+					"path": "/404", 
+					"hidden": true,
+					"title": "PixelVivid - Page Not Found",
+					"description": "The page you are looking for could not be found.",
+					"keywords": ["PixelVivid", "404", "page not found"]  
+				} , { 
+					"name": "Sitemap", 
+					"path": "/sitemap.xml", 
+					"hidden": true,
+					"title": "PixelVivid - Sitemap",
+					"description": "PixelVivid sitemap.xml",
+					"keywords": ["PixelVivid", "sitemap.xml"]  
+				} , {
+					"name" : "Robots.txt",
+					"path" : "/robots.txt",
+					"hidden": true,
+					"title": "PixelVivid - Robots.txt",
+					"description": "PixelVivid robots.txt",
+					"keywords": ["PixelVivid", "robots.txt"]
+				} , {
+					"name": "Web Manifest",
+					"path": "/manifest.webmanifest",
+					"hidden": true,
+					"title": "PixelVivid - Web Manifest",
+					"description": "PixelVivid web manifest",
+					"keywords": ["PixelVivid", "manifest.webmanifest"]
+				} , { 
+					"name": "Humans Txt", 
+					"path": "/humans.txt", 
+					"hidden": true,
+					"title": "PixelVivid - Humans Txt",
+					"description": "Humans Txt",
+					"keywords": ["PixelVivid", "humans txt"] 
+				} , {
+					"name": "Security Txt",
+					"hidden": true,
+					"path": "/security.txt",
+					"title": "PixelVivid - Security Txt",
+					"description": "Security contact and vulnerability disclosure information.",
+					"keywords": ["PixelVivid","security txt","security"]				} 
 			]
-		},
-		{
-			"name": "Security Txt",
-			"hidden": true,
-			"path": "/security.txt",
-			"title": "PixelVivid - Security Txt",
-			"description": "Security contact and vulnerability disclosure information.",
-			"keywords": ["PixelVivid","security txt","security"]
 		}
 	],
 	"visualdesign": {

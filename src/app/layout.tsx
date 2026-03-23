@@ -3,8 +3,8 @@ import { headers } from 'next/headers';
 import { PixelatedServerConfigProvider, type SiteInfo } from "@pixelated-tech/components/server";
 import { descriptionToKeywords, getRouteByKey } from "@pixelated-tech/components/server";
 import { getEbayItem } from "@pixelated-tech/components/server";
-import { WebsiteSchema, LocalBusinessSchema, ServicesSchema } from "@pixelated-tech/components/server";
-import { VisualDesignStyles } from "@pixelated-tech/components/server";
+import { WebsiteSchema, LocalBusinessSchema, ServicesSchema, BreadcrumbListSchema, ProductSchema } from "@pixelated-tech/components";
+import { VisualDesignStyles, getEbayProductSchema } from "@pixelated-tech/components/server";
 import Header from "@/app/elements/header";
 import HeaderNav from "./elements/headernav";
 import Nav from "@/app/elements/nav";
@@ -25,29 +25,41 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	const url = headersList.get("x-url") || "";
 	const origin = headersList.get("x-origin") || "";
 	const pathname = headersList.get("x-path") || "";
+	const siteInfo = myRoutes.siteInfo;
+	
 	let myMetadata = getRouteByKey(myRoutes.routes, "path", pathname);
-	if (!myMetadata) {
+	let productSchema = null;
+	
+	if (!myMetadata && pathname.includes('/store/')) {
 		/// NO METADATA FOUND - EBAY STORE ITEM 
 		const itemID = pathname.split("/store/")[1];
 		const apiProps = {
 			qsItemURL: `/v1|${itemID}|0?fieldgroups=PRODUCT,ADDITIONAL_SELLER_DETAILS`,
 		};
 
-		// const tokenResponse = await getEbayAppToken({ apiProps });
-		const ebayItem = await getEbayItem({ apiProps });
-		const thisItem = await { ...ebayItem };
-		const thisItemTitle = "PixelVivid - Item " + await thisItem.legacyItemId + " - " + await thisItem.title;
+		try {
+			const ebayItem = await getEbayItem({ apiProps });
+			if (ebayItem && ebayItem.title) {
+				const thisItemTitle = "PixelVivid - Item " + ebayItem.legacyItemId + " - " + ebayItem.title;
 
-		myMetadata = {
-			name: await thisItem.title,
-			path: `/store/${ await thisItem.legacyItemId}`,
-			title: thisItemTitle,
-			description: await thisItem.description?.replace(/[\r\n]+/g, ' '), //.split('\n\n').slice(0, Math.min(4, thisItem.description.split('\n\n').length)).join(' '),
-			keywords: descriptionToKeywords(thisItemTitle + " " + await thisItem.description, 30).join(", "),
-		};
+				myMetadata = {
+					name: ebayItem.title,
+					path: `/store/${ebayItem.legacyItemId}`,
+					title: thisItemTitle,
+					description: ebayItem.description?.replace(/[\r\n]+/g, ' '),
+					keywords: descriptionToKeywords(thisItemTitle + " " + ebayItem.description, 30).join(", "),
+				};
+				
+				// Generate product schema from the fetched item
+				productSchema = getEbayProductSchema({
+					item: ebayItem,
+					siteUrl: `${origin}/store/${itemID}`
+				});
+			}
+		} catch (error) {
+			console.error('Error fetching eBay item:', error);
+		}
 	}
-
-	const siteInfo = myRoutes.siteInfo;
 
 	return (
 		<html lang="en">
@@ -61,6 +73,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 					url: url ?? "",
 					siteInfo: siteInfo as SiteInfo,
 				}) }
+				<BreadcrumbListSchema routes={myRoutes.routes} currentPath={pathname} siteUrl={siteInfo.url} />
+				{productSchema && <ProductSchema product={productSchema} />}
 				<WebsiteSchema siteInfo={siteInfo as SiteInfo} />
 				<LocalBusinessSchema siteInfo={siteInfo} />
 				<ServicesSchema siteInfo={siteInfo} />
@@ -85,15 +99,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 							<Search />
 						</div>
 					</header>
-					<nav>
-						<Nav />
-					</nav>
-					<main>
-						{children}
-					</main>
-					<footer>
-						<Footer />
-					</footer>
+					<nav><Nav /></nav>
+					<main>{children}</main>
+					<footer><Footer /></footer>
 				</PixelatedServerConfigProvider>
 			</body>
 		</html>

@@ -12,7 +12,7 @@ import formData from "@/app/data/contactform.json";
 export default function Contact() {
 
 	const myContent = <div className="centered"><br /><br />Thank you for contacting us!<br />We will get back to you as soon as we can.<br /><br /><br /></div>;
-	const [modalContent /* , setModalContent */ ] = useState<React.ReactNode>(myContent);
+	const [modalContent /* , setModalContent */ ] = useState(myContent);
 
 	function handleSubmit(e: Event) {
 		ToggleLoading({show: true});
