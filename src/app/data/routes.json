@@ -92,12 +92,6 @@
 			"description": "Subscribe to the PixelVivid newsletters, announcements, and updates.",
 			"keywords": "PixelVivid, online store, ecommerce, ebay, custom sunglasses, subscribe, subscription, newsletter, announcement, drop, update" 
 		} , { 
-			"name": "Photography", 
-			"path": "/photography", 
-			"title": "PixelVivid - Photography",
-			"description": "An overview of the PixelVivid phtography portfolio.",
-			"keywords": "PixelVivid, photography, stock photography, overview, gallery, carousel, social media" 
-		} , { 
 			"name": "Return Policy", 
 			"path": "/returns", 
 			"title": "PixelVivid - Return Policy",
@@ -109,17 +103,34 @@
 			"title": "PixelVivid - Contact Us",
 			"description": "PixelVivid Contact Us",
 			"keywords": "PixelVivid, contact us"  
-		},
-		{
+		} , {
+			"name": "Frequently Asked Questions",
+			"hidden": true,
+			"path": "/faqs",
+			"title": "PixelVivid - Frequently Asked Questions",
+			"description": "A comprehensive guide to ordering, customizing, and caring for hand-painted eyewear from PixelVivid.",
+			"keywords": ["PixelVivid", "FAQs", "frequently asked questions" ]
+		} , {
+			"name": "Photography", 
+			"hidden": true,
+			"path": "/photography", 
+			"title": "PixelVivid - Photography",
+			"description": "An overview of the PixelVivid phtography portfolio.",
+			"keywords": "PixelVivid, photography, stock photography, overview, gallery, carousel, social media" 
+		} , { 
+			"name": "Preorder 2026 Collection",
+			"hidden": true,
+			"path": "/preorder-2026",
+			"title": "PixelVivid - Preorder 2026 Collection",
+			"description": "Preorder the exclusive 2026 collection of PixelVivid custom painted sunglasses.",
+			"keywords": ["PixelVivid", "preorder", "2026 collection", "custom sunglasses" ]
+		} , {
 			"name": "Style Guide",
 			"hidden": true,
 			"path": "/styleguide",
 			"title": "PixelVivid - Style Guide",
 			"description": "A full style guide for this website, including color pallete, fonts, and information architecture. ",
-			"keywords": [
-				"PixelVivid",
-				"style guide"
-			]
+			"keywords": ["PixelVivid", "style guide" ]
 		} , {
 			"name": "Admin",
 			"hidden": true,
