@@ -51,7 +51,6 @@ export default function Home() {
 				itemType: "Service",
 				publisherName: "PixelVivid"
 			});
-			console.log("Fetched review schemas:", await schemas);
 			setReviewSchemas(await schemas);
 
 			// Transform feedback items into review schemas for JSON-LD

@@ -6,7 +6,9 @@ import { PageTitleHeader, PageSectionHeader, Loading } from "@pixelated-tech/com
 import { Callout } from "@pixelated-tech/components";
 import * as CalloutLibrary from "@/app/elements/calloutlibrary";
 import { Modal, handleModalOpen } from "@pixelated-tech/components";
-import { Carousel, usePixelatedConfig, getContentfulEntriesByType } from "@pixelated-tech/components";
+import { Carousel } from "@pixelated-tech/components";
+import { usePixelatedConfig } from "@pixelated-tech/components";
+import { getContentfulEntriesByType, getContentfulReviewsSchema, ReviewSchema } from "@pixelated-tech/components";
 // import GalleryWrapper from "@/app/elements/gallerywrapper";
 import type { CarouselCardType } from "@pixelated-tech/components";
 import { SmartImage } from "@pixelated-tech/components";
@@ -28,7 +30,8 @@ export default function CustomSunglasses() {
 		handleModalOpen(event.nativeEvent);
   	};
 
-	const [ feedbackCards , setFeedbackCards ] = useState<CarouselCardType[]>([]);
+	const [ carouselCards , setCarouselCards ] = useState<CarouselCardType[]>([]);
+	const [ reviewSchemas , setReviewSchemas ] = useState<any[]>([]);
 	const apiProps = {
 		base_url: pixelatedConfig?.contentful?.base_url || "",
 		space_id: pixelatedConfig?.contentful?.space_id || "",
@@ -36,23 +39,31 @@ export default function CustomSunglasses() {
 		delivery_access_token: pixelatedConfig?.contentful?.delivery_access_token || "",
 	};
 	useEffect(() => {
-		async function getFeedbackCards() {
+		async function getCarouselCards() {
 			const contentType = "feedback"; 
 			const typeCards = await getContentfulEntriesByType({ apiProps: apiProps, contentType: contentType }); 
 			const items = typeCards.items.filter((card: any) => card.sys.contentType.sys.id === contentType);
 			const cardLength = items.length;
 			const reviewCards = items.map(function (card: any, index: number) {
 				return {
-					headerText: card.fields.feedbackText,
-					bodyText: "- " + card.fields.name,
+					headerText: card.fields.description,
+					bodyText: card.fields.reviewer,
 					index: index,
 					cardIndex: index,
 					cardLength: cardLength,
 				};
 			});
-			setFeedbackCards(reviewCards);
+			setCarouselCards(reviewCards);
+			
+			const schemas = await getContentfulReviewsSchema({
+				apiProps: apiProps,
+				itemName: "PixelVivid Custom Sunglasses",
+				itemType: "Service",
+				publisherName: "PixelVivid"
+			});
+			setReviewSchemas(await schemas);
 		}
-		getFeedbackCards();
+		getCarouselCards();
 	}, []);
 
 	return (
@@ -185,8 +196,11 @@ export default function CustomSunglasses() {
 			<section style={{backgroundColor: "var(--accent1-color)"}} id="feedback-section">
 				<div className="section-container">
 					<PageSectionHeader title="Customer Feedback" />
+					{reviewSchemas.map((review, idx) => (
+						<ReviewSchema key={idx} review={review} />
+					))}
 					<Carousel 
-						cards={feedbackCards} 
+						cards={carouselCards} 
 						draggable={false}
 						imgFit='contain' />
 				</div>
