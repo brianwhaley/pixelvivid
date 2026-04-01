@@ -74,7 +74,7 @@ export default function Preorder2026() {
 										</ul>
 									</li>
 									<li><b>Lace Spray Over</b><br />
-										I have lots of different lace options, and I will be trying them all, 
+										A throwback to the low rider community.  I have lots of different lace options, and I will be trying them all, 
 										each on a different pair of sunglasses.  Each pair will be unique. 
 										I will use the airbrush to paint two base colors - 
 										<ul style={{margin: 0}}>

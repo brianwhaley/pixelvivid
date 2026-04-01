@@ -8,6 +8,8 @@ import { Loading, ToggleLoading } from "@pixelated-tech/components";
 import { Modal, handleModalOpen } from "@pixelated-tech/components";
 
 import formData from "@/app/data/contactform.json";
+import routes from "@/app/data/routes.json";
+const siteInfo = (routes as any).siteInfo;
 
 export default function Contact() {
 
@@ -59,8 +61,17 @@ export default function Contact() {
 							/>
 							<div><br /><br /></div>
 							<div>
-								You can also contact us directly using our email address:<br />
-								<a href="mailto:contactus@pixelvivid.com">contactus@pixelvivid.com</a>
+								You can also contact us directly:<br /><br />
+								<h3>Address:</h3>
+								<p>
+									<a href="https://maps.app.goo.gl/2bD1zr43i5CmkfAk7" target="_blank" rel="noopener noreferrer">
+										{siteInfo.address.streetAddress}, {siteInfo.address.addressLocality}, {siteInfo.address.addressRegion} {siteInfo.address.postalCode}
+									</a>
+								</p>
+								<h3>Email:</h3>
+								<p><a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a></p>
+								<h3>Phone:</h3>
+								<p><a href={`tel:${siteInfo.telephone}`}>{siteInfo.telephone}</a></p>
 							</div>
 						</div>
 					</div>

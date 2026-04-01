@@ -27,6 +27,14 @@
 		},{
 			"component" : "FormInput",
 			"props" : {
+				"type" : "hidden",
+				"id" : "domain",
+				"name" : "domain",
+				"value" : "pixelvivid.com"
+			}
+		},{
+			"component" : "FormInput",
+			"props" : {
 				"type" : "text",
 				"id" : "firstname",
 				"name" : "firstname",
