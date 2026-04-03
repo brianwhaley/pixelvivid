@@ -18,7 +18,17 @@ export default function Contact() {
 
 	function handleSubmit(e: Event) {
 		ToggleLoading({show: true});
-		emailFormData(e, postSubmit);
+		emailFormData(e, postSubmit)
+			.then(() => {
+				// submit complete
+			})
+			.catch((err) => {
+				console.error('emailFormData thrown error', err);
+				alert('An error occurred submitting the form. Please try again.');
+			})
+			.finally(() => {
+				ToggleLoading({show: false});
+			});
 	}
 
 	function postSubmit(e: Event) {

@@ -22,7 +22,9 @@ export default function Requests() {
 	async function saveDialog() {
 		ToggleLoading({show: true});
 		// const sendmail_api = "https://nlbqdrixmj.execute-api.us-east-2.amazonaws.com/default/sendmail";
-		const sendmail_api = "https://sendmail.pixelated.tech/default/sendmail";
+		const sendmailBase = "https://sendmail.pixelated.tech/default/sendmail";
+		const proxyBase = pixelatedConfig?.global?.proxyUrl || "";
+		const sendmail_api = proxyBase ? `${proxyBase}${encodeURIComponent(sendmailBase)}` : sendmailBase;
 		const tyDialog = document.getElementById("thankYouDialog") as HTMLDialogElement;
 		const myform = document.getElementById("newRequestForm")as HTMLFormElement;
 		// e.preventDefault(); // removed to allow hubspot submission
@@ -33,25 +35,29 @@ export default function Requests() {
 		}
 		myFormData.Date = new Date().toLocaleDateString() ;
 		myFormData.Status = "Submitted" ;
-		await fetch(sendmail_api, {
-			method: 'POST',
-			mode: 'cors', 
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(myFormData),
-		})
-			.then((response) => {
-				if (response.status !== 200) {
-					throw new Error(response.statusText);
-				}
-				return response.json();
-			}); 
-		ToggleLoading({show: false});
-		myform.reset();
-		// mydialog.close();
-		tyDialog.showModal();
+		try {
+			const response = await fetch(sendmail_api, {
+				method: 'POST',
+				mode: 'cors', 
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(myFormData),
+			});
+			if (!response.ok) {
+				const text = await response.text();
+				throw new Error(`Sendmail failed (${response.status}) ${response.statusText}: ${text}`);
+			}
+			await response.json();
+			myform.reset();
+			tyDialog.showModal();
+		} catch (err) {
+			console.error('sendmail request error', err);
+			alert('Sorry, there was an error submitting your request. Please try again later.');
+		} finally {
+			ToggleLoading({show: false});
+		}
 	}
 	
 	function closeDialog(id: string) {

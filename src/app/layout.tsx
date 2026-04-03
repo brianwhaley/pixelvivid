@@ -11,8 +11,10 @@ import Nav from "@/app/elements/nav";
 import Search from '@/app/elements/search';
 import Footer from '@/app/elements/footer';
 import Interactions from "@/app/elements/interactions";
+import { PixelatedClientConfigProvider } from "@pixelated-tech/components";
 import LayoutClient from "./elements/layoutclient";
 import myRoutes from "@/app/data/routes.json";
+import pixelatedConfig from "./config/pixelated.config.json";
 import "@pixelated-tech/components/css/pixelated.global.css";
 import "@pixelated-tech/components/css/pixelated.grid.scss";
 import "./globals.css";
@@ -26,10 +28,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	const origin = headersList.get("x-origin") || "";
 	const pathname = headersList.get("x-path") || "";
 	const siteInfo = myRoutes.siteInfo;
-	
+
 	let myMetadata = getRouteByKey(myRoutes.routes, "path", pathname);
 	let productSchema = null;
-	
+
 	if (!myMetadata && pathname.includes('/store/')) {
 		/// NO METADATA FOUND - EBAY STORE ITEM 
 		const itemID = pathname.split("/store/")[1];
@@ -49,7 +51,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 					description: ebayItem.description?.replace(/[\r\n]+/g, ' '),
 					keywords: descriptionToKeywords(thisItemTitle + " " + ebayItem.description, 30).join(", "),
 				};
-				
+
 				// Generate product schema from the fetched item
 				productSchema = getEbayProductSchema({
 					item: ebayItem,
@@ -63,16 +65,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 	return (
 		<html lang="en">
-			<LayoutClient />
 			<head>
-				{ generateMetaTags({
+				{generateMetaTags({
 					title: myMetadata?.title ?? "",
 					description: myMetadata?.description ?? "",
 					keywords: myMetadata?.keywords ?? "",
 					origin: origin ?? "",
 					url: url ?? "",
 					siteInfo: siteInfo as SiteInfo,
-				}) }
+				})}
 				<BreadcrumbListSchema routes={myRoutes.routes} currentPath={pathname} siteUrl={siteInfo.url} />
 				{productSchema && <ProductSchema product={productSchema} />}
 				<WebsiteSchema siteInfo={siteInfo as SiteInfo} />
@@ -82,27 +83,30 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 			</head>
 
 			<body>
-				<PixelatedServerConfigProvider>
-					<Interactions />
-					<header>
-						<div id="page-header" className="fixed-header">
-							<Header />
-						</div>
-						<div id="page-header-nav" className="fixed-header-nav">
-							<div className="section-container">
-								<HeaderNav />
+				<PixelatedClientConfigProvider config={pixelatedConfig}>
+					<LayoutClient />
+					<PixelatedServerConfigProvider>
+						<Interactions />
+						<header>
+							<div id="page-header" className="fixed-header">
+								<Header />
 							</div>
-						</div>
-						<div id="fixed-header-spacer" />
-						<div id="fixed-header-nav-spacer" />
-						<div id="page-search" className="no-mobile">
-							<Search />
-						</div>
-					</header>
-					<nav><Nav /></nav>
-					<main>{children}</main>
-					<footer><Footer /></footer>
-				</PixelatedServerConfigProvider>
+							<div id="page-header-nav" className="fixed-header-nav">
+								<div className="section-container">
+									<HeaderNav />
+								</div>
+							</div>
+							<div id="fixed-header-spacer" />
+							<div id="fixed-header-nav-spacer" />
+							<div id="page-search" className="no-mobile">
+								<Search />
+							</div>
+						</header>
+						<nav><Nav /></nav>
+						<main>{children}</main>
+						<footer><Footer /></footer>
+					</PixelatedServerConfigProvider>
+				</PixelatedClientConfigProvider>
 			</body>
 		</html>
 	);
