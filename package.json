@@ -1,6 +1,6 @@
 {
 	"name": "PixelVivid",
-	"version": "3.1.7",
+	"version": "3.1.8",
 	"private": true,
 	"author": {
 		"name": "Pixelated Technologies",
@@ -37,7 +37,7 @@
 		"@next/eslint-plugin-next": "^16.2.2",
 		"@next/third-parties": "^16.2.2",
 		"@types/estree": "^1.0.8",
-		"@types/node": "^25.5.0",
+		"@types/node": "^25.5.2",
 		"@types/prop-types": "^15.7.15",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
@@ -47,7 +47,7 @@
 		"eslint": "9.39.4",
 		"eslint-config-next": "^16.2.2",
 		"eslint-plugin-react": "^7.37.5",
-		"sass": "^1.98.0",
+		"sass": "^1.99.0",
 		"sass-loader": "^16.0.7",
 		"style-loader": "^4.0.0",
 		"typescript": "^6.0.2",

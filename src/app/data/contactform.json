@@ -35,6 +35,14 @@
 		},{
 			"component" : "FormInput",
 			"props" : {
+				"type" : "hidden",
+				"id" : "formName",
+				"name" : "formName",
+				"value" : "contact-us"
+			}
+		},{
+			"component" : "FormInput",
+			"props" : {
 				"type" : "text",
 				"id" : "firstname",
 				"name" : "firstname",
