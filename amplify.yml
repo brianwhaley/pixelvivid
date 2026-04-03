@@ -16,6 +16,8 @@ frontend:
         - node -v
         - npm run build
         - npm run generate-site-images
+        - echo "Building Storybook with higher memory for CI"
+        - NODE_OPTIONS=--max-old-space-size=8192 npm run buildStorybook --legacy-peer-deps
     postBuild:
       commands:
         - echo "Calling Config Vault postbuild"
