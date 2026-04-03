@@ -11,10 +11,8 @@ import Nav from "@/app/elements/nav";
 import Search from '@/app/elements/search';
 import Footer from '@/app/elements/footer';
 import Interactions from "@/app/elements/interactions";
-import { PixelatedClientConfigProvider } from "@pixelated-tech/components";
 import LayoutClient from "./elements/layoutclient";
 import myRoutes from "@/app/data/routes.json";
-import pixelatedConfig from "./config/pixelated.config.json";
 import "@pixelated-tech/components/css/pixelated.global.css";
 import "@pixelated-tech/components/css/pixelated.grid.scss";
 import "./globals.css";
@@ -83,30 +81,28 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 			</head>
 
 			<body>
-				<PixelatedClientConfigProvider config={pixelatedConfig}>
+				<PixelatedServerConfigProvider>
 					<LayoutClient />
-					<PixelatedServerConfigProvider>
-						<Interactions />
-						<header>
-							<div id="page-header" className="fixed-header">
-								<Header />
+					<Interactions />
+					<header>
+						<div id="page-header" className="fixed-header">
+							<Header />
+						</div>
+						<div id="page-header-nav" className="fixed-header-nav">
+							<div className="section-container">
+								<HeaderNav />
 							</div>
-							<div id="page-header-nav" className="fixed-header-nav">
-								<div className="section-container">
-									<HeaderNav />
-								</div>
-							</div>
-							<div id="fixed-header-spacer" />
-							<div id="fixed-header-nav-spacer" />
-							<div id="page-search" className="no-mobile">
-								<Search />
-							</div>
-						</header>
-						<nav><Nav /></nav>
-						<main>{children}</main>
-						<footer><Footer /></footer>
-					</PixelatedServerConfigProvider>
-				</PixelatedClientConfigProvider>
+						</div>
+						<div id="fixed-header-spacer" />
+						<div id="fixed-header-nav-spacer" />
+						<div id="page-search" className="no-mobile">
+							<Search />
+						</div>
+					</header>
+					<nav><Nav /></nav>
+					<main>{children}</main>
+					<footer><Footer /></footer>
+				</PixelatedServerConfigProvider>
 			</body>
 		</html>
 	);
