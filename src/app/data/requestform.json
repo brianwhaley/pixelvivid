@@ -1,4 +1,11 @@
 {
+    "properties": {
+        "name": "newrequest",
+        "id": "newRequestForm",
+        "toggleLoading": true,
+        "openModal": true,
+        "resetForm": true
+    },
     "fields" : [
         {
 			"component" : "FormInput",
@@ -39,6 +46,12 @@
 				"id" : "formName",
 				"name" : "formName",
 				"value" : "custom-request"
+			}
+		},{
+			"component" : "FormHoneypot",
+			"props" : {
+				"id": "winnie",
+				"name" : "website"
 			}
 		},{
             "component" : "FormInput",

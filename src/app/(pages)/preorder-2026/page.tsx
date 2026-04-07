@@ -1,42 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { PageSectionHeader, PageTitleHeader } from "@pixelated-tech/components";
 import { FormEngine } from "@pixelated-tech/components";
-import { emailFormData } from "@pixelated-tech/components";
-import { Loading, ToggleLoading } from "@pixelated-tech/components";
-import { Modal, handleModalOpen } from "@pixelated-tech/components";
 
 import formData from "@/app/data/preorder2026form.json";
 
 export default function Preorder2026() {
-
-	const myContent = <div className="centered"><br /><br />Thank you for contacting us!<br />We will get back to you as soon as we can.<br /><br /><br /></div>;
-	const [modalContent /* , setModalContent */ ] = useState(myContent);
-
-	function handleSubmit(e: Event) {
-		ToggleLoading({show: true});
-		emailFormData(e, postSubmit);
-	}
-
-	function postSubmit(e: Event) {
-		handleModalOpen(e as MouseEvent);
-		ToggleLoading({show: false});
-		const myForm = e.target as HTMLFormElement;
-		myForm.reset();
-	}
-	
-	useEffect(() => {
-		const form = document.getElementById("preorder2026Form") as HTMLFormElement;
-		if (form) {
-			const submitbutton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-			const submitDiv = submitbutton.parentElement as HTMLDivElement;
-			if(submitDiv) {
-				submitDiv.style.textAlign = "center";
-				submitDiv.style.margin = "20px auto";
-			}
-		}
-	}, []);
 
 	return (
 		<>

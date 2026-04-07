@@ -1,4 +1,11 @@
 {
+	"properties": {
+		"name": "contact-us",
+		"id": "contact-us-form",
+		"toggleLoading": true,
+		"openModal": true,
+		"resetForm": true
+	},
 	"fields" : [
 		{
 			"component" : "FormInput",
@@ -39,6 +46,12 @@
 				"id" : "formName",
 				"name" : "formName",
 				"value" : "contact-us"
+			}
+		},{
+			"component" : "FormHoneypot",
+			"props" : {
+				"id": "winnie",
+				"name" : "website"
 			}
 		},{
 			"component" : "FormInput",
@@ -110,15 +123,7 @@
 				"label" : "Message (required) : ",
 				"tooltip": "Please enter the details of your request"
 			}
-		},
-		{
-			"component" : "FormHoneypot",
-			"props" : {
-				"id": "winnie",
-				"name" : "website"
-			}
-		},
-		{
+		},{
 			"component" : "FormButton",
 			"props" : {
 				"type" : "submit",

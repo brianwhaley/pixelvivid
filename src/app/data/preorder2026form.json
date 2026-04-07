@@ -1,4 +1,11 @@
 {
+	"properties": {
+		"name": "preorder-2026",
+		"id": "preorder2026Form",
+		"toggleLoading": true,
+		"openModal": true,
+		"resetForm": true
+	},
 	"fields" : [
 		{
 			"component" : "FormInput",
@@ -23,6 +30,28 @@
 				"id" : "subject",
 				"name" : "subject",
 				"value" : "PixelVivid Preorder 2026 Submit"
+			}
+		},{
+			"component" : "FormInput",
+			"props" : {
+				"type" : "hidden",
+				"id" : "domain",
+				"name" : "domain",
+				"value" : "pixelvivid.com"
+			}
+		},{
+			"component" : "FormInput",
+			"props" : {
+				"type" : "hidden",
+				"id" : "formName",
+				"name" : "formName",
+				"value" : "preorder-2026"
+			}
+		},{
+			"component" : "FormHoneypot",
+			"props" : {
+				"id": "winnie",
+				"name" : "website"
 			}
 		},{
 			"component" : "FormInput",
@@ -126,15 +155,7 @@
 				"label" : "Message : ",
 				"tooltip": "Please enter any additional details of your preorder"
 			}
-		},
-		{
-			"component" : "FormHoneypot",
-			"props" : {
-				"id": "winnie",
-				"name" : "website"
-			}
-		},
-		{
+		},{
 			"component" : "FormButton",
 			"props" : {
 				"type" : "submit",

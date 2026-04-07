@@ -2,11 +2,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PageTitleHeader, PageSectionHeader, getContentfulEntriesByType } from "@pixelated-tech/components";
+import { PageTitleHeader, getContentfulEntriesByType } from "@pixelated-tech/components";
 import { HubspotTrackingCode /* , getHubspotFormSubmissions */ } from "@pixelated-tech/components";
 import { FormEngine } from "@pixelated-tech/components";
 import { Table } from "@pixelated-tech/components";
-import { Loading, ToggleLoading, usePixelatedConfig } from "@pixelated-tech/components";
+import { Loading, usePixelatedConfig } from "@pixelated-tech/components";
 import formData from "@/app/data/requestform.json";
 import "./requests.css";
 
@@ -15,54 +15,6 @@ export default function Requests() {
 
 	if (!pixelatedConfig) {
 		return <Loading />;
-	}
-
-	/* MANAGE CUSTOM REQUEST DIALOG */
-
-	async function saveDialog() {
-		ToggleLoading({show: true});
-		// const sendmail_api = "https://nlbqdrixmj.execute-api.us-east-2.amazonaws.com/default/sendmail";
-		const sendmailBase = "https://sendmail.pixelated.tech/default/sendmail";
-		const proxyBase = pixelatedConfig?.global?.proxyUrl || "";
-		const sendmail_api = proxyBase ? `${proxyBase}${encodeURIComponent(sendmailBase)}` : sendmailBase;
-		const tyDialog = document.getElementById("thankYouDialog") as HTMLDialogElement;
-		const myform = document.getElementById("newRequestForm")as HTMLFormElement;
-		// e.preventDefault(); // removed to allow hubspot submission
-		const myFormData: { [key: string]: any } = {};
-		const formData = new FormData(myform as HTMLFormElement);
-		for (const [key, value] of formData.entries()) {
-			myFormData[key] = value ;
-		}
-		myFormData.Date = new Date().toLocaleDateString() ;
-		myFormData.Status = "Submitted" ;
-		try {
-			const response = await fetch(sendmail_api, {
-				method: 'POST',
-				mode: 'cors', 
-				headers: {
-					Accept: 'application/json',
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(myFormData),
-			});
-			if (!response.ok) {
-				const text = await response.text();
-				throw new Error(`Sendmail failed (${response.status}) ${response.statusText}: ${text}`);
-			}
-			await response.json();
-			myform.reset();
-			tyDialog.showModal();
-		} catch (err) {
-			console.error('sendmail request error', err);
-			alert('Sorry, there was an error submitting your request. Please try again later.');
-		} finally {
-			ToggleLoading({show: false});
-		}
-	}
-	
-	function closeDialog(id: string) {
-		const mydialog = document.getElementById(id) as HTMLDialogElement;
-		mydialog.close();
 	}
 
 	/* MANAGE CONTENTFUL CUSTOM REQUESTDATA FETCHING */
@@ -115,18 +67,9 @@ export default function Requests() {
 				<div className="section-container">
 					<HubspotTrackingCode hubID={"243048355"} />
 					<PageTitleHeader title="Request Your Custom Sunglasses" />
-					<Loading />
 					<div className="new-request-form-wrapper">
-						<FormEngine name="newrequest" id="newRequestForm" formData={formData} onSubmitHandler={saveDialog} />
+						<FormEngine formData={formData} />
 					</div>
-					<dialog id="thankYouDialog">
-						<PageSectionHeader title="Thank you!" />
-						<center>Thank you for your your request.  Your request data has been sent for review.</center>
-						<br />
-						<center>
-							<br /><button type="button" id="closeDialog" onClick={() => closeDialog('thankYouDialog')}>Close</button>
-						</center>
-					</dialog>
 					<br /><br />
 				</div>
 			</section>
